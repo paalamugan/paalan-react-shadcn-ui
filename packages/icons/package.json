@@ -1,0 +1,75 @@
+{
+  "name": "@paalan/react-icons",
+  "version": "1.0.10",
+  "description": "React UI icons for Paalan UI",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Paalamugan Samayamuthu",
+    "email": "paalamugan.samayamuthu@paalan.com"
+  },
+  "scripts": {
+    "build": "npm run type-check && npm run lint && npm run clean && npm run tsup",
+    "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
+    "lint:fix": "npm run lint -- --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,md,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx}\" --cache",
+    "tsup": "tsup",
+    "tsup:watch": "tsup --watch",
+    "prepublish": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.1.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.18.x",
+    "react-dom": ">=16.18.x"
+  },
+  "engines": {
+    "node": ">=16.x.x"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./solid": {
+      "import": "./dist/solid/index.js",
+      "require": "./dist/solid/index.cjs",
+      "types": "./dist/solid/index.d.ts"
+    },
+    "./outline": {
+      "import": "./dist/outline/index.js",
+      "require": "./dist/outline/index.cjs",
+      "types": "./dist/outline/index.d.ts"
+    },
+    "./custom": {
+      "import": "./dist/custom/index.js",
+      "require": "./dist/custom/index.cjs",
+      "types": "./dist/custom/index.d.ts"
+    },
+    "./components": {
+      "import": "./dist/components/index.js",
+      "require": "./dist/components/index.cjs",
+      "types": "./dist/components/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paalamugan/paalan-react-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paalamugan/paalan-react-ui/issues"
+  },
+  "homepage": "https://github.com/paalamugan/paalan-react-ui#readme",
+  "license": "ISC",
+  "files": [
+    "dist",
+    "tsconfig.json"
+  ]
+}

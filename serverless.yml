@@ -1,0 +1,48 @@
+service: ${self:custom.deployPrefix}-sls-react-ui-storybook
+
+package:
+  individually: true
+  patterns:
+    - '!*/**'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${self:custom.region}
+  logRetentionInDays: 365
+  memorySize: 512
+  timeout: 30
+  versionFunctions: false
+  tags:
+    CreatedBy: paalamugan
+    Owner: paalamugan
+    BillingGroup: paalan-${self:custom.environment}
+    BillingSubGroup: paalan-${self:custom.environment}-LAMBDA
+    Project: PAALAN-REACT-UI-STORYBOOK
+    DeptOwner: IT
+    DeptSubOwner: Software Development
+
+params:
+  default:
+    docWebsiteBucketName: arn:aws:s3:::${self:custom.bucketName}
+
+plugins:
+  - serverless-better-credentials
+  - serverless-plugin-split-stacks
+  - serverless-s3-sync
+  - serverless-cloudfront-invalidate
+
+custom:
+  environment: ${env:AWS_ENV, "dev"}
+  region: ${opt:region, "us-east-1"}
+  deployPrefix: paalan${self:custom.environment}
+  bucketName: ${self:custom.deployPrefix}-react-ui-storybook
+  DOC_UI_DISTRIBUTION_ID: E3QJ98377X0XO2
+  lambdaFunctionArnPrefix: arn:aws:lambda:${aws:region}:${aws:accountId}:function
+  s3Sync:
+    - bucketName: ${self:custom.bucketName}
+      localDir: storybook-static
+  cloudfrontInvalidate:
+    - distributionId: ${self:custom.DOC_UI_DISTRIBUTION_ID}
+      items:
+        - '/*'

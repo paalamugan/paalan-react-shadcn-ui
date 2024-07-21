@@ -1,0 +1,192 @@
+import { Controls, Meta, Source, Story } from '@storybook/blocks';
+
+<Meta title="System/Getting Started" />
+
+# Getting Started
+
+_This is a collection of React components and hooks that we use at Paalan to build our web applications._
+
+You can find the source code in [here](https://github.com/paalamugan/paalan-react-ui).
+
+## Pre Requisites
+
+- [Node.js](https://nodejs.org/en/) version >= 16.0.0 is required. We recommend using [nvm](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/) to install the node version.
+
+```bash
+nvm install 18 && nvm use 18
+```
+
+- [tailwindcss](https://tailwindcss.com/docs/guides/vite) version >= 3.0.0 is required.
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+## Installation
+
+- Install the package using npm. This package has peer dependencies on `react`, `react-dom` and `react-router-dom`.
+
+```bash
+npm install @paalan/react-ui
+```
+
+## Usage
+
+- Import the `tailwindConfig` configuration from `@paalan/react-ui/config` in your application. Copy the below content and paste it in your application `tailwind.config.js` file.
+
+**Note: If the `tailwind.config.js` file is not exist in your root folder then create one, before paste the below content.**
+
+```js
+import { tailwindConfig } from '@paalan/react-ui/config';
+
+/** @type {import('tailwindcss').Config} */
+const config = {
+  presets: [tailwindConfig],
+  // override tailwind config here if needed
+  theme: {},
+};
+
+export default config;
+```
+
+- Import the styles css file from `@paalan/react-ui/styles.css` in your application. Copy the below content and paste it in your application `index.css` file.
+
+**Note: If the `index.css` file is not exist in your `src` folder then create one, before paste the below content.**
+
+```css
+@import '@paalan/react-ui/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+- Import the `ThemeProvider` component from `@paalan/react-ui/providers` and wrap your application with it.
+
+```jsx
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { ThemeProvider } from '@paalan/react-ui/providers';
+
+import { App } from './App';
+import './index.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+
+const Root = () => {
+  return (
+    <React.StrictMode>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+};
+
+root.render(<Root />);
+```
+
+- Import the components you need from `@paalan/react-ui/components`.
+
+```jsx
+import React, { useState } from 'react';
+
+import { Button } from '@paalan/react-ui/components';
+import { useCounter } from '@paalan/react-ui/hooks';
+import { Box, Text } from '@paalan/react-ui/layouts';
+
+export const App = () => {
+  const [count, { increment, decrement }] = useCounter(0);
+  return (
+    <Box>
+      <Text mb="2">Count: {count}</Text>
+      <Button onClick={() => increment()} variant="outline" mr="2">
+        Increment
+      </Button>
+      <Button onClick={() => decrement()} variant="outline">
+        Decrement
+      </Button>
+    </Box>
+  );
+};
+```
+
+## How to import the provider hooks
+
+- Import the provider hooks you need from `@paalan/react-ui/providers`.
+
+```jsx
+import React from 'react';
+
+import { Box, Text } from '@paalan/react-ui/layouts';
+import { useTheme } from '@paalan/react-ui/providers';
+
+export const App = () => {
+  const { theme } = useTheme();
+
+  return (
+    <Box>
+      <Text>Current theme is {theme}</Text>
+    </Box>
+  );
+};
+```
+
+## How to import the general hooks
+
+- Import the hooks you need from `@paalan/react-ui/hooks`.
+
+```jsx
+import React from 'react';
+
+import { Button } from '@paalan/react-ui/components';
+import { useToggle } from '@paalan/react-ui/hooks';
+import { Box, Text } from '@paalan/react-ui/layouts';
+
+export const App = () => {
+  const [isOn, toggle] = useToggle();
+
+  return (
+    <Box>
+      <Text>Current state is {isOn ? 'on' : 'off'}</Text>
+      <Button onClick={toggle}>Toggle</Button>
+    </Box>
+  );
+};
+```
+
+## How to import the icons
+
+- Import the icons you need from `@paalan/react-ui/icons`.
+
+```jsx
+import { AccessibilityIcon } from '@paalan/react-ui/icons';
+
+<AccessibilityIcon boxSize="4" />;
+```
+
+- Import the solid icons you need from `@paalan/react-ui/icons/solid`. These icons are from [heroicons](https://heroicons.com/). So you can't use the `boxSize` prop on these icons.
+
+```jsx
+import { AcademicCapIcon } from '@paalan/react-ui/icons/solid';
+
+<AcademicCapIcon className="h-4 w-4" />;
+```
+
+- Import the outline icons you need from `@paalan/react-ui/icons/outline`. These icons are from [heroicons](https://heroicons.com/). So you can't use the `boxSize` prop on these icons.
+
+```jsx
+import { AcademicCapIcon } from '@paalan/react-ui/icons/outline';
+
+<AcademicCapIcon className="h-4 w-4" />;
+```
+
+## Documentation
+
+- [Layouts](/docs/layouts-box--docs)
+- [Components](/docs/components-accordion--docs)
+- [Icons](/docs/system-icons--docs)
+- [Colors](/docs/system-colors--docs)
+- [Hooks](/docs/hooks-state-management-usecallbackref--documentation)
+- [Providers](/docs/providers-themeprovider--docs)import { Controls, Meta, Source, Story } from '@storybook/blocks';

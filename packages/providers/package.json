@@ -1,0 +1,74 @@
+{
+  "name": "@paalan/react-providers",
+  "version": "1.0.3",
+  "description": "React UI providers for Paalan UI",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Paalamugan Samayamuthu",
+    "email": "paalamugan.samayamuthu@paalan.com"
+  },
+  "scripts": {
+    "build": "npm run type-check && npm run lint && npm run clean && npm run tsup",
+    "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
+    "lint:fix": "npm run lint -- --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,md,mdx}\" --cache",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,md,mdx}\" --cache",
+    "tsup": "tsup",
+    "tsup:watch": "tsup --watch",
+    "prepublish": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^3.5.0",
+    "@azure/msal-react": "^2.0.7",
+    "axios": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.18.x",
+    "react-dom": ">=16.18.x",
+    "react-router-dom": ">=6.x.x"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./FormatIntlProvider": {
+      "import": "./dist/FormatIntlProvider/index.js",
+      "require": "./dist/FormatIntlProvider/index.cjs",
+      "types": "./dist/FormatIntlProvider/index.d.ts"
+    },
+    "./MsalAuthProvider": {
+      "import": "./dist/MsalAuthProvider/index.js",
+      "require": "./dist/MsalAuthProvider/index.cjs",
+      "types": "./dist/MsalAuthProvider/index.d.ts"
+    },
+    "./ThemeProvider": {
+      "import": "./dist/ThemeProvider/index.js",
+      "require": "./dist/ThemeProvider/index.cjs",
+      "types": "./dist/ThemeProvider/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paalamugan/paalan-react-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paalamugan/paalan-react-ui/issues"
+  },
+  "homepage": "https://github.com/paalamugan/paalan-react-ui#readme",
+  "license": "ISC",
+  "files": [
+    "dist",
+    "tsconfig.json"
+  ]
+}
