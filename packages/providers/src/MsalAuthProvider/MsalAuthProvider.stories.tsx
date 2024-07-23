@@ -39,8 +39,8 @@ export function WithoutReactRouter() {
     );
   };
   const App = () => {
-    const clientId = '9a565907-72fc-4c10-8c07-883463e5faa4'; // Replace with your own client ID
-    const tenantId = 'c9340d0a-8762-4b43-a2d1-f59bd6ef8726'; // Replace with your own tenant ID
+    const clientId = '<YOUR_CLIENT_ID>'; // Replace with your own client ID
+    const tenantId = '<YOUR_TENANT_ID>'; // Replace with your own tenant ID
     return (
       <MsalAuthProvider clientId={clientId} tenantId={tenantId} isPopupAuthenticationFlow>
         <Home />
@@ -110,11 +110,7 @@ const Dashboard = () => {
 
 WithReactRouter.decorators = [
   (...args) => (
-    <MsalAuthProvider
-      clientId={'9a565907-72fc-4c10-8c07-883463e5faa4'}
-      tenantId={'c9340d0a-8762-4b43-a2d1-f59bd6ef8726'}
-      isPopupAuthenticationFlow
-    >
+    <MsalAuthProvider clientId={'<YOUR_CLIENT_ID>'} tenantId={'<YOUR_TENANT_ID>'} isPopupAuthenticationFlow>
       {withRouter(...args)}
     </MsalAuthProvider>
   ),

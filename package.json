@@ -1,7 +1,7 @@
 {
   "name": "paalan-react-ui",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Reusable react ui components with build on top of Tailwind CSS and Shadcn UI",
   "type": "module",
   "author": {
@@ -12,6 +12,7 @@
     "start": "npm run dev",
     "dev:watch": "pnpm --filter=./packages/* dev:watch",
     "build": "pnpm --filter=./packages/* build",
+    "build-fast": "pnpm --filter=./packages/* build-fast",
     "lint": "eslint ./packages --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
     "lint:fix": "pnpm lint --fix",
     "typedocs": "pnpm react:components typedocs",
@@ -19,11 +20,9 @@
     "react:components": "pnpm --filter=@paalan/react-components",
     "format": "prettier --write packages --cache",
     "format:check": "prettier --check packages --cache",
-    "tsup": "tsup",
-    "tsup:watch": "tsup --watch",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "npm run test -- --watch",
+    "test": "pnpm --filter=./packages/* test",
+    "test:coverage": "pnpm test --coverage",
+    "test:watch": "pnpm test --watch",
     "storybook": "storybook dev -p 6006",
     "storybook:docs": "storybook dev -p 6007 --docs",
     "storybook:build": "cross-env NODE_OPTIONS=\"--max-old-space-size=8096\" storybook build",
@@ -224,8 +223,10 @@
     "pnpm": ">=9"
   },
   "pnpm": {
-    "overrides": {
-      "fdir@6>picomatch": "3"
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "picomatch"
+      ]
     }
   }
 }

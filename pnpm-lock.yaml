@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  fdir@6>picomatch: '3'
-
 importers:
 
   .:
@@ -608,6 +605,9 @@ importers:
       '@azure/msal-react':
         specifier: ^2.0.7
         version: 2.0.21(@azure/msal-browser@3.19.1)(react@18.3.1)
+      '@paalan/react-components':
+        specifier: workspace:*
+        version: link:../components
       axios:
         specifier: ^1.6.0
         version: 1.7.2
@@ -5813,7 +5813,7 @@ packages:
   fdir@6.1.1:
     resolution: {integrity: sha512-QfKBVg453Dyn3mr0Q0O+Tkr1r79lOTAKSi9f/Ot4+qVEwxWhav2Z+SudrG9vQjM2aYRMQQZ2/Q1zdA8ACM1pDg==}
     peerDependencies:
-      picomatch: '3'
+      picomatch: 3.x
     peerDependenciesMeta:
       picomatch:
         optional: true

@@ -5,6 +5,14 @@ export default defineConfig(() => {
   return {
     splitting: false,
     entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}'],
+    // entry: [
+    //   'src/index.ts',
+    //   'src/lib/**/*.{ts,tsx}',
+    //   'src/constants/**/*.{ts,tsx}',
+    //   'src/system/**/*.{ts,tsx}',
+    //   'src/utils/**/*.{ts,tsx}',
+    //   'src/types/**/*.{ts,tsx}',
+    // ],
     format: ['esm', 'cjs'],
     external: ['react', 'react-dom', 'axios', /@paalan\/react-(.*)/, 'tailwind-merge', 'clsx', 'tailwindcss'],
     target: 'esnext',

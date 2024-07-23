@@ -1,6 +1,6 @@
 import { defineConfig } from 'tsup';
 
-export default defineConfig(() => {
+export default defineConfig((_options) => {
   return {
     splitting: false,
     entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}', '!src/**/*.d.ts'],

@@ -1,24 +1,9 @@
 {
+  "extends": ["./tsconfig.base.json"],
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "baseUrl": ".",
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
     "paths": {
       "@/*": ["./packages/*"]
     }
   },
-  "include": ["stories", "@types", ".storybook/**/*"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["stories", "packages", "@types", ".storybook"]
 }
