@@ -1,5 +1,5 @@
 import { Input } from '@paalan/react-components';
-import { Stack, Text } from '@paalan/react-layouts';
+import { Stack, Text } from '@paalan/react-components/base';
 
 import { useUpdateEffect } from '.';
 import { useInputState } from '../use-input-state';

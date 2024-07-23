@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Button } from '@paalan/react-components';
-import { Box, Flex, Stack, Strong } from '@paalan/react-layouts';
+import { Box, Flex, Stack, Strong } from '@paalan/react-components/base';
 
 import { useEyeDropper } from './use-eye-dropper';
 

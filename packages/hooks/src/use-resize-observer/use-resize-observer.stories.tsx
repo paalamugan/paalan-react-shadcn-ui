@@ -1,5 +1,5 @@
 import { Textarea } from '@paalan/react-components';
-import { Center, Code, Text } from '@paalan/react-layouts';
+import { Center, Code, Text } from '@paalan/react-components/base';
 
 import { useResizeObserver } from './use-resize-observer';
 

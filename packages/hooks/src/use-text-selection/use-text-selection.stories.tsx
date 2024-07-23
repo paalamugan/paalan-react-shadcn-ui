@@ -1,4 +1,4 @@
-import { Box, Heading, P, Stack, Strong } from '@paalan/react-layouts';
+import { Box, Heading, P, Stack, Strong } from '@paalan/react-components/base';
 
 import { useTextSelection } from './use-text-selection';
 

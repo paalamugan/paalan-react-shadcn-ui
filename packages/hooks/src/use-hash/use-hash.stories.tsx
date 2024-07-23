@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { Code, Stack, Text } from '@paalan/react-layouts';
+import { Code, Stack, Text } from '@paalan/react-components/base';
 import { randomId } from '@paalan/react-shared/utils';
 
 import { useHash } from './use-hash';

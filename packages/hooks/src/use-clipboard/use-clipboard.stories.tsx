@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { Button, Input, Textarea, useToast } from '@paalan/react-components';
-import { Flex, Stack } from '@paalan/react-layouts';
+import { Flex, Stack } from '@paalan/react-components/base';
 
 import { useClipboard } from './use-clipboard';
 

@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { Box, Center, Paper, Text } from '@paalan/react-layouts';
+import { Box, Center, Paper, Text } from '@paalan/react-components/base';
 
 import { useScrollIntoView } from './use-scroll-into-view';
 

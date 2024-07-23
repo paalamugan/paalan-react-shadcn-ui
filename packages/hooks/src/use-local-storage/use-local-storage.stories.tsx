@@ -1,5 +1,5 @@
 import { Input } from '@paalan/react-components';
-import { Stack, Strong, Text } from '@paalan/react-layouts';
+import { Stack, Strong, Text } from '@paalan/react-components/base';
 
 import { useLocalStorage } from './use-local-storage';
 

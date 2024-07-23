@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { Input } from '@paalan/react-components';
-import { Code, P, Stack } from '@paalan/react-layouts';
+import { Code, P, Stack } from '@paalan/react-components/base';
 
 import { useWindowEvent } from './use-window-event';
 

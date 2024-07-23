@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { Heading, HStack, Stack } from '@paalan/react-layouts';
+import { Heading, HStack, Stack } from '@paalan/react-components/base';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

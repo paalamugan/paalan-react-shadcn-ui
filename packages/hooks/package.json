@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Reusable react hooks for paalan ui",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
     "directory": "dist"
@@ -12,11 +14,12 @@
     "name": "Paalamugan"
   },
   "scripts": {
-    "build": "npm run clean && npm run type-check && npm run lint && npm run tsup",
-    "build-fast": "npm run clean && npm run tsup",
-    "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
+    "build": "npm run type-check:build && npm run lint && npm run tsup",
+    "build-fast": "npm run tsup",
+    "lint": "eslint ./src --ext ts,tsx --ignore-pattern \"**/*.stories.tsx\" --report-unused-disable-directives --max-warnings 0 --cache",
     "lint:fix": "npm run lint -- --fix",
     "type-check": "tsc --noEmit",
+    "type-check:build": "tsc --project tsconfig.build.json --noEmit",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx}\" --cache",
     "tsup": "tsup",

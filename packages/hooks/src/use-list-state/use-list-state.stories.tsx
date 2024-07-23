@@ -1,5 +1,5 @@
 import { Button, Checkbox } from '@paalan/react-components';
-import { Box, LI, Stack, UL, Wrap } from '@paalan/react-layouts';
+import { Box, LI, Stack, UL, Wrap } from '@paalan/react-components/base';
 import { randomId } from '@paalan/react-shared/utils';
 
 import { useListState } from '.';

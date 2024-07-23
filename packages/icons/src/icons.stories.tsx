@@ -1,7 +1,8 @@
 import * as React from 'react';
 
+import { Grid, Input, Text, VStack } from '@paalan/react-components';
+
 import * as AllIconLists from '.';
-import { Grid, Input, Text, VStack } from '../../components';
 
 export default {
   title: 'Icons/All Icons',

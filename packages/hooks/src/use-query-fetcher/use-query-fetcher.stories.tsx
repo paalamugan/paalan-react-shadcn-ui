@@ -1,4 +1,4 @@
-import { Box, Code, Heading, Text } from '@paalan/react-layouts';
+import { Box, Code, Heading, Text } from '@paalan/react-components/base';
 
 import { useQueryFetcher } from './use-query-fetcher';
 

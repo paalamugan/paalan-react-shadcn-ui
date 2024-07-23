@@ -1,5 +1,5 @@
 import { Checkbox, Input } from '@paalan/react-components';
-import { Box, Flex, P, Stack, Strong } from '@paalan/react-layouts';
+import { Box, Flex, P, Stack, Strong } from '@paalan/react-components/base';
 
 import { useSessionStorage } from './use-session-storage';
 

@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { HStack, Text } from '@paalan/react-layouts';
+import { HStack, Text } from '@paalan/react-components/base';
 import { randomId } from '@paalan/react-shared/utils';
 
 import { useForceUpdate } from './use-force-update';

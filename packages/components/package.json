@@ -4,18 +4,18 @@
   "description": "React UI components for Paalan UI",
   "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
     "directory": "dist"
   },
   "author": {
     "name": "Paalamugan"
   },
   "scripts": {
-    "build": "npm run type-check && npm run lint && npm run clean && npm run tsup",
-    "build-fast": "npm run clean && npm run tsup",
+    "build": "npm run type-check && npm run lint && npm run tsup",
+    "build-fast": "npm run tsup",
     "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
     "lint:fix": "npm run lint -- --fix",
     "type-check": "tsc --noEmit",
@@ -79,14 +79,14 @@
       "types": "./dist/index.d.ts"
     },
     "./base": {
-      "import": "./dist/base.js",
-      "require": "./dist/base.cjs",
-      "types": "./dist/base.d.ts"
+      "import": "./dist/base/index.js",
+      "require": "./dist/base/index.cjs",
+      "types": "./dist/base/index.d.ts"
     },
     "./components": {
-      "import": "./dist/components.js",
-      "require": "./dist/components.cjs",
-      "types": "./dist/components.d.ts"
+      "import": "./dist/components/index.js",
+      "require": "./dist/components/index.cjs",
+      "types": "./dist/components/index.d.ts"
     },
     "./tailwind.css": "./dist/tailwind.css",
     "./styles.css": "./dist/index.css"

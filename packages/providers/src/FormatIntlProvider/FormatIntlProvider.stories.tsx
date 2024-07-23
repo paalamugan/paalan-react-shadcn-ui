@@ -19,7 +19,7 @@ import {
   TR,
   UL,
   VStack,
-} from '@paalan/react-layouts';
+} from '@paalan/react-components/base';
 import { TIME_ZONE_LISTS } from '@paalan/react-shared/constants';
 import { CURRENCY_CODES } from '@paalan/react-shared/utils';
 import { addDays } from 'date-fns';

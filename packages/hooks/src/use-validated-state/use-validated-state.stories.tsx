@@ -1,5 +1,5 @@
 import { LabelInput } from '@paalan/react-components';
-import { Box, Text } from '@paalan/react-layouts';
+import { Box, Text } from '@paalan/react-components/base';
 
 import { useValidatedState } from './use-validated-state';
 

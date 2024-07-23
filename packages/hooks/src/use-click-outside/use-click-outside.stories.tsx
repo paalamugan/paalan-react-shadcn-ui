@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Button } from '@paalan/react-components';
-import { Box, LI, P, UL } from '@paalan/react-layouts';
+import { Box, LI, P, UL } from '@paalan/react-components/base';
 
 import { useClickOutside } from './use-click-outside';
 

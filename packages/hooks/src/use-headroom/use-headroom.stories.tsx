@@ -1,4 +1,4 @@
-import { Box, Portal, Stack, Strong, Text } from '@paalan/react-layouts';
+import { Box, Portal, Stack, Strong, Text } from '@paalan/react-components/base';
 
 import { useHeadroom } from './use-headroom';
 

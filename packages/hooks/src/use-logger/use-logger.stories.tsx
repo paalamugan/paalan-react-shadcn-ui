@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import { Button } from '@paalan/react-components';
-import { Stack, Text } from '@paalan/react-layouts';
+import { Stack, Text } from '@paalan/react-components/base';
 
 import { useLogger } from './use-logger';
 

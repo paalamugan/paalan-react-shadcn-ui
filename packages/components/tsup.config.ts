@@ -1,7 +1,7 @@
 import fse from 'fs-extra';
 import { defineConfig } from 'tsup';
 
-export default defineConfig((_options) => {
+export default defineConfig((options) => {
   return {
     splitting: false,
     entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}', '!src/**/*.d.ts'],
@@ -22,7 +22,7 @@ export default defineConfig((_options) => {
       console.log('Tailwind css copied!');
     },
     dts: {
-      entry: 'src/index.ts',
+      entry: ['src/index.ts', 'src/components/index.ts', 'src/base/index.ts'],
     },
     // esbuildOptions(options) {
     //   options.conditions = ['module']; // https://esbuild.github.io/api/#conditions
@@ -31,5 +31,6 @@ export default defineConfig((_options) => {
     banner: {
       js: "'use client';",
     },
+    ...options,
   };
 });

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React UI config for Paalan UI",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "pnpm type-check && pnpm clean && pnpm tsup",
-    "build-fast": "pnpm clean && pnpm tsup",
+    "build-fast": "pnpm tsup",
     "lint": "eslint ./src --ext js,ts --report-unused-disable-directives --max-warnings 0 --cache",
     "lint:fix": "pnpm lint -- --fix",
     "type-check": "tsc --noEmit",

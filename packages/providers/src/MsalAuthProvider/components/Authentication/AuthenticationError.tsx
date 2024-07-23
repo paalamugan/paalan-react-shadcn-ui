@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { Box, Heading } from '@paalan/react-layouts';
+import { Box, Heading } from '@paalan/react-components/base';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useMsalAuth } from '../../context';

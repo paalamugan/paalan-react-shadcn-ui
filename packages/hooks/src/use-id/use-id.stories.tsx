@@ -1,5 +1,5 @@
 import { LabelInput } from '@paalan/react-components';
-import { Heading, Stack, VStack } from '@paalan/react-layouts';
+import { Heading, Stack, VStack } from '@paalan/react-components/base';
 
 import { useId } from './use-id';
 

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { Box } from '@paalan/react-layouts';
+import { Box } from '@paalan/react-components/base';
 
 import { useClickOutside } from '../use-click-outside';
 import { useFocusTrap } from '../use-focus-trap';

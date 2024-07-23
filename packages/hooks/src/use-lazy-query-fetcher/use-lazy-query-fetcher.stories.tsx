@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { Box, Code, Heading, Text } from '@paalan/react-layouts';
+import { Box, Code, Heading, Text } from '@paalan/react-components/base';
 
 import { useLazyQueryFetcher } from './use-lazy-query-fetcher';
 

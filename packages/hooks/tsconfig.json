@@ -2,9 +2,7 @@
   "extends": ["../../tsconfig.base.json"],
   "compilerOptions": {
     "paths": {
-      "@paalan/react-layouts": ["../layouts/src"],
-      "@paalan/react-components": ["../components/src"],
-      "@paalan/react-shared/utils": ["../shared/src/utils"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src", "../../@types"],

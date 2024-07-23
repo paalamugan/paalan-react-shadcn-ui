@@ -1,5 +1,5 @@
 import { Button } from '@paalan/react-components';
-import { Flex, Heading, Stack } from '@paalan/react-layouts';
+import { Flex, Heading, Stack } from '@paalan/react-components/base';
 
 import { useLatestRef } from './use-latest-ref';
 
