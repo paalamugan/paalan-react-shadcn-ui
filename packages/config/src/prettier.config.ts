@@ -1,7 +1,5 @@
-import type { PrettierConfig } from '@ianvs/prettier-plugin-sort-imports';
-import type { PluginOptions } from 'prettier-plugin-tailwindcss';
-
-const config: PrettierConfig & PluginOptions = {
+/** @type {import('@ianvs/prettier-plugin-sort-imports').PrettierConfig & import('prettier-plugin-tailwindcss').PluginOptions} */
+const config = {
   singleQuote: true,
   semi: true,
   useTabs: false,

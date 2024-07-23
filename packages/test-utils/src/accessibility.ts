@@ -2,11 +2,11 @@ import '@testing-library/jest-dom';
 
 import { isValidElement } from 'react';
 
+import { axe, toHaveNoViolations } from 'jest-axe';
+
 import type { RenderOptions } from '@testing-library/react';
 import type { JestAxeConfigureOptions } from 'jest-axe';
 import type { ReactElement } from 'react';
-
-import { axe, toHaveNoViolations } from 'jest-axe';
 
 import { render } from './render';
 

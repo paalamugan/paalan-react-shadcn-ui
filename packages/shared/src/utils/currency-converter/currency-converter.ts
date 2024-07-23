@@ -1,7 +1,7 @@
-import type { CurrencyCode } from './constants';
-
 import axios from 'axios';
 import { load } from 'cheerio';
+
+import type { CurrencyCode } from './constants';
 
 import { CURRENCY_CODES, CURRENCY_RECORD } from './constants';
 

@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { getRandomBoxColors } from '@paalan/react-shared/utils';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 import boxStories from '../Box/Box.stories';
 import { Center } from '../Center';

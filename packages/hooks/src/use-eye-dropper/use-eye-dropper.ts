@@ -10,15 +10,6 @@ export interface EyeDropperOpenReturnType {
   sRGBHex: string;
 }
 
-declare global {
-  // class EyeDropper {
-  //   open(options?: { signal?: AbortSignal }): Promise<{ sRGBHex: string }>;
-  // }
-  interface Window {
-    EyeDropper: typeof EyeDropper;
-  }
-}
-
 export const useEyeDropper = () => {
   const [supported, setSupported] = useState(false);
 

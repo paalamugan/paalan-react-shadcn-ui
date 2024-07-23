@@ -1,8 +1,5 @@
 import type { Config } from 'tailwindcss';
 
-import tailwindAnimate from 'tailwindcss-animate';
-import defaultTheme from 'tailwindcss/defaultTheme';
-
 /**
  * *Whenever you add a new property to SUPPORTED_TAILWIND_CLASSES, you must also add tailwind classname first prefix "word" to this regex.
  * *For example, if you add a new property "borderRadius", you must add "rounded" to the regex below.
@@ -16,7 +13,7 @@ export const tailwindSafeList = [
   },
 ];
 
-export default {
+const config = {
   darkMode: ['class', '[data-theme="dark"]'],
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
@@ -44,15 +41,31 @@ export default {
         A4: '794px',
       },
       spacing: {
-        '72': '18rem',
-        '84': '21rem',
-        '88': '22rem',
-        '96': '24rem',
-        '108': '27rem',
-        '128': '32rem',
+        72: '18rem',
+        84: '21rem',
+        88: '22rem',
+        96: '24rem',
+        108: '27rem',
+        128: '32rem',
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: [
+          'Inter',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'Noto Sans',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          'Segoe UI Symbol',
+          '"Noto Color Emoji"',
+        ],
       },
       fontSize: {
         tiny: '.8125rem',
@@ -84,33 +97,33 @@ export default {
           700: '#0f766e',
           800: '#115e59',
           900: '#134e4a',
-          '950': '#042f2e',
+          950: '#042f2e',
         },
         yellow: {
-          '50': '#fefce8',
-          '100': '#fef9c3',
-          '200': '#fef08a',
-          '300': '#fde047',
-          '400': '#facc15',
-          '500': '#eab308',
-          '600': '#ca8a04',
-          '700': '#a16207',
-          '800': '#92400E',
-          '900': '#713f12',
-          '950': '#422006',
+          50: '#fefce8',
+          100: '#fef9c3',
+          200: '#fef08a',
+          300: '#fde047',
+          400: '#facc15',
+          500: '#eab308',
+          600: '#ca8a04',
+          700: '#a16207',
+          800: '#92400E',
+          900: '#713f12',
+          950: '#422006',
         },
         gray: {
-          '50': '#f9fafb',
-          '100': '#f3f4f6',
-          '200': '#e5e7eb',
-          '300': '#d1d5db',
-          '400': '#9ca3af',
-          '500': '#6b7280',
-          '600': '#4b5563',
-          '700': '#374151',
-          '800': '#1f2937',
-          '900': '#111827',
-          '950': '#030712',
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#030712',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -210,7 +223,7 @@ export default {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [require('tailwindcss-animate')],
   variants: {
     extend: {
       textDecoration: ['focus-visible'],
@@ -224,4 +237,7 @@ export default {
       ringOffsetWidth: ['active'],
     },
   },
+  safelist: tailwindSafeList,
 } satisfies Config;
+
+export default config;

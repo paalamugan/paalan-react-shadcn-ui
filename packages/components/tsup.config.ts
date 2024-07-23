@@ -1,3 +1,4 @@
+import fse from 'fs-extra';
 import { defineConfig } from 'tsup';
 
 export default defineConfig((_options) => {
@@ -15,6 +16,11 @@ export default defineConfig((_options) => {
     sourcemap: false,
     clean: true, // clean up the dist folder before building
     platform: 'browser',
+    async onSuccess() {
+      console.log('Build succeeded!');
+      await fse.copy('src/tailwind.css', 'dist/tailwind.css');
+      console.log('Tailwind css copied!');
+    },
     dts: {
       entry: 'src/index.ts',
     },

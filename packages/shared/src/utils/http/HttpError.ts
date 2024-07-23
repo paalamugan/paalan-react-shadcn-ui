@@ -1,6 +1,6 @@
-import type { IHttpErrorData } from './types';
-
 import { AxiosError, HttpStatusCode } from 'axios';
+
+import type { IHttpErrorData } from './types';
 
 interface IHttpError extends Error {
   message: string;

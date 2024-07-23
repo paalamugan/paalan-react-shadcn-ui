@@ -1,7 +1,7 @@
+import { isAxiosError } from 'axios';
+
 import type { AxiosResponse } from 'axios';
 import type { AxiosRequestConfigData, ErrorHandler, ErrorHandlerMany, IHttpErrorData } from './types';
-
-import axios from 'axios';
 
 import { jsonParser } from '../helper';
 import { ErrorHandlerRegistry } from './ErrorHandlerRegistry';
@@ -30,7 +30,7 @@ export const responseErrorHandler = <T extends IHttpErrorData, D extends AxiosRe
   error: unknown,
   direct?: boolean,
 ) => {
-  if (axios.isAxiosError<T, D>(error)) {
+  if (isAxiosError<T, D>(error)) {
     const { status } = error.response ?? {};
     if (status === 404) {
       error = new ResourceNotFoundException(error);

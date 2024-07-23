@@ -52,3 +52,7 @@ Reusable react ui components with build on top of Tailwind CSS and Shadcn UI.
 ## Publishing the package
 
 - Run `npm publish` to publish the package to npm.
+
+## Migrate Eslint v8 to v9
+
+- Run `npx @eslint/migrate-config .eslintrc.cjs` to migrate the eslint to v9. for more information [click here](https://eslint.org/docs/latest/use/configure/migration-guide#migrate-your-config-file)

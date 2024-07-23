@@ -1,8 +1,8 @@
-import type { As, ComponentWithAs, TailwindStyledComponentProps } from '@paalan/react-shared/types';
-
 import { tailwindBoxVariants } from '@paalan/react-shared/constants';
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef, generateTailwindClassName, objectStyledPropFilter } from '@paalan/react-shared/utils';
+
+import type { As, ComponentWithAs, TailwindStyledComponentProps } from '@paalan/react-shared/types';
 
 export interface BoxProps extends TailwindStyledComponentProps {}
 

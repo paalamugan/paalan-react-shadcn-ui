@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig(() => {
   return {
     splitting: false,
-    entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}', '!src/**/*.d.ts'],
+    entry: ['src/index.ts', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}', '!src/**/*.d.ts'],
     format: ['esm', 'cjs'],
     external: ['react', 'react-dom', /@paalan\/react-(.*)/],
     target: 'esnext',

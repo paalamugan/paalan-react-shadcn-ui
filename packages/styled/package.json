@@ -7,8 +7,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": {
-    "name": "Paalamugan Samayamuthu",
-    "email": "paalamugan.samayamuthu@paalan.com"
+    "name": "Paalamugan"
   },
   "scripts": {
     "build": "npm run type-check && npm run lint && npm run clean && npm run tsup",

@@ -2,7 +2,7 @@ import { createRef } from 'react';
 
 import type React from 'react';
 
-import { render } from '../../render';
+import { render } from '@/render';
 
 interface Options<Props = unknown> {
   component: React.ComponentType<Props>;

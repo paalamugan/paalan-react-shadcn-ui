@@ -1,5 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import {
   alignContent,
   alignItems,
@@ -15,6 +13,8 @@ import {
   placeSelf,
 } from '@paalan/react-shared/constants';
 import { disableStorybookArgTypes } from '@paalan/react-shared/utils';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Box } from './Box';
 

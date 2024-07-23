@@ -1,14 +1,15 @@
 {
   "name": "@paalan/react-hooks",
-  "version": "1.0.3",
-  "description": "React UI hooks for Paalan UI",
+  "version": "1.0.0",
+  "description": "Reusable react hooks for paalan ui",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
   "author": {
-    "name": "Paalamugan Samayamuthu",
-    "email": "paalamugan.samayamuthu@paalan.com"
+    "name": "Paalamugan"
   },
   "scripts": {
     "build": "npm run clean && npm run type-check && npm run lint && npm run tsup",

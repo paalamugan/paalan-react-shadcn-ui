@@ -1,6 +1,6 @@
-import type { UseIntervalOption } from './use-interval';
-
 import { act, renderHook } from '@testing-library/react';
+
+import type { UseIntervalOption } from './use-interval';
 
 import { useInterval } from './use-interval';
 

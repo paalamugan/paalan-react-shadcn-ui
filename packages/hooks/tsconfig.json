@@ -1,25 +1,12 @@
 {
+  "extends": ["../../tsconfig.base.json"],
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "baseUrl": ".",
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "types": ["node", "@testing-library/jest-dom"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@paalan/react-layouts": ["../layouts/src"],
+      "@paalan/react-components": ["../components/src"],
+      "@paalan/react-shared/utils": ["../shared/src/utils"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "../../@types"],
   "exclude": ["dist", "node_modules"]
 }

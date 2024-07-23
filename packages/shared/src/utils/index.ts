@@ -8,7 +8,6 @@ export * from './currency-converter';
 export * from './dom';
 export * from './format';
 export * from './forward-ref';
-export * from './generated-theme';
 export * from './helper';
 export * from './http';
 export * from './logger';

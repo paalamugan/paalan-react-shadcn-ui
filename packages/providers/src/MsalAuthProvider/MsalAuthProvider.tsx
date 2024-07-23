@@ -1,10 +1,10 @@
 import { useCallback, useEffect } from 'react';
 
-import type { AuthenticationResult, EventMessage } from '@azure/msal-browser';
-import type { MsalAuthProviderProps } from './types';
-
 import { EventType } from '@azure/msal-browser';
 import { MsalProvider } from '@azure/msal-react';
+
+import type { AuthenticationResult, EventMessage } from '@azure/msal-browser';
+import type { MsalAuthProviderProps } from './types';
 
 import { createMsalInstance } from './helper';
 import { MsalAuth } from './MsalAuth';

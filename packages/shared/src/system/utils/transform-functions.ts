@@ -1,9 +1,9 @@
-import type { TailwindGeneratedTheme } from '@/utils/generated-theme';
-
 import { camelCase } from 'lodash-es';
 
-import { SUPPORTED_TAILWIND_CLASSES } from '../../constants/supported-classes';
-import { tailwindGeneratedTheme } from '../../utils/generated-theme';
+import type { TailwindGeneratedTheme } from './generated-theme';
+
+import { SUPPORTED_TAILWIND_CLASSES } from '../constants/supported-classes';
+import { tailwindGeneratedTheme } from './generated-theme';
 import {
   backdropFilterTemplate,
   filterTemplate,

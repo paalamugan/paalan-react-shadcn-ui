@@ -1,9 +1,9 @@
-import type { Meta, StoryFn } from '@storybook/react';
-
 import { Button, ErrorRouterBoundary } from '@paalan/react-components';
 import { Box, Code, Flex, Heading, Stack } from '@paalan/react-layouts';
 import { Link, useNavigate } from 'react-router-dom';
 import { reactRouterParameters, withRouter } from 'storybook-addon-react-router-v6';
+
+import type { Meta, StoryFn } from '@storybook/react';
 
 import { AuthenticatedRoute } from './components';
 import { useMsalAuth } from './context';

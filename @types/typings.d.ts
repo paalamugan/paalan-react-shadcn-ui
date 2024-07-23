@@ -26,7 +26,7 @@ interface Navigator {
   onLine: boolean;
 }
 
-class EyeDropper {
+declare class EyeDropper {
   open(options?: { signal?: AbortSignal }): Promise<{ sRGBHex: string }>;
 }
 interface Window {

@@ -1,6 +1,6 @@
-import type { IHttpErrorOptions } from '../HttpError';
-
 import { HttpStatusCode } from 'axios';
+
+import type { IHttpErrorOptions } from '../HttpError';
 
 import { HttpError } from '../HttpError';
 import { HTTP_SERVER_ERROR_CODE } from '../InternalErrorCode';

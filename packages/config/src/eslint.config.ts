@@ -1,42 +1,58 @@
 import prettierConfig from './prettier.config';
 
 export default {
-  root: true,
   env: { browser: true, es2020: true, node: true },
   extends: [
     'eslint:recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:storybook/recommended',
     'plugin:tailwindcss/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:prettier/recommended',
   ],
-  parser: '@typescript-eslint/parser',
-  plugins: ['import'],
+  overrides: [
+    {
+      files: ['*.mdx', '*.md'],
+      extends: 'plugin:mdx/recommended',
+      rules: {
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+    {
+      extends: ['plugin:@typescript-eslint/recommended'],
+      files: ['**/*.ts?(x)', '**/*.js?(x)'],
+      parser: '@typescript-eslint/parser',
+      rules: {
+        '@typescript-eslint/consistent-type-imports': [
+          'warn',
+          {
+            disallowTypeAnnotations: false,
+          },
+        ],
+        '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
+        '@typescript-eslint/no-unused-expressions': 'error',
+        '@typescript-eslint/prefer-as-const': 'warn',
+        '@typescript-eslint/no-explicit-any': 'error',
+        eqeqeq: ['error', 'always'],
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+            ignoreRestSiblings: true,
+            varsIgnorePattern: '^_',
+          },
+        ],
+      },
+    },
+  ],
   rules: {
     'prettier/prettier': ['warn', prettierConfig],
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/consistent-type-imports': [
-      'warn',
-      {
-        disallowTypeAnnotations: false,
-      },
-    ],
-    '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
-    '@typescript-eslint/no-unused-expressions': 'error',
-    '@typescript-eslint/prefer-as-const': 'warn',
-    eqeqeq: ['error', 'always'],
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      {
-        args: 'after-used',
-        argsIgnorePattern: '^_',
-        ignoreRestSiblings: true,
-        varsIgnorePattern: '^_',
-      },
-    ],
     'import/default': 'error',
     'import/export': 'error',
     'import/named': 'error',
@@ -73,9 +89,6 @@ export default {
     ],
   },
   settings: {
-    tailwindcss: {
-      config: './tailwind.config.js',
-    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
@@ -84,20 +97,10 @@ export default {
         extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.md', '.mdx'],
       },
       typescript: {
-        project: ['packages/*/tsconfig.json', 'tsconfig.json'],
+        project: ['packages/**/*/tsconfig.json', 'tsconfig.json'],
         alwaysTryTypes: true,
         // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
       },
     },
   },
-  overrides: [
-    {
-      files: ['*.mdx', '*.md'],
-      extends: 'plugin:mdx/recommended',
-      rules: {
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-      },
-    },
-  ],
 };

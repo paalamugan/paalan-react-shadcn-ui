@@ -1,6 +1,6 @@
-import type { NavigateOptions } from 'react-router-dom';
-
 import { useNavigate } from 'react-router-dom';
+
+import type { NavigateOptions } from 'react-router-dom';
 
 type GetParamFromPathResult<TParam extends PropertyKey> = { [key in TParam]: string };
 type GetParamFromPath<TPath extends string> = TPath extends `${string}:${infer TParam}/${infer TRest}`

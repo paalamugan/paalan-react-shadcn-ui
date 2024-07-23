@@ -1,7 +1,7 @@
+import { NavigationClient } from '@azure/msal-browser';
+
 import type { NavigationOptions } from '@azure/msal-browser';
 import type { NavigateFunction } from 'react-router-dom';
-
-import { NavigationClient } from '@azure/msal-browser';
 
 /**
  * This is an example for overriding the default function MSAL uses to navigate to other urls in your webpage

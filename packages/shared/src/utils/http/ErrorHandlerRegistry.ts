@@ -1,3 +1,6 @@
+import { isAxiosError } from 'axios';
+import { isFunction, isObject, isString } from 'lodash-es';
+
 import type {
   AxiosRequestConfigData,
   ErrorHandler,
@@ -5,9 +8,6 @@ import type {
   ErrorHandlerObject,
   IHttpErrorData,
 } from './types';
-
-import axios from 'axios';
-import { isFunction, isObject, isString } from 'lodash-es';
 
 // import { toast } from '@paalan/react-components';
 
@@ -81,7 +81,7 @@ export class ErrorHandlerRegistry {
   }
 
   responseErrorHandler(this: ErrorHandlerRegistry, error: unknown, direct?: boolean) {
-    if (axios.isAxiosError<IHttpErrorData, AxiosRequestConfigData>(error)) {
+    if (isAxiosError<IHttpErrorData, AxiosRequestConfigData>(error)) {
       const response = error?.response;
 
       const config = error?.config;

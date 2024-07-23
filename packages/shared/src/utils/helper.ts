@@ -1,33 +1,4 @@
-import type { BoxColorVariant } from '@/constants/colors';
-import type { Dict } from '@/types/common';
-import type { Breakpoints } from './generated-theme';
-
-import { BOX_COLOR_VARIANTS } from '@/constants/colors';
-import { isStyleProp, systemProps } from '@/system';
-
-import { breakpoints } from './generated-theme';
-
-type FilterFn<T> = (value: unknown, key: string, object: T) => boolean;
-
-/**
- * Returns the items of an object that meet the condition specified in a callback function.
- *
- * @param object the object to loop through
- * @param fn The filter function
- */
-export function objectFilter<T extends Dict>(object: T, fn: FilterFn<T>) {
-  const result: Dict = {};
-
-  Object.keys(object).forEach((key) => {
-    const value = object[key];
-    const shouldPass = fn(value, key, object);
-    if (shouldPass) {
-      result[key] = value;
-    }
-  });
-
-  return result;
-}
+import type { Dict } from '../types/common';
 
 /**
  * Checks if a value is defined and not null.
@@ -35,39 +6,6 @@ export function objectFilter<T extends Dict>(object: T, fn: FilterFn<T>) {
  * @returns `true` if the value is defined and not null, `false` otherwise.
  */
 export const isDefinedValue = (value: unknown) => value !== undefined && value !== null;
-
-/**
- * Filters out undefined values from an object.
- * @param object - The object to filter.
- * @returns A new object with only defined values.
- */
-export const filterUndefined = (object: Dict) => objectFilter(object, isDefinedValue);
-
-/**
- * Filters an object into two separate objects based on whether the keys are style props or attribute props.
- * @template T - The type of the object being filtered.
- * @param {T} object - The object to filter.
- * @returns {{ styledProps: Dict, attrProps: Dict }} - An object containing two dictionaries: one for style props and one for attribute props.
- */
-export const objectStyledPropFilter = <T extends Dict>(object: T): Record<'styledProps' | 'attrProps', Dict> => {
-  const result: Record<'styledProps' | 'attrProps', Dict> = {
-    styledProps: {},
-    attrProps: {},
-  };
-
-  Object.keys(object).forEach((key) => {
-    const value = object[key];
-    if (!isDefinedValue(value)) return; // skip undefined values
-
-    if (isStyleProp(key)) {
-      result.styledProps[key] = value;
-    } else {
-      result.attrProps[key] = value;
-    }
-  });
-
-  return result;
-};
 
 /**
  * Disables the argTypes for Storybook.
@@ -79,25 +17,6 @@ export const disableStorybookArgTypes = (argTypes: string[]) => {
   argTypes.forEach((key) => {
     result[key] = { table: { disable: true } };
   });
-  return result;
-};
-
-/**
- * Returns an array of random box colors from the available color variants.
- * @param count - The number of random colors to generate.
- * @returns An array of random box colors.
- */
-export const getRandomBoxColors = (count: number) => {
-  const result: BoxColorVariant[] = [];
-  const ignoredColors = ['inherit', 'transparent', 'background', 'foreground', 'secondary', 'muted', 'white', 'black'];
-  const variants = BOX_COLOR_VARIANTS.filter((variant) => !ignoredColors.includes(variant));
-  for (let i = 0; i < count; i += 1) {
-    const randomIndex = Math.floor(Math.random() * variants.length);
-    const value = variants[randomIndex];
-    if (value) {
-      result.push();
-    }
-  }
   return result;
 };
 
@@ -147,43 +66,6 @@ export const isPositiveFloat = (value: unknown, startFrom: number = 0) => {
  */
 export const isAriaInvalid = (value: unknown) => {
   return value === 'true' || value === true;
-};
-
-/**
- * Generates a Tailwind CSS class name based on the given styled props.
- *
- * @param styledProps - The styled props to generate the class name from.
- * @returns The generated Tailwind CSS class name.
- */
-export const generateTailwindClassName = (styledProps: Dict) => {
-  const classNames: string[] = [];
-  Object.entries(styledProps).forEach(([key, value]) => {
-    const val = value as string;
-    const props = systemProps[key];
-    if (!isDefinedValue(props)) return;
-    if (typeof props === 'boolean') {
-      classNames.push(val);
-      return;
-    }
-    const prefix = props?.prefix || '';
-    const prefixes = Array.isArray(prefix) ? prefix : [prefix];
-
-    prefixes.map((prefixVal) => {
-      let className = val;
-      if (prefixVal) {
-        className = `${prefixVal}-${val}`;
-      } else if (breakpoints.includes(val as Breakpoints)) {
-        className = val;
-      }
-
-      const tailwindClassName = (props.transform?.(className) || '') as string;
-      if (tailwindClassName && typeof tailwindClassName === 'string') {
-        classNames.push(tailwindClassName);
-      }
-    });
-  });
-
-  return classNames.join(' ').trim();
 };
 
 /**

@@ -1,7 +1,7 @@
-import type { UseSubscriptionOptions } from './use-subscription';
-
 import { Text } from '@paalan/react-layouts';
 import { Observable } from 'zen-observable-ts';
+
+import type { UseSubscriptionOptions } from './use-subscription';
 
 import { useSubscription } from './use-subscription';
 

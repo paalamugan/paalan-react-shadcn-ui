@@ -1,4 +1,4 @@
-import type { TimeZone } from '@/constants/time-zones';
+import type { TimeZone } from '../../constants/time-zones';
 import type { CurrencyCode } from '../currency-converter';
 
 export type AllLocaleType = typeof import('date-fns/locale');

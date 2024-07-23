@@ -1,7 +1,7 @@
+import { merge } from 'lodash-es';
+
 import type { IAxiosClient, IAxiosClientConfig } from './IAxiosClient';
 import type { IHttpClient } from './IHttpClient';
-
-import { merge } from 'lodash-es';
 
 export class HttpClient<Config extends IAxiosClientConfig> implements IHttpClient<Config> {
   private client: IAxiosClient<IAxiosClientConfig>;

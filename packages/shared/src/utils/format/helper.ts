@@ -1,5 +1,5 @@
-import type { TimeZone } from '@/constants/time-zones';
 import type { Locale } from 'date-fns';
+import type { TimeZone } from '../../constants/time-zones';
 
 /**
  * Returns the default date format as a string.

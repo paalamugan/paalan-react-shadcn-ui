@@ -1,8 +1,8 @@
 import { createRef, useRef } from 'react';
 
-import type React from 'react';
-
 import { render } from '@testing-library/react';
+
+import type React from 'react';
 
 import { useMergedRef } from './use-merged-ref';
 

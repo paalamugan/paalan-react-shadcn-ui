@@ -1,3 +1,4 @@
+import type * as CSS from 'csstype';
 import type {
   AlignContentKey,
   AlignItemsKey,
@@ -10,8 +11,7 @@ import type {
   PlaceContentKey,
   PlaceItemsKey,
   PlaceSelfKey,
-} from '@/constants/flexbox-styling';
-import type * as CSS from 'csstype';
+} from '../constants/flexbox-styling';
 import type { Config } from '../utils/prop-config';
 import type { Length, Token } from '../utils/types';
 
@@ -27,8 +27,7 @@ import {
   placeContent,
   placeItems,
   placeSelf,
-} from '@/constants/flexbox-styling';
-
+} from '../constants/flexbox-styling';
 import { t } from '../utils';
 
 export const flexbox: Config = {

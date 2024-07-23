@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import type { ElementSize } from '@zag-js/element-size';
-
 import { trackElementSize } from '@zag-js/element-size';
+
+import type { ElementSize } from '@zag-js/element-size';
 
 import { useIsomorphicEffect } from '../use-isomorphic-effect';
 

@@ -1,9 +1,9 @@
-import type { tailwindBoxVariants } from '@/constants';
-import type { VariantProps } from 'class-variance-authority';
 import type { ReactNode } from 'react';
 
 export type Dict<T = unknown> = Record<string, T>;
 export type ValueOf<T> = T[keyof T];
+export type FilterFn<T> = (value: unknown, key: string, object: T) => boolean;
+
 export interface OptionType {
   /**
    * The value of the option. If labelContent is not provided, this will be displayed in the option.
@@ -71,4 +71,3 @@ export type EventKeys =
   | 'Shift';
 
 export type SizeVariant = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl';
-export type TailwindBoxVariants = VariantProps<typeof tailwindBoxVariants>;

@@ -1,10 +1,10 @@
-import type { AccountInfo, Configuration, IPublicClientApplication } from '@azure/msal-browser';
-import type { AxiosRequestConfig } from 'axios';
-import type { MsalConfiguration, MsalUserInfo } from './types';
-
 import { InteractionRequiredAuthError, LogLevel, PublicClientApplication } from '@azure/msal-browser';
 import { logger } from '@paalan/react-shared/utils';
 import axios from 'axios';
+
+import type { AccountInfo, Configuration, IPublicClientApplication } from '@azure/msal-browser';
+import type { AxiosRequestConfig } from 'axios';
+import type { MsalConfiguration, MsalUserInfo } from './types';
 
 import { MSAL_GRAPH_CONFIG, MSAL_LOGIN_REQUEST } from './constants';
 

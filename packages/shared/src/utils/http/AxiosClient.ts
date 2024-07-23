@@ -1,8 +1,8 @@
+import axios from 'axios';
+
 import type { AxiosResponse } from 'axios';
 import type { IAxiosClient, IAxiosClientConfig } from './IAxiosClient';
 import type { AxiosRequestConfigData, AxiosReturnResponse } from './types';
-
-import axios from 'axios';
 
 import { responseErrorHandler, responseSuccessHandler } from './handlers';
 
