@@ -5,6 +5,7 @@ import { DotsHorizontalIcon } from '@paalan/react-icons';
 import type z from 'zod';
 import type { DataTableActionItem, DataTableRow } from './types';
 
+import { Button } from '../Button';
 import {
   DropdownMenuContent,
   DropdownMenuItem,
@@ -17,9 +18,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@/components/DropdownMenu';
-
-import { Button } from '../Button';
+} from '../DropdownMenu';
 
 interface DataTableRowActionsProps<TData> {
   row: DataTableRow<TData>;

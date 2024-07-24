@@ -3,11 +3,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { CheckIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 
-import type { CommandNoResultFoundProps } from '@/components/Command/types';
 import type { OptionType } from '@paalan/react-shared/types';
 import type { FC, ReactNode } from 'react';
+import type { CommandNoResultFoundProps } from '../../Command/types';
 
-import { Box } from '@/base';
+import { Box } from '../../../base';
 import {
   CommandGroup,
   CommandInput,
@@ -15,8 +15,8 @@ import {
   CommandLoading,
   CommandModal,
   CommandNoResultFound,
-} from '@/components/Command';
-import { Loading } from '@/components/Loading';
+} from '../../Command';
+import { Loading } from '../../Loading';
 
 export interface PopoverModalContentProps extends Omit<CommandNoResultFoundProps, 'optionsLength' | 'searchValue'> {
   /**

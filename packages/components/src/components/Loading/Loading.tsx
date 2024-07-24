@@ -3,7 +3,7 @@ import { cn } from '@paalan/react-shared/lib';
 
 import type React from 'react';
 
-import { Flex } from '@/base';
+import { Flex } from '../../base';
 
 type LoadingProps = React.ComponentPropsWithoutRef<typeof LoadingIcon> & {
   /**

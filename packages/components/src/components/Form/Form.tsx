@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ArrowPathIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 import { Slot } from '@radix-ui/react-slot';
 import { Controller, FormProvider as OriginalFormProvider, useFormContext } from 'react-hook-form';
@@ -10,9 +10,7 @@ import type { ControllerProps, FieldPath, FieldValues, Path, useForm } from 'rea
 import type { ButtonProps } from '../Button';
 import type { FormItemField } from './types';
 
-import { Box } from '@/base';
-import { Label } from '@/components/Label/Label';
-
+import { Box } from '../../base';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { CheckboxGroup } from '../CheckboxGroup/CheckboxGroup';
@@ -20,6 +18,7 @@ import { Combobox } from '../Combobox';
 import { DatePicker } from '../DatePicker';
 import { DateRangePicker } from '../DateRangePicker';
 import { Input } from '../Input';
+import { Label } from '../Label/Label';
 import { MultiSelect } from '../MultiSelect';
 import { NumberInput } from '../NumberInput/NumberInput';
 import { RadioGroup } from '../RadioGroup';

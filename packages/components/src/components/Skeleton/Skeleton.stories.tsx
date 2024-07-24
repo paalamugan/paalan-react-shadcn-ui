@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box } from '@/base';
-
 import { Skeleton, SkeletonContainer } from '.';
+import { Box } from '../../base';
 
 const meta: Meta<typeof SkeletonContainer> = {
   title: 'Components/Skeleton',

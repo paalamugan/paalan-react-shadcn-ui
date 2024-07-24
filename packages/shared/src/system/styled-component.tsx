@@ -1,8 +1,7 @@
-import type { As, ComponentWithAs, TailwindStyledComponentProps } from '@/types';
+import type { As, ComponentWithAs, TailwindStyledComponentProps } from '../types';
 
-import { cn } from '@/lib';
-import { forwardRef } from '@/utils/forward-ref';
-
+import { cn } from '../lib';
+import { forwardRef } from '../utils/forward-ref';
 import { generateTailwindClassName, objectStyledPropFilter, tailwindBoxVariants } from './utils/helper';
 
 export const StyledComponent: ComponentWithAs<'div', TailwindStyledComponentProps> = forwardRef((props, ref) => {

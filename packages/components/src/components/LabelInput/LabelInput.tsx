@@ -4,8 +4,7 @@ import { forwardRef } from '@paalan/react-shared/utils';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
 import type { InputProps } from '../Input';
 
-import { VStack } from '@/base';
-
+import { VStack } from '../../base';
 import { Input } from '../Input';
 import { Label } from '../Label';
 

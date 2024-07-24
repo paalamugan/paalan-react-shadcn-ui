@@ -20,7 +20,11 @@ export const useEyeDropper = () => {
   const open = useCallback(
     (options: EyeDropperOpenOptions = {}): Promise<EyeDropperOpenReturnType> => {
       if (supported) {
-        const eyeDropper = new window.EyeDropper();
+        const EyeDropper = 'EyeDropper' in window ? window.EyeDropper : null;
+        if (!EyeDropper) {
+          return Promise.reject(new Error('EyeDropper is not supported'));
+        }
+        const eyeDropper = new EyeDropper();
         return eyeDropper.open(options);
       }
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, toast } from '@paalan/react-components';
-import { Box, Heading } from '@paalan/react-layouts';
+import { Box, Heading } from '@paalan/react-components/base';
 
 export const Client = () => {
   return (

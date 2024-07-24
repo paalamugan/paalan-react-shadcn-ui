@@ -1,9 +1,9 @@
 import { cn } from '@paalan/react-shared/lib';
 
-import type { TextProps } from '@/base';
 import type { FC } from 'react';
+import type { TextProps } from '../../base';
 
-import { Text } from '@/base';
+import { Text } from '../../base';
 
 interface ErrorMessageProps extends Omit<TextProps, 'children'> {
   /**

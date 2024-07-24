@@ -6,8 +6,7 @@ import { forwardRef } from '@paalan/react-shared/utils';
 import type { ComponentWithAs, OptionType } from '@paalan/react-shared/types';
 import type { RadioInputProps } from '../RadioInput';
 
-import { Stack } from '@/base';
-
+import { Stack } from '../../base';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
 import { RadioInput } from '../RadioInput';

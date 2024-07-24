@@ -4,8 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import type { FC, ReactNode } from 'react';
 
-import { Box, Heading, Stack, Strong, Text } from '@/base';
-
+import { Box, Heading, Stack, Strong, Text } from '../../base';
 import { Button } from '../Button';
 
 interface ErrorRouterComponentProps {

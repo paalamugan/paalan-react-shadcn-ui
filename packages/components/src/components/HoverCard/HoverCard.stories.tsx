@@ -1,9 +1,8 @@
-import { CalendarIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon } from '@paalan/react-icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box, Heading, Text } from '@/base';
-
+import { Box, Heading, Text } from '../../base';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from './HoverCard';

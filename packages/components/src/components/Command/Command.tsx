@@ -7,8 +7,8 @@ import { Command as CommandPrimitive } from 'cmdk';
 import type { DialogProps } from '@radix-ui/react-dialog';
 import type { CommandGroupList, CommandNoResultFoundProps } from './types';
 
-import { Box, Text } from '@/base';
-import { DialogContent, DialogRoot } from '@/components/Dialog/Dialog';
+import { Box, Text } from '../../base';
+import { DialogContent, DialogRoot } from '../Dialog/Dialog';
 
 const CommandModal = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,

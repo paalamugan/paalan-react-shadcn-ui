@@ -4,8 +4,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '@paalan/react-icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './Collapsible';
 
 const meta: Meta<typeof Collapsible> = {

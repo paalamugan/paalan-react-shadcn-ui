@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Grid, Input, Text, VStack } from '@paalan/react-components';
 
-import * as AllIconLists from '.';
+import * as AllIconLists from './index';
 
 export default {
   title: 'Icons/All Icons',
@@ -16,7 +16,9 @@ export default {
 };
 
 export function AllIcons() {
-  const allIcons = Object.entries(AllIconLists);
+  const allIcons = Object.entries(AllIconLists).filter(
+    ([name]) => name !== 'Icon' && name !== 'convertSvgIconToIcon' && name !== 'createIcon',
+  );
 
   const [filteredIconRecords, setFilteredIconRecords] = React.useState(allIcons);
 

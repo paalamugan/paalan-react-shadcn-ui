@@ -5,12 +5,11 @@ import { cn } from '@paalan/react-shared/lib';
 import { forwardRef } from '@paalan/react-shared/utils';
 import { cva } from 'class-variance-authority';
 
-import type { BoxProps } from '@/base';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
 import type { VariantProps } from 'class-variance-authority';
+import type { BoxProps } from '../../base';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { IconButton } from '../IconButton';
 
 const alertVariants = cva(

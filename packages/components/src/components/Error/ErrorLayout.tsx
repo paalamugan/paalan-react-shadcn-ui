@@ -3,7 +3,7 @@ import { cn } from '@paalan/react-shared/lib';
 
 import type { FC, ReactNode } from 'react';
 
-import { Box, Center, Heading, Stack, Text, VStack } from '@/base';
+import { Box, Center, Heading, Stack, Text, VStack } from '../../base';
 
 export interface ErrorLayoutProps {
   /**

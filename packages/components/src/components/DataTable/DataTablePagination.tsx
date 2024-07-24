@@ -5,8 +5,8 @@ import { ChevronLeftIcon, ChevronRightIcon, DoubleArrowLeftIcon, DoubleArrowRigh
 import type { Table } from '@tanstack/react-table';
 import type { DataTablePaginationOption } from './types';
 
-import { Button } from '@/components/Button';
-import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValue } from '@/components/Select';
+import { Button } from '../Button';
+import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValue } from '../Select';
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>;

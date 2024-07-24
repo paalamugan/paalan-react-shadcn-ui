@@ -2,11 +2,11 @@ import { cn } from '@paalan/react-shared/lib';
 import { forwardRef } from '@paalan/react-shared/utils';
 import { cva } from 'class-variance-authority';
 
-import type { BoxProps } from '@/base';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
 import type { VariantProps } from 'class-variance-authority';
+import type { BoxProps } from '../../base';
 
-import { Box } from '@/base';
+import { Box } from '../../base';
 
 const badgeVariants = cva(
   'inline-flex items-center rounded-md border border-transparent font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',

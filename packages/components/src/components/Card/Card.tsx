@@ -1,11 +1,11 @@
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef } from '@paalan/react-shared/utils';
 
-import type { HeadingProps } from '@/base';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
 import type * as React from 'react';
+import type { HeadingProps } from '../../base';
 
-import { Box, Heading, Text } from '@/base';
+import { Box, Heading, Text } from '../../base';
 
 type OmitColorFromHTMLAttributes = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'>;
 type OmitColorAndChildrenFromHTMLAttributes = Omit<React.HTMLAttributes<HTMLParagraphElement>, 'children' | 'color'>;

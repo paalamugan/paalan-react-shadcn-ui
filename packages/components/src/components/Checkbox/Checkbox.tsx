@@ -8,8 +8,7 @@ import { cva } from 'class-variance-authority';
 
 import type { VariantProps } from 'class-variance-authority';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
 

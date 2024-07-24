@@ -8,8 +8,7 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 
 import type { SelectOption, SelectOptionGroupType } from './types';
 
-import { Box, Text } from '@/base';
-
+import { Box, Text } from '../../base';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
 import { isSelectOptionGroup } from './helper';

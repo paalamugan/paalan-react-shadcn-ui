@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
-import { Flex, Text } from '@/base';
-import { Select } from '@/components/Select';
+import { Flex, Text } from '../../../base';
+import { Select } from '../../Select';
 
 export interface PaginationSizeOptionProps {
   pageSize: number;

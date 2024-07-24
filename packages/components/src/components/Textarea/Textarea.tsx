@@ -3,11 +3,10 @@ import { useEffect, useState } from 'react';
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef, isAriaInvalid } from '@paalan/react-shared/utils';
 
-import type { BoxProps } from '@/base';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
+import type { BoxProps } from '../../base';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
 

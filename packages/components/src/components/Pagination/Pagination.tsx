@@ -4,12 +4,11 @@ import { usePagination } from '@paalan/react-hooks';
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, ChevronLeftIcon, ChevronRightIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 
-import type { BoxProps } from '@/base';
 import type { UsePaginationParams } from '@paalan/react-hooks';
 import type { ReactNode } from 'react';
+import type { BoxProps } from '../../base';
 
-import { Box, Strong, Text } from '@/base';
-
+import { Box, Strong, Text } from '../../base';
 import { IconButton } from '../IconButton';
 import { NextAndPrevPagination, PaginationSizeOption } from './components';
 

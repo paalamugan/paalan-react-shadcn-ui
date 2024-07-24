@@ -1,15 +1,13 @@
 import * as React from 'react';
 
-import { XMarkIcon } from '@heroicons/react/24/solid';
 import { useCallbackRef } from '@paalan/react-hooks';
-import { CaretSortIcon } from '@paalan/react-icons';
+import { CaretSortIcon, XMarkIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 import { isAriaInvalid } from '@paalan/react-shared/utils';
 
 import type { ComboboxProps } from '../Combobox';
 
-import { Box, Text } from '@/base';
-
+import { Box, Text } from '../../base';
 import { Badge } from '../Badge';
 import { Button } from '../Button';
 import { ErrorMessage } from '../ErrorMessage';

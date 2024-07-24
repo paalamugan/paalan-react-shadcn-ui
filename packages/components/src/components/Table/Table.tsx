@@ -3,10 +3,10 @@ import * as React from 'react';
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef } from '@paalan/react-shared/utils';
 
-import type { BoxProps } from '@/base';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
+import type { BoxProps } from '../../base';
 
-import { Box } from '@/base';
+import { Box } from '../../base';
 
 export interface TableProps extends BoxProps {}
 

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box, Heading, Text } from '@/base';
-
+import { Box, Heading, Text } from '../../base';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Label } from '../Label';

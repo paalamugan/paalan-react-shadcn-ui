@@ -1,3 +1,5 @@
+import path from 'path';
+
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => {
@@ -20,6 +22,7 @@ export default defineConfig((options) => {
       'import.meta.env.TEST': 'false',
       'import.meta.env.DEV': 'false',
     },
+    tsconfig: path.resolve(__dirname, '..', '..', 'tsconfig.json'),
     // esbuildOptions(options) {
     //   options.conditions = ['module']; // https://esbuild.github.io/api/#conditions
     // },

@@ -8,8 +8,7 @@ import type { ColorVariant } from '@paalan/react-shared/system';
 import type { VariantProps } from 'class-variance-authority';
 import type { ReactNode } from 'react';
 
-import { Flex } from '@/base';
-
+import { Flex } from '../../base';
 import { Label } from '../Label';
 
 const toggleGroupItemVariants = cva<{

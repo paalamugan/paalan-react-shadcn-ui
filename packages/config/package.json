@@ -7,14 +7,13 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "author": {
     "name": "Paalamugan"
   },
   "scripts": {
-    "build": "pnpm type-check && pnpm clean && pnpm tsup",
+    "build": "pnpm type-check && pnpm tsup",
     "build-fast": "pnpm tsup",
     "lint": "eslint ./src --ext js,ts --report-unused-disable-directives --max-warnings 0 --cache",
     "lint:fix": "pnpm lint -- --fix",

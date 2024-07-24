@@ -3,8 +3,6 @@ import { reactRouterParameters, withRouter } from 'storybook-addon-react-router-
 
 import type { StoryFn } from '@storybook/react';
 
-import { Heading, Stack, Text } from '@/base';
-
 import {
   ErrorBoundary,
   ErrorEmptyResponse,
@@ -15,6 +13,7 @@ import {
   ErrorRouterBoundary,
   ErrorRouterComponent,
 } from '.';
+import { Heading, Stack, Text } from '../../base';
 
 export default {
   title: 'Components/Error',

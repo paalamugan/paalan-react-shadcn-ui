@@ -179,22 +179,16 @@ importers:
         version: link:packages/config
       '@paalan/react-hooks':
         specifier: workspace:*
-        version: link:packages/hooks/dist
+        version: link:packages/hooks
       '@paalan/react-icons':
         specifier: workspace:*
         version: link:packages/icons
-      '@paalan/react-layouts':
-        specifier: workspace:*
-        version: link:packages/layouts/dist
       '@paalan/react-providers':
         specifier: workspace:*
         version: link:packages/providers
       '@paalan/react-shared':
         specifier: workspace:*
         version: link:packages/shared
-      '@paalan/react-styled':
-        specifier: workspace:*
-        version: link:packages/styled
       '@paalan/react-test-utils':
         specifier: workspace:*
         version: link:packages/test-utils
@@ -579,7 +573,6 @@ importers:
       zen-observable-ts:
         specifier: ^1.1.0
         version: 1.1.0
-    publishDirectory: dist
 
   packages/icons:
     dependencies:
@@ -592,16 +585,6 @@ importers:
       react-dom:
         specifier: '>=16.18.x'
         version: 18.3.1(react@18.3.1)
-
-  packages/layouts:
-    dependencies:
-      react:
-        specifier: '>=16.18.x'
-        version: 18.3.1
-      react-dom:
-        specifier: '>=16.18.x'
-        version: 18.3.1(react@18.3.1)
-    publishDirectory: dist
 
   packages/providers:
     dependencies:
@@ -644,8 +627,6 @@ importers:
       tailwindcss:
         specifier: '>=3.0.0'
         version: 3.4.6(ts-node@10.9.2(@swc/core@1.7.0)(@types/node@20.14.11)(typescript@5.3.3))
-
-  packages/styled: {}
 
   packages/test-utils: {}
 

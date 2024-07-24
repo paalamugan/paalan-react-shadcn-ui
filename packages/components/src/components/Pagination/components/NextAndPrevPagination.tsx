@@ -2,8 +2,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@paalan/react-icons';
 
 import type { FC } from 'react';
 
-import { Flex, HStack } from '@/base';
-import { Button } from '@/components/Button';
+import { Flex, HStack } from '../../../base';
+import { Button } from '../../Button';
 
 export interface NextAndPrevPaginationProps {
   onNext: () => void;

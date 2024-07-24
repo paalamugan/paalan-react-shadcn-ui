@@ -1,11 +1,11 @@
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef } from '@paalan/react-shared/utils';
 
-import type { BoxProps } from '@/base';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
 import type React from 'react';
+import type { BoxProps } from '../../base';
 
-import { Box } from '@/base';
+import { Box } from '../../base';
 
 export type IconButtonProps = BoxProps & {
   icon?: React.ReactNode;

@@ -1,4 +1,4 @@
-import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import { CheckCircleIcon } from '@paalan/react-icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

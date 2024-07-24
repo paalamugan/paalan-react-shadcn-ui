@@ -6,8 +6,7 @@ import { cva } from 'class-variance-authority';
 
 import type { HTMLTailwindStyledComponentProps } from '@paalan/react-shared/types';
 
-import { Box, Flex } from '@/base';
-
+import { Box, Flex } from '../../base';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
 

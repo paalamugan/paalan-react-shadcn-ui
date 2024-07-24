@@ -3,8 +3,7 @@ import { useEffect } from 'react';
 import { ArrowLeftIcon, ReloadIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 
-import { Box, Flex, Strong, Text } from '@/base';
-
+import { Box, Flex, Strong, Text } from '../../base';
 import { Button } from '../Button';
 import { ErrorLayout } from './ErrorLayout';
 

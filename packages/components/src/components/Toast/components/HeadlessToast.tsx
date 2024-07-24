@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { ToastT } from '../types';
 
-import { Box, Text } from '@/base';
+import { Box, Text } from '../../../base';
 
 interface HeadlessToastProps {
   title: string | React.ReactNode;

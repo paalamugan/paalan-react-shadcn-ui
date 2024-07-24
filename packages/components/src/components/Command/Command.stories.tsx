@@ -4,8 +4,7 @@ import { CalendarIcon, EnvelopeClosedIcon, FaceIcon, GearIcon, PersonIcon, Rocke
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Text } from '@/base';
-
+import { Text } from '../../base';
 import { Command } from './Command';
 
 const meta: Meta<typeof Command> = {

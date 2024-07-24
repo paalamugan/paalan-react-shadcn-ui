@@ -10,6 +10,7 @@ import { Icon } from './icon';
 interface SvgIconProps extends React.SVGAttributes<SVGElement> {
   children?: never;
   color?: string;
+  title?: string;
 }
 
 export const convertSvgIconToIcon = (
@@ -21,7 +22,7 @@ export const convertSvgIconToIcon = (
         } & React.RefAttributes<SVGSVGElement>
       >
     | React.ForwardRefExoticComponent<SvgIconProps & React.RefAttributes<SVGSVGElement>>,
-): ComponentWithAs<'svg', IconProps> => {
+) => {
   const IconComponent: ComponentWithAs<'svg', IconProps> = forwardRef<IconProps, 'svg'>(
     ({ className, ...props }, ref) => {
       return <Icon as={icon} ref={ref} className={cn('size-4', className)} {...props} />;

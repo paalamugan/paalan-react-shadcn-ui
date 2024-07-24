@@ -2,8 +2,6 @@ import { CircleBackslashIcon } from '@paalan/react-icons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box, LI, Text, UL } from '@/base';
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,6 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '.';
+import { Box, LI, Text, UL } from '../../base';
 
 const meta: Meta<typeof NavigationMenu> = {
   title: 'Components/NavigationMenu',

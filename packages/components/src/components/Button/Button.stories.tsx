@@ -1,11 +1,10 @@
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
+import { EnvelopeIcon } from '@paalan/react-icons';
 import { ALL_COLOR_VARIANTS } from '@paalan/react-shared/system';
 import { expect, userEvent, within } from '@storybook/test';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Heading } from '@/base';
-
+import { Heading } from '../../base';
 import { Button } from './Button';
 import { BUTTON_ROUNDED, BUTTON_SIZE, BUTTON_VARIANTS } from './constants';
 

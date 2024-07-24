@@ -20,6 +20,7 @@ type Orientation = 'vertical' | 'horizontal';
 export interface IconProps extends HTMLTailwindStyledComponentProps<'svg'> {
   className?: string;
   orientation?: Orientation;
+  title?: string;
 }
 
 /**

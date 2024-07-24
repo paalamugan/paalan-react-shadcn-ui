@@ -1,18 +1,17 @@
-import { ArrowPathIcon } from '@heroicons/react/24/solid';
+import { ArrowPathIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef } from '@paalan/react-shared/utils';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 
-import type { BoxProps } from '@/base';
 import type { AllColorVariant } from '@paalan/react-shared/system';
 import type { ComponentWithAs } from '@paalan/react-shared/types';
 import type { VariantProps } from 'class-variance-authority';
 import type * as React from 'react';
+import type { BoxProps } from '../../base';
 import type { ButtonVariant } from './constants';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { BUTTON_COLOR_VARIANT_MAPPING, BUTTON_ROUNDED, BUTTON_SIZE, LOADING_ICON_SIZE } from './constants';
 
 const buttonVariants = cva(

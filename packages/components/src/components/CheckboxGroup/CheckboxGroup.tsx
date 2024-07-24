@@ -7,8 +7,7 @@ import type { ColorVariant } from '@paalan/react-shared/system';
 import type { OptionType } from '@paalan/react-shared/types';
 import type { ReactNode } from 'react';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { Checkbox } from '../Checkbox';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';

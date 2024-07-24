@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import boxStory from '@/base/Box/Box.stories';
-
+import boxStory from '../../base/Box/Box.stories';
 import { Badge } from './Badge';
 
 const meta: Meta<typeof Badge> = {

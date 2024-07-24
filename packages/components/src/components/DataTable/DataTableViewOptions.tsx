@@ -3,14 +3,14 @@ import { DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
 
 import type { Table } from '@tanstack/react-table';
 
-import { Button } from '@/components/Button';
+import { Button } from '../Button';
 import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuRoot,
   DropdownMenuSeparator,
-} from '@/components/DropdownMenu';
+} from '../DropdownMenu';
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;

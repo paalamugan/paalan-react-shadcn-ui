@@ -1,20 +1,18 @@
 import * as React from 'react';
 
-import { XCircleIcon } from '@heroicons/react/24/outline';
-import { CalendarIcon } from '@paalan/react-icons';
+import { CalendarIcon, XCircleIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 import { isAriaInvalid } from '@paalan/react-shared/utils';
 import { format } from 'date-fns';
 
 import type { DateRange } from 'react-day-picker';
 
-import { Box } from '@/base/Box';
-import { Button } from '@/components/Button';
-import { Calendar } from '@/components/Calendar';
-import { PopoverContent, PopoverRoot, PopoverTrigger } from '@/components/Popover';
-
+import { Box } from '../../base/Box';
+import { Button } from '../Button';
+import { Calendar } from '../Calendar';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
+import { PopoverContent, PopoverRoot, PopoverTrigger } from '../Popover';
 
 export interface DateRangePickerProps {
   /**

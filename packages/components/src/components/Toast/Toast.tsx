@@ -5,8 +5,7 @@ import { cn } from '@paalan/react-shared/lib';
 import type { FC } from 'react';
 import type { ToastProps } from './types';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { getAsset, Loader } from './assets';
 import { ActionButton } from './components/ActionButton';
 import { CancelButton } from './components/CancelButton';

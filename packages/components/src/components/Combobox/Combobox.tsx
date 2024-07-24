@@ -7,8 +7,7 @@ import { isAriaInvalid } from '@paalan/react-shared/utils';
 import type { OptionType } from '@paalan/react-shared/types';
 import type { PopoverModalContentProps } from '../Popover/components';
 
-import { Box, Text } from '@/base';
-
+import { Box, Text } from '../../base';
 import { Button } from '../Button';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';

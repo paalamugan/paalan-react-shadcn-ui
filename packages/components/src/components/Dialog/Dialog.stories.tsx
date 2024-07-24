@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Box, Text } from '@/base';
-
+import { Box, Text } from '../../base';
 import { Button } from '../Button';
 import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '../ContextMenu';
 import { Input } from '../Input';

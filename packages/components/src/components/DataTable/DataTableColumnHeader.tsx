@@ -4,14 +4,14 @@ import { cn } from '@paalan/react-shared/lib';
 import type { Column } from '@tanstack/react-table';
 import type { ReactNode } from 'react';
 
-import { Button } from '@/components/Button';
+import { Button } from '../Button/Button';
 import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuRoot,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/DropdownMenu';
+} from '../DropdownMenu';
 
 interface DataTableColumnHeaderProps<TData, TValue> extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   column: Column<TData, TValue>;

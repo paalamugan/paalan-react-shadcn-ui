@@ -1,3 +1,5 @@
+import tailwindcssAnimate from 'tailwindcss-animate';
+
 import type { Config } from 'tailwindcss';
 
 /**
@@ -223,7 +225,7 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [tailwindcssAnimate],
   variants: {
     extend: {
       textDecoration: ['focus-visible'],

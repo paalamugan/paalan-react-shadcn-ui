@@ -3,8 +3,7 @@ import { cn } from '@paalan/react-shared/lib';
 import type { HTMLTailwindStyledComponentProps } from '@paalan/react-shared/types';
 import type { FC } from 'react';
 
-import { Box } from '@/base';
-
+import { Box } from '../../base';
 import { Skeleton } from './Skeleton';
 
 export interface SkeletonContainerProps extends Omit<HTMLTailwindStyledComponentProps<'div'>, 'as' | 'children'> {
