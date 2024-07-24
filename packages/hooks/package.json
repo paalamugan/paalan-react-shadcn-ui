@@ -23,7 +23,6 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx}\" --cache",
     "tsup": "tsup",
     "tsup:watch": "tsup --watch",
-    "prepublish": "npm run build",
     "clean": "rimraf dist"
   },
   "dependencies": {

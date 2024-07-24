@@ -22,7 +22,6 @@
     "format:check": "prettier --check \"**/*.{js,ts}\" --cache",
     "tsup": "tsup",
     "tsup:watch": "tsup --watch",
-    "prepublish": "pnpm build",
     "clean": "rimraf dist",
     "postinstall": "pnpm tsup",
     "publish:locally": "npx yalc publish"

@@ -97,7 +97,7 @@ export default {
         extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.md', '.mdx'],
       },
       typescript: {
-        project: ['packages/**/*/tsconfig.json', 'tsconfig.json'],
+        project: ['packages/*/tsconfig.json', 'tsconfig.json'],
         alwaysTryTypes: true,
         // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
       },

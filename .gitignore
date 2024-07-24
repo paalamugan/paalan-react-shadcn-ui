@@ -27,3 +27,4 @@ coverage
 storybook-static
 .serverless
 complied.css
+.env
