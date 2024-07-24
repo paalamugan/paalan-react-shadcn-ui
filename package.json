@@ -48,7 +48,8 @@
     "release:local": "npx env-cmd -f .env -x \"pnpm release --otp $NPM_TOKEN\"",
     "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
-    "release:dev": "changeset publish --tag dev"
+    "release:dev": "changeset publish --tag dev",
+    "slack": "tsx scripts/slack.ts"
   },
   "dependencies": {
     "@azure/msal-browser": "^3.5.0",
@@ -152,6 +153,7 @@
     "commitizen": "^4.3.0",
     "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "env-cmd": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.0.0",
