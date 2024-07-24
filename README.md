@@ -53,9 +53,17 @@ Reusable react ui components with build on top of Tailwind CSS and Shadcn UI.
 
 - Run `pnpm test:watch` to run the tests in watch mode.
 
-## Publishing the package
+## Publishing the package locally
 
-- Run `pnpm publish` to publish the package to npm.
+- First login to npm using `npm login` command(If you are not logged in).
+
+- Run `pnpm changeset` to create a changeset for the package.
+
+- Run `pnpm version` to bump the version of the package.
+
+- Run `pnpm release` to publish the package to npm.
+
+- After that push the changes to the remote repository using this `git push --follow-tags` command.
 
 ## Migrate Eslint v8 to v9
 
