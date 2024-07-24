@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import type { RenderOptions, RenderResult } from '@testing-library/react';
-import type { ReactElement } from 'react';
-
 import { patchConsoleError } from '@paalan/react-shared/utils';
 import { fireEvent, render, screen } from '@paalan/react-test-utils';
+
+import type { RenderOptions, RenderResult } from '@testing-library/react';
+import type { ReactElement } from 'react';
 
 import { useFocusTrap } from './use-focus-trap';
 

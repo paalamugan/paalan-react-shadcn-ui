@@ -1,7 +1,7 @@
-import type { FormatXMLElementFn, PrimitiveType } from 'intl-messageformat';
-
 import { memoize } from '@formatjs/fast-memoize';
 import { IntlMessageFormat } from 'intl-messageformat';
+
+import type { FormatXMLElementFn, PrimitiveType } from 'intl-messageformat';
 
 type Format<T> = Record<string, PrimitiveType | T | FormatXMLElementFn<T, string | T | (string | T)[]>> | undefined;
 

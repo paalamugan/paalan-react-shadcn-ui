@@ -1,4 +1,4 @@
-import { Strong } from '@paalan/react-layouts';
+import { Strong } from '@paalan/react-ui/base';
 
 import { useOs } from './use-os';
 

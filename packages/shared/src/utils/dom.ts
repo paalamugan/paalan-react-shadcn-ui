@@ -1,4 +1,4 @@
-import type { Booleanish, EventKeys } from '@/types';
+import type { Booleanish, EventKeys } from '../types';
 
 export function isElement(el: unknown): el is Element {
   return !!el && typeof el === 'object' && 'nodeType' in el && el.nodeType === Node.ELEMENT_NODE;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { LabelInput, toast } from '@paalan/react-components';
-import { Stack, Text } from '@paalan/react-layouts';
+import { LabelInput, toast } from '@paalan/react-ui';
+import { Stack, Text } from '@paalan/react-ui/base';
 
 import { getHotkeyHandler, useHotkeys } from './use-hotkeys';
 

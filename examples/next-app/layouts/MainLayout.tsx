@@ -1,6 +1,6 @@
-import type { ToasterProps } from '@paalan/react-components';
+import { Toaster } from '@paalan/react-ui';
 
-import { Toaster } from '@paalan/react-components';
+import type { ToasterProps } from '@paalan/react-ui';
 
 interface MainLayoutProps {
   children: React.ReactNode;

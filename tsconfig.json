@@ -1,9 +1,12 @@
 {
   "extends": ["./tsconfig.base.json"],
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./packages/*"]
-    }
+    },
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["stories", "packages", "@types", ".storybook"]
+  "include": ["stories/**/*", "packages/**/*", "@types", ".storybook/**/*"],
+  "exclude": ["node_modules"]
 }

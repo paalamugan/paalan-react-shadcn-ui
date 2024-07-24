@@ -1,29 +1,25 @@
 import '@testing-library/jest-dom';
 
-import type { ThemeProviderProps } from '@paalan/react-providers';
-import type { RenderOptions, RenderResult } from '@testing-library/react';
-import type * as React from 'react';
-
-import { ThemeProvider } from '@paalan/react-providers';
 import { act, render as rtlRender } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-const ThemeProviderWrapper = (props: ThemeProviderProps) => <ThemeProvider {...props} />;
+import type { RenderOptions, RenderResult } from '@testing-library/react';
+import type * as React from 'react';
 
 export interface ThemeRenderOptions extends RenderOptions {
-  withThemeProvider?: boolean;
+  ThemeProvider?: React.ComponentType<unknown>;
 }
 
-export const render = (
+export type RenderFn = (
   ui: React.ReactNode,
-  { withThemeProvider, ...options }: ThemeRenderOptions = {
-    withThemeProvider: true,
-  },
-): ReturnType<typeof rtlRender> & { user: ReturnType<typeof userEvent.setup> } => {
+  options?: ThemeRenderOptions,
+) => ReturnType<typeof rtlRender> & { user: ReturnType<typeof userEvent.setup> };
+
+export const render: RenderFn = (ui, { ThemeProvider, ...options } = {}) => {
   const user = userEvent.setup();
 
-  if (withThemeProvider) {
-    options.wrapper = ThemeProviderWrapper;
+  if (ThemeProvider) {
+    options.wrapper = ThemeProvider;
   }
 
   const result = rtlRender(<>{ui}</>, options);

@@ -1,5 +1,5 @@
-import { Loading } from '@paalan/react-components';
-import { Box } from '@paalan/react-layouts';
+import { Loading } from '@paalan/react-ui';
+import { Box } from '@paalan/react-ui/base';
 
 export const LoadingIndicator: React.FC = () => {
   return (

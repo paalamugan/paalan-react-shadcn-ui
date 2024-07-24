@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Heading, Stack } from '@paalan/react-layouts';
+import { Button } from '@paalan/react-ui';
+import { Heading, Stack } from '@paalan/react-ui/base';
 
 import { useSetState } from '.';
 

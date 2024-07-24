@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button, Dialog } from '@paalan/react-components';
+import { Button, Dialog } from '@paalan/react-ui';
 
 import { useFocusReturn } from './use-focus-return';
 

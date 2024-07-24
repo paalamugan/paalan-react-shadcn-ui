@@ -1,7 +1,7 @@
-import type { UseFocusWithinOptions } from './use-focus-within';
-
 import { render, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
+
+import type { UseFocusWithinOptions } from './use-focus-within';
 
 import { useFocusWithin } from './use-focus-within';
 

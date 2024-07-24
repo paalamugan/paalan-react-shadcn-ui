@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { Button, Input, LabelInput } from '@paalan/react-components';
-import { Box, Stack, Strong, Text } from '@paalan/react-layouts';
+import { Button, Input, LabelInput } from '@paalan/react-ui';
+import { Box, Stack, Strong, Text } from '@paalan/react-ui/base';
 
 import { useDebouncedValue } from './use-debounced-value';
 

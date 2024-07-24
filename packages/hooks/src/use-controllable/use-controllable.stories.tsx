@@ -1,4 +1,4 @@
-import { Input, Label } from '@paalan/react-components';
+import { Input, Label } from '@paalan/react-ui';
 
 import { useControllableState } from './use-controllable';
 

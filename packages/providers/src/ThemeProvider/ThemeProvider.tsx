@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import type { Theme, ThemeProviderProps } from './types';
+import { Toaster } from '@paalan/react-ui';
 
-import { Toaster } from '@paalan/react-components';
+import type { Theme, ThemeProviderProps } from './types';
 
 import { ThemeContextProvider } from './context';
 

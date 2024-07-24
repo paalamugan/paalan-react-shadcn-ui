@@ -1,6 +1,6 @@
 import { forwardRef as forwardReactRef } from 'react';
 
-import type { As, ComponentWithAs, PropsOf, RightJoinProps } from '@/types/tailwind-styled-component';
+import type { As, ComponentWithAs, PropsOf, RightJoinProps } from '../types/tailwind-styled-component';
 
 export const forwardRef = <Props extends object, Component extends As>(
   component: React.ForwardRefRenderFunction<

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { Box, H2, P } from '@paalan/react-layouts';
+import { Box, H2, P } from '@paalan/react-ui/base';
 
 import { useSize } from './use-size';
 

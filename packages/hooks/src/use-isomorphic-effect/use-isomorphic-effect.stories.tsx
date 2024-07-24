@@ -1,4 +1,4 @@
-import { Text } from '@paalan/react-layouts';
+import { Text } from '@paalan/react-ui/base';
 
 import { useIsomorphicEffect } from './use-isomorphic-effect';
 

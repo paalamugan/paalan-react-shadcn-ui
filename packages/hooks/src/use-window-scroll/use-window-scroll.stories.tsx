@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Center, Text } from '@paalan/react-layouts';
+import { Button } from '@paalan/react-ui';
+import { Center, Text } from '@paalan/react-ui/base';
 
 import { useWindowScroll } from './use-window-scroll';
 

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@paalan/react-config": "^1.0.2",
-    "@paalan/react-components": "^1.0.3",
+    "@paalan/react-ui": "^1.0.3",
     "@paalan/react-hooks": "^1.0.2",
     "@paalan/react-icons": "^1.0.2",
     "@paalan/react-layouts": "^1.0.2",

@@ -63,13 +63,11 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        '@paalan/react-components': path.resolve(__dirname, '../packages/components/src'),
+        '@paalan/react-ui': path.resolve(__dirname, '../packages/ui/src'),
         '@paalan/react-hooks': path.resolve(__dirname, '../packages/hooks/src'),
         '@paalan/react-icons': path.resolve(__dirname, '../packages/icons/src'),
-        '@paalan/react-layouts': path.resolve(__dirname, '../packages/layouts/src'),
         '@paalan/react-providers': path.resolve(__dirname, '../packages/providers/src'),
         '@paalan/react-shared': path.resolve(__dirname, '../packages/shared/src'),
-        '@paalan/react-styled': path.resolve(__dirname, '../packages/styled/src'),
       };
     }
 

@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig(() => {
   return {
     splitting: false,
-    entry: ['src/**/*.{ts,tsx}'],
+    entry: ['src/**/*.ts'],
     format: ['esm', 'cjs'],
     target: 'esnext',
     outDir: 'dist',
@@ -14,7 +14,7 @@ export default defineConfig(() => {
     sourcemap: false,
     clean: true, // clean up the dist folder before building
     dts: true,
-    platform: 'node',
+    platform: 'browser',
     // esbuildOptions(options) {
     //   options.conditions = ['module']; // https://esbuild.github.io/api/#conditions
     // },

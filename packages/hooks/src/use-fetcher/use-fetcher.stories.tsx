@@ -1,4 +1,4 @@
-import { Box, Code, Heading, Text } from '@paalan/react-layouts';
+import { Box, Code, Heading, Text } from '@paalan/react-ui/base';
 
 import { useFetcher } from './use-fetcher';
 

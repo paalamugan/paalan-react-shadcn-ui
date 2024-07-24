@@ -1,3 +1,5 @@
+import path from 'path';
+
 import fse from 'fs-extra';
 import { defineConfig } from 'tsup';
 
@@ -5,20 +7,13 @@ export default defineConfig(() => {
   return {
     splitting: false,
     entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}'],
-    // entry: [
-    //   'src/index.ts',
-    //   'src/lib/**/*.{ts,tsx}',
-    //   'src/constants/**/*.{ts,tsx}',
-    //   'src/system/**/*.{ts,tsx}',
-    //   'src/utils/**/*.{ts,tsx}',
-    //   'src/types/**/*.{ts,tsx}',
-    // ],
     format: ['esm', 'cjs'],
     external: ['react', 'react-dom', 'axios', /@paalan\/react-(.*)/, 'tailwind-merge', 'clsx', 'tailwindcss'],
     target: 'esnext',
     outDir: 'dist',
     minify: false,
     skipNodeModulesBundle: false,
+    tsconfig: path.resolve(__dirname, '..', '..', 'tsconfig.json'),
     async onSuccess() {
       console.log('Build succeeded!');
       await fse.copy('src/assets', 'dist/assets');

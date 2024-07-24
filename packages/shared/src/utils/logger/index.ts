@@ -61,12 +61,12 @@ class Logger {
 
   private init() {
     if (this._client === undefined) {
-      if (import.meta.env.TEST) {
+      if (process.env.TEST) {
         console.debug('Mock logger was initiated');
         return (this._client = new loggers[LogEnvironment.Test]());
       }
 
-      if (import.meta.env.DEV) {
+      if (process.env.DEV) {
         console.debug('Development logger was initiated');
         return (this._client = new loggers[LogEnvironment.Dev]());
       }

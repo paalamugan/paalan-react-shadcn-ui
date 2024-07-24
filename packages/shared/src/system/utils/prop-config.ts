@@ -1,5 +1,5 @@
 import type * as CSS from 'csstype';
-import type { Transform } from '.';
+import type { Transform } from './types';
 
 import { createTransform } from './create-transform';
 

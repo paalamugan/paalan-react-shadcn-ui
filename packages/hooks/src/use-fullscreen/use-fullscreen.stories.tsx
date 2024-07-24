@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Box, Stack } from '@paalan/react-layouts';
+import { Button } from '@paalan/react-ui';
+import { Box, Stack } from '@paalan/react-ui/base';
 
 import { useFullscreen } from './use-fullscreen';
 

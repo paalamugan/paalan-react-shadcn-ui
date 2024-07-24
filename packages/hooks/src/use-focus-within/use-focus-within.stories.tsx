@@ -1,5 +1,5 @@
-import { Button, LabelInput } from '@paalan/react-components';
-import { Box, Text } from '@paalan/react-layouts';
+import { Button, LabelInput } from '@paalan/react-ui';
+import { Box, Text } from '@paalan/react-ui/base';
 
 import { useFocusWithin } from './use-focus-within';
 

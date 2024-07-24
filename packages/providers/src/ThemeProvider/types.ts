@@ -1,4 +1,4 @@
-import type { ToasterProps } from '@paalan/react-components';
+import type { ToasterProps } from '@paalan/react-ui';
 
 export type Theme = 'dark' | 'light' | 'system';
 

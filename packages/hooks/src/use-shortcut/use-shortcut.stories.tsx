@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Box, Heading, Stack, Strong, Text } from '@paalan/react-layouts';
+import { Box, Heading, Stack, Strong, Text } from '@paalan/react-ui/base';
 
 import { useShortcut } from './use-shortcut';
 

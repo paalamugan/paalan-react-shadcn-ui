@@ -1,6 +1,6 @@
-import type { SystemProps } from '@/system/types';
 import type { ForwardedRef } from 'react';
-import type { TailwindBoxVariants } from './common';
+import type { SystemProps } from '../system/types';
+import type { TailwindBoxVariants } from '../system/utils/helper';
 
 export type As = React.ElementType;
 export type PropsOf<T extends As> = React.ComponentPropsWithoutRef<T> & {

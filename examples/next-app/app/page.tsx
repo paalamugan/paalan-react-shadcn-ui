@@ -1,4 +1,4 @@
-import { Box, Code, H2, P, Text } from '@paalan/react-layouts';
+import { Box, Code, H2, P, Text } from '@paalan/react-ui/base';
 import Image from 'next/image';
 
 export default function Home() {

@@ -1,17 +1,19 @@
 {
   "name": "@paalan/react-test-utils",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "React UI test utils for Paalan UI",
   "type": "module",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
-    "name": "Paalamugan Samayamuthu",
-    "email": "paalamugan.samayamuthu@paalan.com"
+    "name": "Paalamugan"
   },
   "scripts": {
-    "build": "npm run type-check && npm run lint && npm run clean && npm run tsup",
+    "build": "npm run type-check && npm run lint && npm run tsup",
     "build-fast": "npm run clean && npm run tsup",
     "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache",
     "lint:fix": "npm run lint -- --fix",

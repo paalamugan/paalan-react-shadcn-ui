@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import type { AccountInfo } from '@azure/msal-browser';
-import type { FC } from 'react';
-
 import { useCallbackRef } from '@paalan/react-hooks';
 import { logger } from '@paalan/react-shared/utils';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+
+import type { AccountInfo } from '@azure/msal-browser';
+import type { FC } from 'react';
 
 import { useMsalAuth } from '../../context';
 import { getMsalUserInfo } from '../../helper';

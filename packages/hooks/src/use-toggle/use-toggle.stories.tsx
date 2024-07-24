@@ -1,4 +1,4 @@
-import { Button } from '@paalan/react-components';
+import { Button } from '@paalan/react-ui';
 
 import { useToggle } from './use-toggle';
 

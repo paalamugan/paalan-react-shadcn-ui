@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import type { PropsWithChildren } from 'react';
-
 import { ScrollRestoration, useNavigate } from 'react-router-dom';
+
+import type { PropsWithChildren } from 'react';
 
 import { useMsalAuth } from '../../context';
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator';

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Box, Text } from '@paalan/react-layouts';
+import { Box, Text } from '@paalan/react-ui/base';
 
 import { useCallbackRef } from './use-callback-ref';
 

@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@paalan/react-ui';
+import { Heading, HStack, Stack } from '@paalan/react-ui/base';
 
-import { Button } from '@paalan/react-components';
-import { Heading, HStack, Stack } from '@paalan/react-layouts';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { useTheme } from './context';
 import { ThemeProvider } from './ThemeProvider';

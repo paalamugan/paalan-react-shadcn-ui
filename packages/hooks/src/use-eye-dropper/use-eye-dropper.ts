@@ -10,15 +10,6 @@ export interface EyeDropperOpenReturnType {
   sRGBHex: string;
 }
 
-declare global {
-  // class EyeDropper {
-  //   open(options?: { signal?: AbortSignal }): Promise<{ sRGBHex: string }>;
-  // }
-  interface Window {
-    EyeDropper: typeof EyeDropper;
-  }
-}
-
 export const useEyeDropper = () => {
   const [supported, setSupported] = useState(false);
 
@@ -29,7 +20,11 @@ export const useEyeDropper = () => {
   const open = useCallback(
     (options: EyeDropperOpenOptions = {}): Promise<EyeDropperOpenReturnType> => {
       if (supported) {
-        const eyeDropper = new window.EyeDropper();
+        const EyeDropper = 'EyeDropper' in window ? window.EyeDropper : null;
+        if (!EyeDropper) {
+          return Promise.reject(new Error('EyeDropper is not supported'));
+        }
+        const eyeDropper = new EyeDropper();
         return eyeDropper.open(options);
       }
 

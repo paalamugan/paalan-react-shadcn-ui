@@ -20,13 +20,10 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit",
+    // "source.organizeImports": "explicit",
     "source.addMissingImports": "explicit"
   },
-  "eslint.options": {
-    "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
-  },
-  "eslint.validate": ["markdown", "mdx", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
@@ -38,16 +35,16 @@
     "**/dist": true
   },
   "mdx.experimentalLanguageServer": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.workingDirectories": [
-    {
-      "pattern": "./packages/*/"
-    },
-    {
-      "pattern": "./examples/*/"
-    },
-    {
-      "pattern": "./stories/*/"
-    }
-  ]
+  "typescript.tsdk": "node_modules/typescript/lib"
+  // "eslint.workingDirectories": [
+  //   {
+  //     "pattern": "./packages/*/"
+  //   },
+  //   {
+  //     "pattern": "./examples/*/"
+  //   },
+  //   {
+  //     "pattern": "./stories/*/"
+  //   }
+  // ]
 }

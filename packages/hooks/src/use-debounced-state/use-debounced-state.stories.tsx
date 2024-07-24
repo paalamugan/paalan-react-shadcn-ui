@@ -1,5 +1,5 @@
-import { LabelInput } from '@paalan/react-components';
-import { Box, Text } from '@paalan/react-layouts';
+import { LabelInput } from '@paalan/react-ui';
+import { Box, Text } from '@paalan/react-ui/base';
 
 import { useDebouncedState } from './use-debounced-state';
 

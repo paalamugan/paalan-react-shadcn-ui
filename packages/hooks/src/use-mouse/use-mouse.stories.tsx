@@ -1,4 +1,4 @@
-import { Box, Center, Code, Text } from '@paalan/react-layouts';
+import { Box, Center, Code, Text } from '@paalan/react-ui/base';
 
 import { useMouse } from './use-mouse';
 

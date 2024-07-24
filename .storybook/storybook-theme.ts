@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { create } from '@storybook/theming';
 
 import brandImage from './storybook-logo.png';
@@ -19,6 +20,6 @@ const getCurrentTheme = () => {
 export default create({
   base: getCurrentTheme(),
   brandTitle: 'Paalan React UI',
-  brandUrl: 'https://paalandental.com',
+  brandUrl: 'https://paalamugan.com',
   brandImage,
 });

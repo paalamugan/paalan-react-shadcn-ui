@@ -1,4 +1,4 @@
-import { Badge } from '@paalan/react-components';
+import { Badge } from '@paalan/react-ui';
 
 import { useMediaQuery } from './use-media-query';
 

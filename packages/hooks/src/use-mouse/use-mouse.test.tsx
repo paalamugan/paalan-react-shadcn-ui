@@ -1,6 +1,6 @@
-import type React from 'react';
-
 import { fireEvent, render, renderHook, screen } from '@testing-library/react';
+
+import type React from 'react';
 
 import { useMouse } from './use-mouse';
 

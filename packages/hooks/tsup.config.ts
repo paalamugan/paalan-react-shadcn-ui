@@ -1,9 +1,11 @@
+import path from 'path';
+
 import { defineConfig } from 'tsup';
 
-export default defineConfig(() => {
+export default defineConfig((options) => {
   return {
     splitting: false,
-    entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}'],
+    entry: ['src/index.ts'],
     format: ['esm', 'cjs'],
     external: ['react', 'react-dom', 'react-router-dom', /@paalan\/react-(.*)/],
     target: 'esnext',
@@ -14,14 +16,13 @@ export default defineConfig(() => {
     treeshake: false,
     sourcemap: false,
     clean: true, // clean up the dist folder before building
-    platform: 'browser',
-    dts: {
-      entry: 'src/index.ts',
-    },
+    platform: 'node',
+    dts: true,
     define: {
       'import.meta.env.TEST': 'false',
       'import.meta.env.DEV': 'false',
     },
+    tsconfig: path.resolve(__dirname, '..', '..', 'tsconfig.json'),
     // esbuildOptions(options) {
     //   options.conditions = ['module']; // https://esbuild.github.io/api/#conditions
     // },
@@ -29,5 +30,6 @@ export default defineConfig(() => {
     banner: {
       js: "'use client';",
     },
+    ...options,
   };
 });

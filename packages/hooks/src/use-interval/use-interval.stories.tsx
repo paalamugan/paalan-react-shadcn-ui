@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 
-import { Button } from '@paalan/react-components';
-import { Stack, Text } from '@paalan/react-layouts';
+import { Button } from '@paalan/react-ui';
+import { Stack, Text } from '@paalan/react-ui/base';
 
 import { useInterval } from './use-interval';
 

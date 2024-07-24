@@ -1,11 +1,12 @@
 import type { Preview, StoryFn } from '@storybook/react';
 
-import '../packages/styled/src/css/index.css';
+import '../packages/ui/dist/index.css';
+import '../packages/ui/dist/tailwind.css';
 
+import { ThemeProvider } from '@paalan/react-providers/ThemeProvider';
 import { GLOBALS_UPDATED } from '@storybook/core-events';
 import { addons } from '@storybook/preview-api';
 
-import { ThemeProvider } from '../packages/providers/src/ThemeProvider/ThemeProvider';
 import theme from './storybook-theme';
 
 let defaultTwDarkMode = theme.base === 'dark';

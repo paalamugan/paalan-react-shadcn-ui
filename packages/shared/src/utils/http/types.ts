@@ -1,4 +1,4 @@
-// import type { ExternalToast } from '@paalan/react-components';
+// import type { ExternalToast } from '@paalan/react-ui';
 import type { AxiosResponse } from 'axios';
 import type { IAxiosClientConfig } from './IAxiosClient';
 
