@@ -11,31 +11,35 @@ Reusable react ui components with build on top of Tailwind CSS and Shadcn UI.
 
 - Run `pnpm install` to install all the dependencies.
 
+### Build the package
+
+- Run `pnpm build` to build the package.
+
 ### Running the storybook for development
 
-- Run `pnpm run storybook` to start the storybook app in development mode.
+- Run `pnpm storybook` to start the storybook app in development mode.
 - Open [http://localhost:6006/](http://localhost:6006/) to view it in the browser.
 
 ### Running the storybook docs for development
 
-- Run `pnpm run storybook:docs` to start the storybook docs in development mode.
+- Run `pnpm storybook:docs` to start the storybook docs in development mode.
 - Open [http://localhost:6007/](http://localhost:6007/) to view it in the browser.
 
 ### Build the storybook app for production
 
-- Run `pnpm run storybook:build` to build the storybook app for production.
+- Run `pnpm storybook:build` to build the storybook app for production.
 
 ### Build the storybook docs for production
 
-- Run `pnpm run storybook:build:docs` to build the storybook docs for production.
+- Run `pnpm storybook:build:docs` to build the storybook docs for production.
 
 ### Preview the storybook
 
-- Run `pnpm run preview` to build the storybook app for production.
+- Run `pnpm preview` to build the storybook app for production.
 
 ### Preview the storybook docs
 
-- Run `pnpm run preview:docs` to build the storybook docs for production.
+- Run `pnpm preview:docs` to build the storybook docs for production.
 
 ### Generate the code coverage report
 
