@@ -1,5 +1,5 @@
 {
-  "name": "paalan-react-ui",
+  "name": "paalan-react-shadcn-ui",
   "private": true,
   "version": "1.0.0",
   "description": "Reusable react ui components with build on top of Tailwind CSS and Shadcn UI",
@@ -45,10 +45,10 @@
     "next:enter": "changeset pre enter next",
     "next:exit": "changeset pre exit next",
     "version": "changeset version",
-    "release:local": "npx env-cmd -f .env -x \"pnpm release --otp $NPM_TOKEN\"",
     "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
     "release:dev": "changeset publish --tag dev",
+    "release:local": "npx env-cmd -f .env -x \"pnpm release --otp $NPM_TOKEN\"",
     "slack": "tsx scripts/slack.ts"
   },
   "dependencies": {

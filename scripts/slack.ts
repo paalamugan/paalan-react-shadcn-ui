@@ -25,7 +25,7 @@ export async function main() {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      project: 'paalan-react-ui',
+      project: 'paalan-react-shadcn-ui',
       version,
       url: `https://github.com/paalamugan/paalan-react-shadcn-ui/blob/main/.changelog/v${version}.mdx`,
       discord: 'https://discordapp.com/channels/1234567890',

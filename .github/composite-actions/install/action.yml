@@ -20,6 +20,14 @@ runs:
         git config --global user.email "paalamugan44@gmail.com"
         git config --global user.name "paalamugan"
 
+    - name: Setup npmrc
+      shell: bash
+      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+    - name: setup pnpm config
+      shell: bash
+      run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+
     - name: Install dependencies
       shell: bash
       run: pnpm install

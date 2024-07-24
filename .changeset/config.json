@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "paalamugan/paalan-react-ui"
+      "repo": "paalamugan/paalan-react-shadcn-ui"
     }
   ],
   "commit": false,
