@@ -1,6 +1,6 @@
 {
   "name": "@paalan/react-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React UI icons for Paalan UI",
   "type": "module",
   "main": "dist/index.js",

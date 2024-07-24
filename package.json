@@ -48,7 +48,8 @@
     "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
     "release:dev": "changeset publish --tag dev",
-    "release:local": "npx env-cmd -f .env -x \"pnpm release --otp $NPM_TOKEN\"",
+    "release:local": "npx env-cmd -f .env -x \"pnpm release\"",
+    "publish": "npx env-cmd -f .env -x \"pnpm publish -r //registry.npmjs.org/:_authToken=$NPM_TOKEN\"",
     "slack": "tsx scripts/slack.ts"
   },
   "dependencies": {
