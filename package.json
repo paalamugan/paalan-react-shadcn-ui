@@ -48,7 +48,6 @@
     "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
     "release:dev": "pnpm release --tag dev",
-    "release:local": "env-cmd -f .env pnpm release",
     "slack": "tsx scripts/slack.ts"
   },
   "dependencies": {
