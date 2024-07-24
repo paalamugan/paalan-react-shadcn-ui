@@ -1,4 +1,4 @@
-import { Strong } from '@paalan/react-components/base';
+import { Strong } from '@paalan/react-ui/base';
 
 import { useOs } from './use-os';
 

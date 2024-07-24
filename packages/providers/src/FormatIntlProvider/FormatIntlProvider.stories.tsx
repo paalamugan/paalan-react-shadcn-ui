@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-import { Button, Combobox, NumberInput, Select, toast, ToggleGroup } from '@paalan/react-components';
+import { TIME_ZONE_LISTS } from '@paalan/react-shared/constants';
+import { CURRENCY_CODES } from '@paalan/react-shared/utils';
+import { Button, Combobox, NumberInput, Select, toast, ToggleGroup } from '@paalan/react-ui';
 import {
   Box,
   Flex,
@@ -19,9 +21,7 @@ import {
   TR,
   UL,
   VStack,
-} from '@paalan/react-components/base';
-import { TIME_ZONE_LISTS } from '@paalan/react-shared/constants';
-import { CURRENCY_CODES } from '@paalan/react-shared/utils';
+} from '@paalan/react-ui/base';
 import { addDays } from 'date-fns';
 
 import type { TimeZone } from '@paalan/react-shared/constants';

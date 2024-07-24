@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { Button } from '@paalan/react-components';
-import { Small, Stack } from '@paalan/react-components/base';
+import { Button } from '@paalan/react-ui';
+import { Small, Stack } from '@paalan/react-ui/base';
 
 import { useFocusOnPointerDown } from './use-focus-on-pointer-down';
 

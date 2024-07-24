@@ -1,5 +1,5 @@
-import { Input, Label } from '@paalan/react-components';
-import { Box, Heading, Stack, VStack } from '@paalan/react-components/base';
+import { Input, Label } from '@paalan/react-ui';
+import { Box, Heading, Stack, VStack } from '@paalan/react-ui/base';
 
 import { useFocusTrap } from './use-focus-trap';
 

@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Box, Text } from '@paalan/react-components/base';
+import { Button } from '@paalan/react-ui';
+import { Box, Text } from '@paalan/react-ui/base';
 
 import { useDisclosure } from './use-disclosure';
 

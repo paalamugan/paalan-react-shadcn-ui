@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { Input, LabelInput, NumberInput } from '@paalan/react-components';
-import { Stack } from '@paalan/react-components/base';
+import { Input, LabelInput, NumberInput } from '@paalan/react-ui';
+import { Stack } from '@paalan/react-ui/base';
 
 import { useInputState } from './use-input-state';
 

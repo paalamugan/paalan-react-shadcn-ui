@@ -1,4 +1,4 @@
-import { Code, Heading, Stack } from '@paalan/react-components/base';
+import { Code, Heading, Stack } from '@paalan/react-ui/base';
 
 import { useNetwork } from './use-network';
 

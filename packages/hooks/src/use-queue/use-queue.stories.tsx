@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Code, Heading, Stack } from '@paalan/react-components/base';
+import { Button } from '@paalan/react-ui';
+import { Code, Heading, Stack } from '@paalan/react-ui/base';
 
 import { useQueue } from './use-queue';
 

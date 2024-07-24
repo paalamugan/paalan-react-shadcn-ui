@@ -1,4 +1,4 @@
-import { Badge } from '@paalan/react-components';
+import { Badge } from '@paalan/react-ui';
 
 import { useReducedMotion } from './use-reduced-motion';
 

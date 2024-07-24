@@ -1,4 +1,4 @@
-import { Box } from '@paalan/react-components/base';
+import { Box } from '@paalan/react-ui/base';
 
 import { useHover } from './use-hover';
 

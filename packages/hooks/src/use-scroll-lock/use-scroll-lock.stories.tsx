@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Box, Heading, P, Strong } from '@paalan/react-components/base';
+import { Button } from '@paalan/react-ui';
+import { Box, Heading, P, Strong } from '@paalan/react-ui/base';
 
 import { useScrollLock } from './use-scroll-lock';
 

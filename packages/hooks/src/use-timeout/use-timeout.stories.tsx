@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { Button } from '@paalan/react-components';
-import { Center, Text } from '@paalan/react-components/base';
 import { randomId } from '@paalan/react-shared/utils';
+import { Button } from '@paalan/react-ui';
+import { Center, Text } from '@paalan/react-ui/base';
 
 import { useTimeout } from './use-timeout';
 

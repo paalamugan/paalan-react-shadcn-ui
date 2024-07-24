@@ -1,5 +1,5 @@
-import { Button, ErrorRouterBoundary } from '@paalan/react-components';
-import { Box, Code, Flex, Heading, Stack } from '@paalan/react-components/base';
+import { Button, ErrorRouterBoundary } from '@paalan/react-ui';
+import { Box, Code, Flex, Heading, Stack } from '@paalan/react-ui/base';
 import { Link, useNavigate } from 'react-router-dom';
 import { reactRouterParameters, withRouter } from 'storybook-addon-react-router-v6';
 

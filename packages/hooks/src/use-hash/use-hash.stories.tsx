@@ -1,6 +1,6 @@
-import { Button } from '@paalan/react-components';
-import { Code, Stack, Text } from '@paalan/react-components/base';
 import { randomId } from '@paalan/react-shared/utils';
+import { Button } from '@paalan/react-ui';
+import { Code, Stack, Text } from '@paalan/react-ui/base';
 
 import { useHash } from './use-hash';
 

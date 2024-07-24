@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Stack } from '@paalan/react-components/base';
+import { Heading, Stack } from '@paalan/react-ui/base';
 
 import { useLatestValue } from '.';
 

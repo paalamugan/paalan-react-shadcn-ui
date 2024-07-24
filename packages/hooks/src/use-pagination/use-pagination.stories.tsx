@@ -1,5 +1,5 @@
-import { Pagination } from '@paalan/react-components';
-import { Box, Text, VStack } from '@paalan/react-components/base';
+import { Pagination } from '@paalan/react-ui';
+import { Box, Text, VStack } from '@paalan/react-ui/base';
 
 export default { title: 'Hooks/State Management/usePagination' };
 

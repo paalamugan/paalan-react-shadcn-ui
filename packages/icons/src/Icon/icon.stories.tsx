@@ -21,7 +21,7 @@ import { createIcon } from './create-icon';
 import { Icon } from './icon';
 
 export default {
-  title: 'Components/Icon',
+  title: 'Icons/Icon',
   component: Icon,
   tags: ['autodocs'],
   argTypes: {

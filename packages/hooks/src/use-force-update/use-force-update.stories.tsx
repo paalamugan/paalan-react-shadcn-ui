@@ -1,6 +1,6 @@
-import { Button } from '@paalan/react-components';
-import { HStack, Text } from '@paalan/react-components/base';
 import { randomId } from '@paalan/react-shared/utils';
+import { Button } from '@paalan/react-ui';
+import { HStack, Text } from '@paalan/react-ui/base';
 
 import { useForceUpdate } from './use-force-update';
 

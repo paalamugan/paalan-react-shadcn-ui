@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Box, Center, Code, Text } from '@paalan/react-components/base';
+import { Box, Center, Code, Text } from '@paalan/react-ui/base';
 
 import { useMove } from './use-move';
 

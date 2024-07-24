@@ -1,4 +1,4 @@
-import { Text } from '@paalan/react-components/base';
+import { Text } from '@paalan/react-ui/base';
 
 import { useViewportSize } from './use-viewport-size';
 

@@ -1,5 +1,5 @@
-import { Textarea } from '@paalan/react-components';
-import { Center, Text } from '@paalan/react-components/base';
+import { Textarea } from '@paalan/react-ui';
+import { Center, Text } from '@paalan/react-ui/base';
 
 import { useElementSize } from './use-element-size';
 

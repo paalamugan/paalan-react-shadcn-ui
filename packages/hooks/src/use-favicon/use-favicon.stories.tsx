@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from '@paalan/react-components/base';
+import { Box, Heading, Text } from '@paalan/react-ui/base';
 
 import { useFavicon } from './use-favicon';
 

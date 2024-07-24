@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Grid, Input, Text, VStack } from '@paalan/react-components';
+import { Grid, Input, Text, VStack } from '@paalan/react-ui';
 
 import * as AllIconLists from './index';
 

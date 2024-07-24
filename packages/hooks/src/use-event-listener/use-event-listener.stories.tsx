@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Heading, Stack, Strong, Text } from '@paalan/react-components/base';
+import { Heading, Stack, Strong, Text } from '@paalan/react-ui/base';
 
 import { useEventListener } from './use-event-listener';
 

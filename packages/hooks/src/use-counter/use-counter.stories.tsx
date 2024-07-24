@@ -1,5 +1,5 @@
-import { Button } from '@paalan/react-components';
-import { Flex, Small, Stack, Text } from '@paalan/react-components/base';
+import { Button } from '@paalan/react-ui';
+import { Flex, Small, Stack, Text } from '@paalan/react-ui/base';
 
 import { useCounter } from './use-counter';
 

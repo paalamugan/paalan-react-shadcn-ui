@@ -9,7 +9,7 @@ import type {
   IHttpErrorData,
 } from './types';
 
-// import { toast } from '@paalan/react-components';
+// import { toast } from '@paalan/react-ui';
 
 import { jsonParser } from '../helper';
 

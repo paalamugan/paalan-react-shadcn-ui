@@ -1,4 +1,4 @@
-import { Text } from '@paalan/react-components/base';
+import { Text } from '@paalan/react-ui/base';
 import { Observable } from 'zen-observable-ts';
 
 import type { UseSubscriptionOptions } from './use-subscription';

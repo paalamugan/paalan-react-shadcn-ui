@@ -1,4 +1,4 @@
-@import '@paalan/react-components/tailwind.css';
+@import '@paalan/react-ui/tailwind.css';
 
 @tailwind base;
 @tailwind components;

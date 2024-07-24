@@ -1,7 +1,7 @@
 'use client';
 
-import { Button, toast } from '@paalan/react-components';
-import { Box, Heading } from '@paalan/react-components/base';
+import { Button, toast } from '@paalan/react-ui';
+import { Box, Heading } from '@paalan/react-ui/base';
 
 export const Client = () => {
   return (

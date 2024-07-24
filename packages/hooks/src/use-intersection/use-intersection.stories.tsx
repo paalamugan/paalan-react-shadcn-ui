@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { Box, Paper, Text } from '@paalan/react-components/base';
+import { Box, Paper, Text } from '@paalan/react-ui/base';
 
 import { useIntersection } from './use-intersection';
 

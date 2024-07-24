@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useReducer } from 'react';
 
 import { useMsal } from '@azure/msal-react';
-import { toast } from '@paalan/react-components';
+import { toast } from '@paalan/react-ui';
 
 import type React from 'react';
 import type { PropsWithChildren } from 'react';

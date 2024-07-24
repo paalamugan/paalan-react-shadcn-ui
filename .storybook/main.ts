@@ -63,8 +63,7 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        // '@/': path.resolve(__dirname, '../packages'),
-        '@paalan/react-components': path.resolve(__dirname, '../packages/components/src'),
+        '@paalan/react-ui': path.resolve(__dirname, '../packages/ui/src'),
         '@paalan/react-hooks': path.resolve(__dirname, '../packages/hooks/src'),
         '@paalan/react-icons': path.resolve(__dirname, '../packages/icons/src'),
         '@paalan/react-providers': path.resolve(__dirname, '../packages/providers/src'),

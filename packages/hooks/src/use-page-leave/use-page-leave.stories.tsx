@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Text } from '@paalan/react-components/base';
+import { Text } from '@paalan/react-ui/base';
 
 import { usePageLeave } from './use-page-leave';
 
