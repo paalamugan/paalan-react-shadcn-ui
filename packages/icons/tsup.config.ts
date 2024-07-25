@@ -1,5 +1,3 @@
-import path from 'path';
-
 import { defineConfig } from 'tsup';
 
 export default defineConfig(() => {
@@ -18,7 +16,6 @@ export default defineConfig(() => {
     clean: true, // clean up the dist folder before building
     dts: true,
     platform: 'browser',
-    tsconfig: path.resolve(__dirname, '..', '..', 'tsconfig.json'),
     // esbuildOptions(options) {
     //   options.conditions = ['module']; // https://esbuild.github.io/api/#conditions
     // },

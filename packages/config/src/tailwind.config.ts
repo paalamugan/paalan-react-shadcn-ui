@@ -1,3 +1,5 @@
+import tailwindGridAreas from '@savvywombat/tailwindcss-grid-areas';
+import tailwindContainerQueries from '@tailwindcss/container-queries';
 import tailwindcssAnimate from 'tailwindcss-animate';
 
 import type { Config } from 'tailwindcss';
@@ -225,7 +227,7 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, tailwindGridAreas, tailwindContainerQueries],
   variants: {
     extend: {
       textDecoration: ['focus-visible'],

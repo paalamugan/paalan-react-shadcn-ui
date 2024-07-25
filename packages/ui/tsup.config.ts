@@ -1,5 +1,3 @@
-import path from 'path';
-
 import fse from 'fs-extra';
 import { defineConfig } from 'tsup';
 
@@ -18,7 +16,6 @@ export default defineConfig((options) => {
     sourcemap: false,
     clean: true, // clean up the dist folder before building
     platform: 'browser',
-    tsconfig: path.resolve(__dirname, '..', '..', 'tsconfig.json'),
     async onSuccess() {
       console.log('Build succeeded!');
       await fse.copy('src/tailwind.css', 'dist/tailwind.css');

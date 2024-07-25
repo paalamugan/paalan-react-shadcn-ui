@@ -1,5 +1,3 @@
-import path from 'path';
-
 import fse from 'fs-extra';
 import { defineConfig } from 'tsup';
 
@@ -13,7 +11,6 @@ export default defineConfig(() => {
     outDir: 'dist',
     minify: false,
     skipNodeModulesBundle: false,
-    tsconfig: path.resolve(__dirname, '..', '..', 'tsconfig.json'),
     async onSuccess() {
       console.log('Build succeeded!');
       await fse.copy('src/assets', 'dist/assets');

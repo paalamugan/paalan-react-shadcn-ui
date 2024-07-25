@@ -28,11 +28,13 @@
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@savvywombat/tailwindcss-grid-areas": "^4.0.0",
+    "@tailwindcss/container-queries": "^0.1.1",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss-animate": "^1.0.7"
   },
   "peerDependencies": {
-    "tailwindcss": "^3"
+    "tailwindcss": ">=3.2"
   },
   "exports": {
     ".": {

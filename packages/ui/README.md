@@ -18,7 +18,11 @@ import tailwindConfig from '@paalan/react-config/tailwind';
 /** @type {import('tailwindcss').Config} */
 export default {
   presets: [tailwindConfig],
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@paalan/react-ui/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@paalan/react-icons/**/*.{js,ts,jsx,tsx}',
+  ],
 
   // Project-specific customizations
   theme: {
