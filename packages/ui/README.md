@@ -5,7 +5,7 @@ This package contains the components for the Paalan React UI.
 ## Installation
 
 ```bash
-npm install @paalan/react-ui @paalan/react-config @paalan/react-providers @paalan/react-shared @paalan/react-icons @paalan/react-hooks
+npm install @paalan/react-ui @paalan/react-config @paalan/react-shared @paalan/react-icons @paalan/react-hooks @paalan/react-providers
 ```
 
 ## Usage
@@ -22,6 +22,7 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@paalan/react-ui/**/*.{js,ts,jsx,tsx}',
     './node_modules/@paalan/react-icons/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@paalan/react-shared/**/*.{js,ts,jsx,tsx}',
   ],
 
   // Project-specific customizations
