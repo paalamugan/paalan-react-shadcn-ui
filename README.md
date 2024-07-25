@@ -53,7 +53,17 @@ Reusable react ui components with build on top of Tailwind CSS and Shadcn UI.
 
 - Run `pnpm test:watch` to run the tests in watch mode.
 
-## Publishing the package from locally
+## Publishing the package to npm through CI/CD pipeline
+
+Once you are ready to publish the package, then run below command in the terminal, it will create a changeset for the package. you have select the package which you want to publish.
+
+```sh
+pnpm changeset
+```
+
+after the above command, commit the changes and push the changes to the remote repository. So that the CI/CD pipeline will publish the package to npm registry.
+
+### Publishing the package from locally
 
 - First login to npm using `npm login` command(If you are not logged in).
 - Run `pnpm changeset` to create a changeset for the package.
