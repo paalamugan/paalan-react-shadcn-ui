@@ -1,6 +1,6 @@
 {
   "name": "@paalan/react-test-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React UI test utils for Paalan UI",
   "type": "module",
   "main": "dist/index.js",
