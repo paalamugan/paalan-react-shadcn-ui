@@ -6,6 +6,9 @@ export interface ThemeContextState {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
+  isDark: boolean;
+  isLight: boolean;
+  isSystem: boolean;
 }
 
 /**

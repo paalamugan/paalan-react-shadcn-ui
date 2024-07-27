@@ -41,6 +41,9 @@ export const ThemeProvider = ({
   const value = {
     theme,
     setTheme: setThemeHandler,
+    isDark: theme === 'dark',
+    isLight: theme === 'light',
+    isSystem: theme === 'system',
     toggleTheme: () => {
       setThemeHandler(theme === 'light' ? 'dark' : 'light');
     },

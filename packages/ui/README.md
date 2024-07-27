@@ -32,14 +32,22 @@ export default {
 };
 ```
 
-Second, you need to import the `@paalan/react-ui/styles.css` styles from the package and then wrap your application with the `ThemeProvider` component from the `@paalan/react-providers` package.
+Second, you need to import the `@paalan/react-ui/styles.css` styles from the package in your project.
+
+```jsx
+import '@paalan/react-ui/styles.css'; // Import the styles in the root of your application
+```
+
+### ThemeProvider - For React Framework
+
+- Import the `ThemeProvider` component from `@paalan/react-providers/ThemeProvider` and use them in your project.
 
 ```jsx
 import "@paalan/react-ui/styles.css"; // Import the styles from the package
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from '@paalan/react-providers';
+import { ThemeProvider } from '@paalan/react-providers/ThemeProvider';
 
 import { App } from './App';
 
@@ -57,6 +65,62 @@ const Root = () => {
 
 root.render(<Root />);
 ```
+
+- Import the `useTheme` hook from the `@paalan/react-providers/ThemeProvider` and use them in your project.
+
+```jsx
+import { useTheme } from '@paalan/react-providers/ThemeProvider';
+
+export const App = () => {
+  const theme = useTheme();
+
+  return (
+    <div style={{ backgroundColor: theme.isDark ? 'black' : 'white' }}>
+      <h1 style={{ color: theme.isDark ? 'white' : 'black' }}>Hello, World!</h1>
+    </div>
+  );
+};
+```
+
+### NextThemeProvider - For Next.js Framework
+
+- Import the `NextThemeProvider` component from `@paalan/react-providers/NextThemeProvider` and use them in your project.
+
+```jsx
+import '@paalan/react-ui/styles.css'; // Import the styles from the package
+
+import { NextThemeProvider } from '@paalan/react-providers/NextThemeProvider';
+
+import { App } from './App';
+
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <NextThemeProvider>
+      <Component {...pageProps} />
+    </NextThemeProvider>
+  );
+};
+
+export default MyApp;
+```
+
+- Import the `useNextTheme` hook from `@paalan/react-providers/NextThemeProvider` and use them in your project.
+
+```jsx
+import { useNextTheme } from '@paalan/react-providers/NextThemeProvider';
+
+export const App = () => {
+  const theme = useNextTheme();
+
+  return (
+    <div style={{ backgroundColor: theme.isDark ? 'black' : 'white' }}>
+      <h1 style={{ color: theme.isDark ? 'white' : 'black' }}>Hello, World!</h1>
+    </div>
+  );
+};
+```
+
+### Button, Box, Container
 
 - Import the `Button` component from the package and use them in your project.
 
