@@ -7,7 +7,6 @@ import { useNextTheme } from '../NextThemeProvider/hooks';
 
 export interface ToastProviderProps extends ToasterProps {
   children: ReactNode;
-  currentTheme?: 'light' | 'dark';
 }
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children, ...props }) => {
