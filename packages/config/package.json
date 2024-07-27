@@ -23,7 +23,6 @@
     "tsup": "tsup",
     "tsup:watch": "tsup --watch",
     "clean": "rimraf dist",
-    "postinstall": "pnpm tsup",
     "publish:locally": "npx yalc publish"
   },
   "dependencies": {
