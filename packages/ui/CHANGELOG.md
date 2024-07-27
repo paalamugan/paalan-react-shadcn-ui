@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.0.4
+
+### Patch Changes
+
+- [`6f0f4fb`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/6f0f4fb8fee26a7a557e0798e6ba033d122a8c34) Thanks [@paalamugan](https://github.com/paalamugan)! - fixed(form): form input issues
+
 ## 1.0.3
 
 ### Patch Changes
