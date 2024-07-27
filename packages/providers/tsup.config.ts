@@ -12,6 +12,7 @@ export default defineConfig(() => {
       'axios',
       '@azure/msal-react',
       '@azure/msal-browser',
+      'next-themes',
       /@paalan\/react-(.*)/,
     ],
     target: 'esnext',

@@ -27,7 +27,8 @@
   "dependencies": {
     "@azure/msal-browser": "^3.5.0",
     "@azure/msal-react": "^2.0.7",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "next-themes": "^0.3.0"
   },
   "peerDependencies": {
     "react": ">=16.18.x",
@@ -54,10 +55,20 @@
       "import": "./dist/ThemeProvider/index.js",
       "require": "./dist/ThemeProvider/index.cjs",
       "types": "./dist/ThemeProvider/index.d.ts"
+    },
+    "./ToastProvider": {
+      "import": "./dist/ToastProvider/index.js",
+      "require": "./dist/ToastProvider/index.cjs",
+      "types": "./dist/ToastProvider/index.d.ts"
+    },
+    "./NextThemeProvider": {
+      "import": "./dist/NextThemeProvider/index.js",
+      "require": "./dist/NextThemeProvider/index.cjs",
+      "types": "./dist/NextThemeProvider/index.d.ts"
     }
   },
   "engines": {
-    "node": ">=20",
+    "node": ">=18",
     "pnpm": ">=9"
   },
   "repository": {
