@@ -1,5 +1,11 @@
 # @paalan/react-config
 
+## 1.0.3
+
+### Patch Changes
+
+- [`988d611`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/988d6115f03ca1bd3e0acdd7c236fae866bf4cfd) Thanks [@paalamugan](https://github.com/paalamugan)! - update package.json
+
 ## 1.0.2
 
 ### Patch Changes
