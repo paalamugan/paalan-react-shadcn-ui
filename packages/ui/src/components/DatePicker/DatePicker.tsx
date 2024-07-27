@@ -75,6 +75,10 @@ export interface DatePickerProps {
    * Parent class name for the date picker
    */
   parentClassName?: string;
+  /**
+   * Whether the date picker is disabled or not
+   */
+  disabled?: boolean;
 }
 
 const PresetCalendar: React.FC<Pick<DatePickerProps, 'presets' | 'presetPlaceholder' | 'date' | 'onDateChange'>> = ({
@@ -124,6 +128,7 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
       required,
       id,
       errorMessage,
+      disabled,
       ...props
     },
     ref,
@@ -163,6 +168,7 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
                 {...props}
                 type="button"
                 variant="outline"
+                disabled={disabled}
                 className={cn(
                   'min-w-[240px] justify-start text-left font-normal',
                   {

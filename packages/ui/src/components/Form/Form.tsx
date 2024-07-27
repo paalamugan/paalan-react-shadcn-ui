@@ -242,10 +242,6 @@ interface FormComponentProps<TData extends FieldValues> {
    * The id for the form element
    */
   id?: string;
-  /**
-   * Whether to disable the browser form validation
-   */
-  noValidate?: boolean;
 }
 
 const Form = <TData extends FieldValues>({
@@ -270,7 +266,6 @@ const Form = <TData extends FieldValues>({
   inline: formInline,
   formRef,
   id,
-  noValidate,
 }: FormComponentProps<TData>) => {
   const inlineTypes = ['checkbox'];
   return (
@@ -278,7 +273,6 @@ const Form = <TData extends FieldValues>({
       <form
         id={id}
         ref={formRef}
-        noValidate={noValidate}
         onSubmit={onSubmit ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
         className={cn('space-y-4', className)}
       >
@@ -314,9 +308,18 @@ const Form = <TData extends FieldValues>({
                         <Input
                           {...field}
                           id={field.name}
-                          {...item}
+                          autoComplete={item.autoComplete}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
                           type={item.inputType || 'text'}
+                          {...item?.inputProps}
                           inputType={undefined}
+                          onChange={(event) => {
+                            field.onChange(event.currentTarget.value);
+                            item.onValueChange?.(event.currentTarget.value);
+                            item.onChange?.(event);
+                          }}
                         />
                       </FormControl>
                     )}
@@ -326,11 +329,33 @@ const Form = <TData extends FieldValues>({
                           {...field}
                           id={field.name}
                           value={field.value ?? ''}
-                          {...item}
+                          autoComplete={item.autoComplete}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          {...item?.numberInputProps}
                           onChange={(event) => {
                             const value = event.currentTarget.valueAsNumber;
                             field.onChange(Number.isNaN(value) ? undefined : value);
                             item.onValueChange?.(value);
+                          }}
+                        />
+                      </FormControl>
+                    )}
+                    {item.type === 'textarea' && (
+                      <FormControl>
+                        <Textarea
+                          {...field}
+                          id={field.name}
+                          autoComplete={item.autoComplete}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          {...item?.textareaProps}
+                          onChange={(event) => {
+                            field.onChange(event.currentTarget.value);
+                            item.onValueChange?.(event.currentTarget.value);
+                            item.onChange?.(event);
                           }}
                         />
                       </FormControl>
@@ -340,7 +365,13 @@ const Form = <TData extends FieldValues>({
                         <Select
                           {...field}
                           id={field.name}
-                          {...item}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          triggerClassName={item.triggerClassName}
+                          contentClassName={item.contentClassName}
+                          options={item.options}
+                          {...item?.selectProps}
                           onValueChange={(value) => {
                             field.onChange(value || undefined);
                             item.onValueChange?.(value);
@@ -353,8 +384,12 @@ const Form = <TData extends FieldValues>({
                         <Checkbox
                           {...field}
                           id={field.name}
-                          {...item}
+                          disabled={item.disabled}
+                          className={item.className}
+                          variant={item.variant}
                           type={'button'}
+                          {...item?.checkboxProps}
+                          onChange={item?.onChange}
                           onCheckedChange={(checked) => {
                             field.onChange(checked);
                             item.onCheckedChange?.(checked);
@@ -367,10 +402,16 @@ const Form = <TData extends FieldValues>({
                         <CheckboxGroup
                           {...field}
                           inline={item.checkboxInline}
+                          className={item.className}
+                          options={item.options}
+                          labelClassName={item.labelClassName}
+                          swapRight={item.swapRight}
+                          variant={item.variant}
+                          {...item?.checkboxGroupProps}
                           selectedValues={field.value?.length ? field.value : undefined}
-                          {...item}
                           onSelectedValueChange={(values) => {
                             field.onChange(values.length ? values : undefined);
+                            item.onSelectedValueChange?.(values);
                           }}
                         />
                       </FormControl>
@@ -381,7 +422,14 @@ const Form = <TData extends FieldValues>({
                           {...field}
                           id={field.name}
                           inline={item.radioInline}
-                          {...item}
+                          className={item.className}
+                          options={item.options}
+                          labelClassName={item.labelClassName}
+                          swapRight={item.swapRight}
+                          variant={item.variant}
+                          disabled={item.disabled}
+                          {...item?.radioGroupProps}
+                          onChange={item?.onChange}
                           onValueChange={(value) => {
                             field.onChange(value || undefined);
                             item.onValueChange?.(value);
@@ -389,16 +437,15 @@ const Form = <TData extends FieldValues>({
                         />
                       </FormControl>
                     )}
-                    {item.type === 'textarea' && (
-                      <FormControl>
-                        <Textarea {...field} id={field.name} {...item} />
-                      </FormControl>
-                    )}
                     {item.type === 'combobox' && (
                       <FormControl>
                         <Combobox
                           {...field}
-                          {...item}
+                          options={item.options}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          {...item?.comboboxProps}
                           onValueChange={(value) => {
                             field.onChange(value || undefined);
                             item.onValueChange?.(value);
@@ -410,10 +457,18 @@ const Form = <TData extends FieldValues>({
                       <FormControl>
                         <MultiSelect
                           {...field}
+                          options={item.options}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          triggerClassName={item.triggerClassName}
+                          contentClassName={item.contentClassName}
+                          commandClassName={item.commandClassName}
+                          {...item?.multiSelectProps}
                           selectedValues={field.value?.length ? field.value : undefined}
-                          {...item}
                           onSelectedValueChange={(values) => {
                             field.onChange(values.length ? values : undefined);
+                            item.onSelectedValueChange?.(values);
                           }}
                         />
                       </FormControl>
@@ -423,7 +478,10 @@ const Form = <TData extends FieldValues>({
                         <DatePicker
                           {...field}
                           date={field.value}
-                          {...item}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          {...item?.datePickerProps}
                           onDateChange={(value) => {
                             field.onChange(value || undefined);
                             item.onDateChange?.(value);
@@ -436,7 +494,10 @@ const Form = <TData extends FieldValues>({
                         <DateRangePicker
                           {...field}
                           dateRange={field.value}
-                          {...item}
+                          placeholder={item.placeholder}
+                          disabled={item.disabled}
+                          className={item.className}
+                          {...item?.dateRangePickerProps}
                           onDateRangeChange={(value) => {
                             field.onChange(value || undefined);
                             item.onDateRangeChange?.(value);

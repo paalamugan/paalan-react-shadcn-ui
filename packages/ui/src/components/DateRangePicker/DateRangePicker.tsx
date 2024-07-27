@@ -67,6 +67,10 @@ export interface DateRangePickerProps {
    * Parent class name for the date range picker
    */
   parentClassName?: string;
+  /**
+   * Whether the date range picker is disabled.
+   */
+  disabled?: boolean;
 }
 
 /**
@@ -87,6 +91,7 @@ export const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePick
       required,
       id,
       errorMessage,
+      disabled,
       ...props
     },
     ref,
@@ -120,6 +125,7 @@ export const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePick
               <PopoverTrigger asChild>
                 <Button
                   {...props}
+                  disabled={disabled}
                   type="button"
                   variant={'outline'}
                   className={cn('min-w-[300px] justify-start text-left font-normal', {
