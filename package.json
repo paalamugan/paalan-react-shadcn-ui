@@ -48,7 +48,8 @@
     "release": "changeset publish",
     "version:dev": "changeset version --snapshot dev",
     "release:dev": "pnpm release --tag dev",
-    "slack": "tsx scripts/slack.ts"
+    "slack": "tsx scripts/slack.ts",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@azure/msal-browser": "^3.5.0",
