@@ -1,5 +1,11 @@
 # @paalan/react-providers
 
+## 1.3.1
+
+### Patch Changes
+
+- [`69a9022`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/69a9022f1c4d70bc1ba271b14f52626084d2ae55) Thanks [@paalamugan](https://github.com/paalamugan)! - change default theme to system
+
 ## 1.3.0
 
 ### Minor Changes
