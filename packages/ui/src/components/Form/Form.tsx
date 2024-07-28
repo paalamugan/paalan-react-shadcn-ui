@@ -242,6 +242,10 @@ interface FormComponentProps<TData extends FieldValues> {
    * The id for the form element
    */
   id?: string;
+  /**
+   * Whether support the browser native form validation or not (default is true)
+   */
+  noValidate?: boolean;
 }
 
 const Form = <TData extends FieldValues>({
@@ -263,6 +267,7 @@ const Form = <TData extends FieldValues>({
   actionClassName,
   hideResetButton = false,
   hideSubmitButton = false,
+  noValidate = true,
   inline: formInline,
   formRef,
   id,
@@ -273,6 +278,7 @@ const Form = <TData extends FieldValues>({
       <form
         id={id}
         ref={formRef}
+        noValidate={noValidate}
         onSubmit={onSubmit ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
         className={cn('space-y-4', className)}
       >
