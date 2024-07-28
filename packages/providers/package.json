@@ -1,6 +1,6 @@
 {
   "name": "@paalan/react-providers",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "React UI providers for Paalan UI",
   "type": "module",
   "main": "dist/index.js",
