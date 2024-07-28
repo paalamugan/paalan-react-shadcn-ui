@@ -1,5 +1,11 @@
 # @paalan/react-providers
 
+## 1.2.1
+
+### Patch Changes
+
+- [`3609058`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/3609058fc71f63309e00ecdd6db6f34371334531) Thanks [@paalamugan](https://github.com/paalamugan)! - update tsup config
+
 ## 1.2.0
 
 ### Minor Changes
