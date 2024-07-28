@@ -22,13 +22,19 @@ export const ThemeProvider = ({
 
     root.classList.remove('light', 'dark');
 
+    if (root.getAttribute('data-theme')) {
+      root.removeAttribute('data-theme');
+    }
+
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
       root.classList.add(systemTheme);
+      root.setAttribute('data-theme', systemTheme);
       return;
     }
 
+    root.setAttribute('data-theme', theme);
     root.classList.add(theme);
   }, [theme]);
 

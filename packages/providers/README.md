@@ -15,8 +15,6 @@ npm install @paalan/react-providers
 - Import the `ThemeProvider` component from `@paalan/react-providers/ThemeProvider` and use them in your project.
 
 ```jsx
-import "@paalan/react-ui/styles.css"; // Import the styles from the package
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from '@paalan/react-providers/ThemeProvider';
@@ -59,8 +57,6 @@ export const App = () => {
 - Import the `NextThemeProvider` component from `@paalan/react-providers/NextThemeProvider` and use them in your project.
 
 ```jsx
-import '@paalan/react-ui/styles.css'; // Import the styles from the package
-
 import { NextThemeProvider } from '@paalan/react-providers/NextThemeProvider';
 
 import { App } from './App';

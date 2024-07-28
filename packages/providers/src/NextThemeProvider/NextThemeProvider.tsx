@@ -27,7 +27,7 @@ export const NextThemeProvider: FC<NextThemeProviderProps> = ({ children, toastP
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="white"
+      defaultTheme="system"
       enableSystem
       storageKey={THEME_STORAGE_KEY}
       disableTransitionOnChange
