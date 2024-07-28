@@ -46,7 +46,15 @@
   "license": "ISC",
   "files": [
     "dist",
-    "tsconfig.json",
-    "README.md"
+    "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "jest",
+    "testing",
+    "react-testing-library",
+    "js"
   ]
 }

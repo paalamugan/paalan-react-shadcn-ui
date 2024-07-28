@@ -81,5 +81,15 @@
   "files": [
     "dist",
     "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "axios",
+    "clsx",
+    "tailwind-merge",
+    "tailwindcss",
+    "js"
   ]
 }

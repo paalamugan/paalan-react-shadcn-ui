@@ -25,9 +25,6 @@
     "tsup:watch": "tsup --watch",
     "clean": "rimraf dist"
   },
-  "dependencies": {
-    "@heroicons/react": "^2.1.3"
-  },
   "peerDependencies": {
     "react": ">=16.18.x",
     "react-dom": ">=16.18.x"
@@ -40,26 +37,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
-    },
-    "./solid": {
-      "import": "./dist/solid/index.js",
-      "require": "./dist/solid/index.cjs",
-      "types": "./dist/solid/index.d.ts"
-    },
-    "./outline": {
-      "import": "./dist/outline/index.js",
-      "require": "./dist/outline/index.cjs",
-      "types": "./dist/outline/index.d.ts"
-    },
-    "./custom": {
-      "import": "./dist/custom/index.js",
-      "require": "./dist/custom/index.cjs",
-      "types": "./dist/custom/index.d.ts"
-    },
-    "./components": {
-      "import": "./dist/components/index.js",
-      "require": "./dist/components/index.cjs",
-      "types": "./dist/components/index.d.ts"
     }
   },
   "repository": {
@@ -74,5 +51,13 @@
   "files": [
     "dist",
     "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "icons",
+    "react-icons",
+    "@paalan/react-shared"
   ]
 }

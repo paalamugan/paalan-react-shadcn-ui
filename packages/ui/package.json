@@ -117,6 +117,10 @@
     "system",
     "tailwind",
     "css",
-    "js"
+    "js",
+    "@paalan/react-config",
+    "@paalan/react-shared",
+    "@paalan/react-icons",
+    "@paalan/react-providers"
   ]
 }

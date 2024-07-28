@@ -80,5 +80,15 @@
   "files": [
     "dist",
     "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "react-config",
+    "tailwindcss",
+    "eslint",
+    "prettier",
+    "vite"
   ]
 }

@@ -57,5 +57,13 @@
     "dist",
     "tsconfig.json",
     "package.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "hooks",
+    "react-hooks",
+    "@paalan/react-shared"
   ]
 }

@@ -77,5 +77,14 @@
   "files": [
     "dist",
     "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "axios",
+    "@azure/msal-browser",
+    "@azure/msal-react",
+    "@paalan/react-ui"
   ]
 }
