@@ -93,6 +93,7 @@
     "date-fns-tz": "^2.0.0",
     "intl-messageformat": "^10.5.5",
     "lodash-es": "^4.17.21",
+    "next-themes": "^0.3.0",
     "react-day-picker": "^8.8.2",
     "react-error-boundary": "^4.0.13",
     "react-hook-form": "^7.46.1",
