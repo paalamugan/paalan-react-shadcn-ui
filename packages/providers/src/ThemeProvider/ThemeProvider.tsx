@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { Toaster } from '@paalan/react-ui';
-
 import type { Theme, ThemeProviderProps } from './types';
 
+import { ToastProvider } from '../ToastProvider';
 import { ThemeContextProvider } from './context';
 
 /**
@@ -51,8 +50,10 @@ export const ThemeProvider = ({
 
   return (
     <ThemeContextProvider value={value}>
+      <ToastProvider theme={theme} {...toasterProps}>
+        {children}
+      </ToastProvider>
       {children}
-      <Toaster richColors closeButton theme={theme} {...toasterProps} />
     </ThemeContextProvider>
   );
 };
