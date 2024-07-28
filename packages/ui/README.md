@@ -32,10 +32,21 @@ export default {
 };
 ```
 
-Second, you need to import the `@paalan/react-ui/styles.css` styles from the package in your project.
+Second, you need to import the `@paalan/react-ui/styles.css` styles from the package in your project root `App.tsx` file or `index.tsx` file.
 
 ```jsx
-import '@paalan/react-ui/styles.css'; // Import the styles in the root of your application
+import '@paalan/react-ui/styles.css'; // Import the package styles in the top of the root file and after import your local styles css file.
+import './globals.css'; // Import your global styles
+```
+
+**Note: You need to load fonts from Google Fonts in your project. Add the following line in your `globals.css` file or `styles.css` file.**
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ### ThemeProvider - For React Framework
