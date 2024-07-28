@@ -194,7 +194,7 @@ importers:
         version: link:packages/icons
       '@paalan/react-providers':
         specifier: workspace:*
-        version: link:packages/providers/dist
+        version: link:packages/providers
       '@paalan/react-shared':
         specifier: workspace:*
         version: link:packages/shared
@@ -501,7 +501,6 @@ importers:
       react-router-dom:
         specifier: '>=6.x.x'
         version: 6.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    publishDirectory: dist
 
   packages/shared:
     dependencies:
