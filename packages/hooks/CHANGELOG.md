@@ -1,5 +1,11 @@
 # @paalan/react-hooks
 
+## 1.1.0
+
+### Minor Changes
+
+- [`97d4263`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/97d4263dbe7ad32058ed56d2d3bd97af28dbe4b0) Thanks [@paalamugan](https://github.com/paalamugan)! - added tailwind local config
+
 ## 1.0.3
 
 ### Patch Changes
