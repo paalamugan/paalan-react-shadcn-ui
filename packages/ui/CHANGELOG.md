@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.0.6
+
+### Patch Changes
+
+- [`35b3667`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/35b3667e42963a90a6cc16bd297cfbc261e380ee) Thanks [@paalamugan](https://github.com/paalamugan)! - update form onValidate prop
+
 ## 1.0.5
 
 ### Patch Changes
