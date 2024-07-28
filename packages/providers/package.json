@@ -7,8 +7,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "author": {
     "name": "Paalamugan"
@@ -37,29 +36,29 @@
   },
   "exports": {
     "./FormatIntlProvider": {
-      "import": "./FormatIntlProvider/index.js",
-      "require": "./FormatIntlProvider/index.cjs",
-      "types": "./FormatIntlProvider/index.d.ts"
+      "import": "./dist/FormatIntlProvider/index.js",
+      "require": "./dist/FormatIntlProvider/index.cjs",
+      "types": "./dist/FormatIntlProvider/index.d.ts"
     },
     "./MsalAuthProvider": {
-      "import": "./MsalAuthProvider/index.js",
-      "require": "./MsalAuthProvider/index.cjs",
-      "types": "./MsalAuthProvider/index.d.ts"
+      "import": "./dist/MsalAuthProvider/index.js",
+      "require": "./dist/MsalAuthProvider/index.cjs",
+      "types": "./dist/MsalAuthProvider/index.d.ts"
     },
     "./ThemeProvider": {
-      "import": "./ThemeProvider/index.js",
-      "require": "./ThemeProvider/index.cjs",
-      "types": "./ThemeProvider/index.d.ts"
+      "import": "./dist/ThemeProvider/index.js",
+      "require": "./dist/ThemeProvider/index.cjs",
+      "types": "./dist/ThemeProvider/index.d.ts"
     },
     "./NextThemeProvider": {
-      "import": "./NextThemeProvider/index.js",
-      "require": "./NextThemeProvider/index.cjs",
-      "types": "./NextThemeProvider/index.d.ts"
+      "import": "./dist/NextThemeProvider/index.js",
+      "require": "./dist/NextThemeProvider/index.cjs",
+      "types": "./dist/NextThemeProvider/index.d.ts"
     },
     "./ToastProvider": {
-      "import": "./ToastProvider/index.js",
-      "require": "./ToastProvider/index.cjs",
-      "types": "./ToastProvider/index.d.ts"
+      "import": "./dist/ToastProvider/index.js",
+      "require": "./dist/ToastProvider/index.cjs",
+      "types": "./dist/ToastProvider/index.d.ts"
     }
   },
   "engines": {
