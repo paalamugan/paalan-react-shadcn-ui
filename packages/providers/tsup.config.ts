@@ -1,3 +1,4 @@
+import fse from 'fs-extra';
 import { defineConfig } from 'tsup';
 
 export default defineConfig(() => {
@@ -11,6 +12,9 @@ export default defineConfig(() => {
     minify: true,
     skipNodeModulesBundle: false,
     bundle: true,
+    async onSuccess() {
+      await fse.copy('./package.json', './dist/package.json');
+    },
     treeshake: false,
     sourcemap: false,
     clean: true, // clean up the dist folder before building
