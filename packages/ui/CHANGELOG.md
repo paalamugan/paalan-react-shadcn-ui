@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.2
+
+### Patch Changes
+
+- [`79b6ff9`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/79b6ff97bc809f56a7580d3092496803e728439b) Thanks [@paalamugan](https://github.com/paalamugan)! - update readme file
+
 ## 1.3.1
 
 ### Patch Changes
