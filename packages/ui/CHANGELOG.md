@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.1
+
+### Patch Changes
+
+- [`cb0f49b`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/cb0f49b6e182fc55b4e3c41eb7c3bca506168b14) Thanks [@paalamugan](https://github.com/paalamugan)! - removed google font from ui package
+
 ## 1.3.0
 
 ### Minor Changes
