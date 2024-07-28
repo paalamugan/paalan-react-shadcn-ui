@@ -93,15 +93,15 @@ import { NextThemeProvider } from '@paalan/react-providers/NextThemeProvider';
 
 import { App } from './App';
 
-const MyApp = ({ Component, pageProps }) => {
+const Root = () => {
   return (
     <NextThemeProvider>
-      <Component {...pageProps} />
+      <App />
     </NextThemeProvider>
   );
 };
 
-export default MyApp;
+export default Root;
 ```
 
 - Import the `useNextTheme` hook from `@paalan/react-providers/NextThemeProvider` and use them in your project.

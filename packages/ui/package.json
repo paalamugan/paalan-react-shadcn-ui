@@ -101,5 +101,22 @@
   "files": [
     "dist",
     "tsconfig.json"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "typescript",
+    "shadcn",
+    "radix-ui",
+    "react-hook-form",
+    "tailwindcss",
+    "zod",
+    "data-fns",
+    "components",
+    "design",
+    "system",
+    "tailwind",
+    "css",
+    "js"
   ]
 }
