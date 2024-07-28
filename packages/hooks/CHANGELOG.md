@@ -1,5 +1,11 @@
 # @paalan/react-hooks
 
+## 1.2.0
+
+### Minor Changes
+
+- [`71b6b99`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/71b6b9913a21c6fa341c71a663fbc3f7e907d8e8) Thanks [@paalamugan](https://github.com/paalamugan)! - minor bug fixes
+
 ## 1.1.0
 
 ### Minor Changes
