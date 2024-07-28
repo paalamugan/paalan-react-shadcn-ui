@@ -27,8 +27,6 @@
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
-    "@savvywombat/tailwindcss-grid-areas": "^4.0.0",
-    "@tailwindcss/container-queries": "^0.1.1",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -50,6 +48,11 @@
       "import": "./dist/tailwind.config.js",
       "require": "./dist/tailwind.config.cjs",
       "types": "./dist/tailwind.config.d.ts"
+    },
+    "./tailwind-local": {
+      "import": "./dist/tailwind-local.config.js",
+      "require": "./dist/tailwind-local.config.cjs",
+      "types": "./dist/tailwind-local.config.d.ts"
     },
     "./eslint": {
       "import": "./dist/eslint.config.js",
