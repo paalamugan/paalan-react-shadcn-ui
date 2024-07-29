@@ -1,5 +1,11 @@
 # @paalan/react-icons
 
+## 1.3.1
+
+### Patch Changes
+
+- [`208650d`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/208650dbfac4f15eb4469eb658f290d8e61f5e0e) Thanks [@paalamugan](https://github.com/paalamugan)! - update tsup config
+
 ## 1.3.0
 
 ### Minor Changes
