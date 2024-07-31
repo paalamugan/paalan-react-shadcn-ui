@@ -5,7 +5,7 @@ import { z } from 'zod';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../Button';
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormProvider } from '../Form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormRoot } from '../Form';
 import { Label } from '../Label';
 import { toast } from '../Toast';
 import { Switch } from './Switch';
@@ -60,7 +60,7 @@ const SwitchFormExample = () => {
   };
 
   return (
-    <FormProvider {...form}>
+    <FormRoot {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <div>
           <h3 className="mb-4 text-lg font-medium">Email Notifications</h3>
@@ -99,7 +99,7 @@ const SwitchFormExample = () => {
         </div>
         <Button type="submit">Submit</Button>
       </form>
-    </FormProvider>
+    </FormRoot>
   );
 };
 

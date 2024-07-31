@@ -16,6 +16,7 @@ import type { TextareaProps } from '../Textarea';
 interface CommonFormItemField {
   name: string;
   label: string;
+  labelDescription?: ReactNode;
   description?: ReactNode;
   required?: boolean;
   placeholder?: string;

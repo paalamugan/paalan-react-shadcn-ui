@@ -6,7 +6,7 @@ import { z } from 'zod';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../Button';
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, FormProvider } from '../Form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, FormRoot } from '../Form';
 import { toast } from '../Toast';
 import { Checkbox } from './Checkbox';
 
@@ -114,7 +114,7 @@ export const SingleCheckBoxForm: Story = {
     };
 
     return (
-      <FormProvider {...form}>
+      <FormRoot {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
             control={form.control}
@@ -139,7 +139,7 @@ export const SingleCheckBoxForm: Story = {
           />
           <Button type="submit">Submit</Button>
         </form>
-      </FormProvider>
+      </FormRoot>
     );
   },
 };
@@ -195,7 +195,7 @@ export const MultipleCheckBoxForm: Story = {
     };
 
     return (
-      <FormProvider {...form}>
+      <FormRoot {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
@@ -236,7 +236,7 @@ export const MultipleCheckBoxForm: Story = {
           />
           <Button type="submit">Submit</Button>
         </form>
-      </FormProvider>
+      </FormRoot>
     );
   },
 };

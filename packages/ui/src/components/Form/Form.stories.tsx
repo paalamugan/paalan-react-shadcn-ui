@@ -253,6 +253,7 @@ export const Basic: Story = {
         placeholder: 'Enter a username',
         required: true,
         autoComplete: 'off',
+        labelDescription: 'This is your public username name.',
       },
       {
         type: 'input',

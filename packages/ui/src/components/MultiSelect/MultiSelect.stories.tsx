@@ -7,7 +7,7 @@ import z from 'zod';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../Button';
-import { FormField, FormItem, FormLabel, FormMessage, FormProvider } from '../Form';
+import { FormField, FormItem, FormLabel, FormMessage, FormRoot } from '../Form';
 import { toast } from '../Toast';
 import { MultiSelect } from './MultiSelect';
 
@@ -154,7 +154,7 @@ export const Form: Story = {
       });
     }
     return (
-      <FormProvider {...form}>
+      <FormRoot {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
           <FormField
             control={form.control}
@@ -176,7 +176,7 @@ export const Form: Story = {
             Submit
           </Button>
         </form>
-      </FormProvider>
+      </FormRoot>
     );
   },
   args: {

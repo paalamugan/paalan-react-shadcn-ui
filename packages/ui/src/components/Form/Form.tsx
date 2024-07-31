@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ArrowPathIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 import { Slot } from '@radix-ui/react-slot';
-import { Controller, FormProvider as OriginalFormProvider, useFormContext } from 'react-hook-form';
+import { Controller, FormProvider, useFormContext } from 'react-hook-form';
 
 import type * as LabelPrimitive from '@radix-ui/react-label';
 import type {
@@ -17,6 +17,7 @@ import type {
   UseFormReset,
 } from 'react-hook-form';
 import type { ButtonProps } from '../Button';
+import type { LabelProps } from '../Label/Label';
 import type { FormItemField } from './types';
 
 import { Box } from '../../base';
@@ -34,7 +35,7 @@ import { RadioGroup } from '../RadioGroup';
 import { Select } from '../Select';
 import { Textarea } from '../Textarea';
 
-const FormProvider = OriginalFormProvider;
+const FormRoot = FormProvider;
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -100,24 +101,23 @@ const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 );
 FormItem.displayName = 'FormItem';
 
-const FormLabel = React.forwardRef<
-  React.ElementRef<typeof LabelPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & { required?: boolean }
->(({ className, required, ...props }, ref) => {
-  const { error, formItemId } = useFormField();
+const FormLabel = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, LabelProps>(
+  ({ className, required, ...props }, ref) => {
+    const { error, formItemId } = useFormField();
 
-  return (
-    <Label
-      ref={ref}
-      className={cn(error && 'text-danger', className)}
-      htmlFor={formItemId}
-      required={required}
-      {...props}
-    >
-      {props.children}
-    </Label>
-  );
-});
+    return (
+      <Label
+        ref={ref}
+        className={cn(error && 'text-danger', className)}
+        htmlFor={formItemId}
+        required={required}
+        {...props}
+      >
+        {props.children}
+      </Label>
+    );
+  },
+);
 FormLabel.displayName = 'FormLabel';
 
 const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
@@ -310,7 +310,7 @@ const Form = <TData extends FieldValues>({
   const inlineTypes = ['checkbox'];
   const isSubmitting = isFormSubmitting ?? form.formState.isSubmitting;
   return (
-    <FormProvider {...form}>
+    <FormRoot {...form}>
       <form
         id={id}
         ref={formRef}
@@ -318,7 +318,7 @@ const Form = <TData extends FieldValues>({
         onSubmit={!hideSubmitButton ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
         className={cn('space-y-4', className)}
       >
-        {fields.map(({ required, label, inline, formItemClassName, formLabelClassName, ...item }) => (
+        {fields.map(({ required, label, labelDescription, inline, formItemClassName, formLabelClassName, ...item }) => (
           <FormField
             key={item.name}
             control={form.control}
@@ -340,6 +340,7 @@ const Form = <TData extends FieldValues>({
                       },
                       formLabelClassName,
                     )}
+                    labelDescription={labelDescription}
                   >
                     {label}
                   </FormLabel>
@@ -605,10 +606,10 @@ const Form = <TData extends FieldValues>({
           )}
         </Box>
       </form>
-    </FormProvider>
+    </FormRoot>
   );
 };
 
 Form.displayName = 'Form';
 
-export { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, FormProvider, useFormField };
+export { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, FormRoot, useFormField };

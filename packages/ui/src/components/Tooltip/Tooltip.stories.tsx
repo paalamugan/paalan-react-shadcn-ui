@@ -28,7 +28,7 @@ type Story = StoryObj<typeof Tooltip>;
 export const Basic: Story = {
   args: {
     content: 'Tooltip content',
-    children: <Button variant="outline">Mouse Over here</Button>,
+    trigger: <Button variant="outline">Mouse Over here</Button>,
   },
 };
 

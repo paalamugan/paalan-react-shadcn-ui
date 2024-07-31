@@ -10,7 +10,7 @@ import z from 'zod';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../Button';
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, FormProvider } from '../Form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, FormRoot } from '../Form';
 import { PopoverContent, PopoverRoot, PopoverTrigger } from '../Popover';
 import { toast } from '../Toast';
 import { Calendar } from './Calendar';
@@ -98,7 +98,7 @@ export const Form: Story = {
     };
 
     return (
-      <FormProvider {...form}>
+      <FormRoot {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
@@ -135,7 +135,7 @@ export const Form: Story = {
           />
           <Button type="submit">Submit</Button>
         </form>
-      </FormProvider>
+      </FormRoot>
     );
   },
 };

@@ -27,12 +27,12 @@ const TooltipContent = React.forwardRef<
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-interface TooltipProps extends Omit<React.ComponentPropsWithoutRef<typeof TooltipContent>, 'content'> {
+interface TooltipProps extends Omit<React.ComponentPropsWithoutRef<typeof TooltipContent>, 'content' | 'children'> {
   /**
    * Tooltip trigger content
    *
    */
-  children: React.ReactNode;
+  trigger: React.ReactNode;
   /**
    * Tooltip body content
    *
@@ -76,7 +76,7 @@ interface TooltipProps extends Omit<React.ComponentPropsWithoutRef<typeof Toolti
 }
 
 const Tooltip = React.forwardRef<React.ElementRef<typeof TooltipContent>, TooltipProps>(
-  ({ className, children, asPortal, content, side = 'top', align = 'center', ...props }, ref) => {
+  ({ className, trigger, asPortal, content, side = 'top', align = 'center', ...props }, ref) => {
     const TooltipPortalComponent = asPortal ? TooltipPortal : React.Fragment;
     const [open, setOpen] = React.useState(props.open ?? props.defaultOpen);
 
@@ -93,7 +93,7 @@ const Tooltip = React.forwardRef<React.ElementRef<typeof TooltipContent>, Toolti
     return (
       <TooltipProvider delayDuration={100}>
         <TooltipRoot open={open} onOpenChange={onOpenChangeHandle}>
-          <TooltipTrigger asChild>{children}</TooltipTrigger>
+          <TooltipTrigger asChild>{trigger}</TooltipTrigger>
           <TooltipPortalComponent>
             <TooltipContent
               ref={ref}
