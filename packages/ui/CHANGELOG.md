@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.5
+
+### Patch Changes
+
+- [`f0549ba`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/f0549baeae1f2c4173f39261ca485d9813c596b6) Thanks [@paalamugan](https://github.com/paalamugan)! - fixed chart color issue
+
 ## 1.3.4
 
 ### Patch Changes
