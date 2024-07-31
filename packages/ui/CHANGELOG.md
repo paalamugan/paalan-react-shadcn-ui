@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.6
+
+### Patch Changes
+
+- [`69b92a5`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/69b92a5793aa42cbb2db895e9f7c02b2164243ae) Thanks [@paalamugan](https://github.com/paalamugan)! - add isSubmitting to Form
+
 ## 1.3.5
 
 ### Patch Changes
