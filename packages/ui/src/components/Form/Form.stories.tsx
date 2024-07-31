@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import type { Meta, StoryObj } from '@storybook/react';
+import type { FormComponentProps } from './Form';
 import type { FormItemField } from './types';
 
 import { toast } from '../Toast';
@@ -25,7 +26,7 @@ const meta: Meta<typeof Form> = {
     submitText: {
       description: 'The text to display on the submit button',
     },
-    submitButton: {
+    SubmitButton: {
       description: 'The submit button component',
     },
     submitButtonVariant: {
@@ -40,7 +41,7 @@ const meta: Meta<typeof Form> = {
     resetText: {
       description: 'The text to display on the reset button',
     },
-    resetButton: {
+    ResetButton: {
       description: 'The reset button component',
     },
     resetButtonVariant: {
@@ -241,7 +242,174 @@ const formItemFields: FormItemField[] = [
 ];
 
 export const Basic: Story = {
-  render: (args) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  render: (args: FormComponentProps<any>) => {
+    const formItemFields: FormItemField[] = [
+      {
+        type: 'input',
+        name: 'username',
+        label: 'Username',
+        description: 'This is your public username name.',
+        placeholder: 'Enter a username',
+        required: true,
+        autoComplete: 'off',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        label: 'Email',
+        placeholder: 'Enter a email',
+        required: true,
+      },
+      {
+        type: 'number',
+        name: 'age',
+        label: 'Age',
+        placeholder: 'Enter a age',
+        required: true,
+      },
+      {
+        type: 'date-picker',
+        name: 'dob',
+        label: 'Date of Birth',
+        placeholder: 'Select a date of birth',
+        required: true,
+      },
+      {
+        type: 'date-range-picker',
+        name: 'dateRange',
+        label: 'Date Range',
+        placeholder: 'Select a date range',
+        required: true,
+      },
+      {
+        type: 'select',
+        name: 'gender',
+        label: 'Gender',
+        required: true,
+        placeholder: 'Select a gender',
+        options: ['Male', 'Female', 'Other'],
+      },
+      {
+        type: 'textarea',
+        name: 'description',
+        label: 'Description',
+        required: true,
+        placeholder: 'Enter a description',
+      },
+      {
+        type: 'combobox',
+        name: 'language',
+        label: 'Language',
+        placeholder: 'Select a language',
+        required: true,
+        options: [
+          { label: 'English', value: 'en', key: 'en' },
+          { label: 'French', value: 'fr', key: 'fr' },
+          { label: 'German', value: 'de', key: 'de' },
+          { label: 'Spanish', value: 'es', key: 'es' },
+          { label: 'Portuguese', value: 'pt', key: 'pt' },
+          { label: 'Russian', value: 'ru', key: 'ru' },
+          { label: 'Japanese', value: 'ja', key: 'ja' },
+          { label: 'Korean', value: 'ko', key: 'ko' },
+          { label: 'Chinese', value: 'zh', key: 'zh' },
+        ],
+      },
+      {
+        type: 'multi-select',
+        name: 'skills',
+        label: 'Skills',
+        required: true,
+        placeholder: 'Select one or more skills',
+        options: [
+          { label: 'React', value: 'react', key: 'react' },
+          { label: 'Vue', value: 'vue', key: 'vue' },
+          { label: 'Angular', value: 'angular', key: 'angular' },
+          { label: 'Svelte', value: 'svelte', key: 'svelte' },
+          { label: 'Ember', value: 'ember', key: 'ember' },
+          { label: 'Next.js', value: 'nextjs', key: 'nextjs' },
+          { label: 'Nuxt.js', value: 'nuxtjs', key: 'nuxtjs' },
+          { label: 'Gatsby', value: 'gatsby', key: 'gatsby' },
+          { label: 'Sapper', value: 'sapper', key: 'sapper' },
+          { label: 'Blitz.js', value: 'blitzjs', key: 'blitzjs' },
+          { label: 'React Native', value: 'reactnative', key: 'reactnative' },
+          { label: 'Flutter', value: 'flutter', key: 'flutter' },
+          { label: 'Ionic', value: 'ionic', key: 'ionic' },
+          { label: 'Cordova', value: 'cordova', key: 'cordova' },
+          { label: 'Capacitor', value: 'capacitor', key: 'capacitor' },
+          { label: 'Electron', value: 'electron', key: 'electron' },
+          { label: 'NW.js', value: 'nwjs', key: 'nwjs' },
+          { label: 'React Native Web', value: 'reactnativeweb', key: 'reactnativeweb' },
+          { label: 'React Native Windows', value: 'reactnativewindows', key: 'reactnativewindows' },
+          { label: 'React Native macOS', value: 'reactnativemacos', key: 'reactnativemacos' },
+          { label: 'React Native Android', value: 'reactnativeandroid', key: 'reactnativeandroid' },
+          { label: 'React Native iOS', value: 'reactnativeios', key: 'reactnativeios' },
+        ],
+      },
+      {
+        type: 'checkbox-group',
+        name: 'courses',
+        required: true,
+        label: 'Courses',
+        checkboxInline: true,
+        options: [
+          {
+            label: 'React',
+            value: 'react',
+            key: 'react',
+          },
+          {
+            label: 'Vue',
+            value: 'vue',
+            key: 'vue',
+          },
+          {
+            label: 'Angular',
+            value: 'angular',
+            key: 'angular',
+          },
+          {
+            label: 'Svelte',
+            value: 'svelte',
+            key: 'svelte',
+          },
+          {
+            label: 'Ember',
+            value: 'ember',
+            key: 'ember',
+          },
+          {
+            label: 'Next.js',
+            value: 'nextjs',
+            key: 'nextjs',
+          },
+        ],
+      },
+      {
+        type: 'radio-group',
+        name: 'newsletter',
+        required: true,
+        label: 'Newsletter',
+        options: ['Yes', 'No'],
+        labelClassName: 'font-normal',
+        radioInline: true,
+      },
+
+      {
+        type: 'input',
+        name: 'displayName',
+        label: 'Display Name',
+        placeholder: 'Display name',
+        description: 'This is your public display name.',
+      },
+
+      {
+        type: 'checkbox',
+        name: 'terms',
+        required: true,
+        label: 'Accept terms and conditions',
+      },
+    ];
     const genderOptions = ['Male', 'Female', 'Other'] as const;
 
     const FormSchema = z.object({
@@ -326,7 +494,9 @@ export const Basic: Story = {
       });
     };
 
-    return <Form<FormType> {...args} form={form} fields={args.fields} inline={args.inline} onSubmit={onSubmitHandle} />;
+    return (
+      <Form<FormType> {...args} form={form} fields={formItemFields} inline={args.inline} onSubmit={onSubmitHandle} />
+    );
   },
   args: {
     fields: formItemFields,

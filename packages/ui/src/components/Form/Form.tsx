@@ -6,7 +6,16 @@ import { Slot } from '@radix-ui/react-slot';
 import { Controller, FormProvider as OriginalFormProvider, useFormContext } from 'react-hook-form';
 
 import type * as LabelPrimitive from '@radix-ui/react-label';
-import type { ControllerProps, FieldPath, FieldValues, Path, useForm } from 'react-hook-form';
+import type {
+  ControllerProps,
+  FieldPath,
+  FieldValues,
+  Path,
+  SubmitErrorHandler,
+  SubmitHandler,
+  useForm,
+  UseFormReset,
+} from 'react-hook-form';
 import type { ButtonProps } from '../Button';
 import type { FormItemField } from './types';
 
@@ -157,7 +166,7 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
 );
 FormMessage.displayName = 'FormMessage';
 
-interface FormComponentProps<TData extends FieldValues> {
+export interface FormComponentProps<TData extends FieldValues> {
   /**
    * The form object from react-hook-form
    */
@@ -169,19 +178,30 @@ interface FormComponentProps<TData extends FieldValues> {
   /**
    * The callback will fired when the form is submitted
    */
-  onSubmit?: Parameters<ReturnType<typeof useForm<TData>>['handleSubmit']>['0'];
+  onSubmit: SubmitHandler<TData>;
   /**
    * The callback will fired when the form is submitted with error
    */
-  onSubmitError?: Parameters<ReturnType<typeof useForm<TData>>['handleSubmit']>['1'];
+  onSubmitError?: SubmitErrorHandler<TData> | undefined;
   /**
    * The text to display on the submit button
    */
-  submitText?: string;
+  submitText?: React.ReactNode;
   /**
    * The submit button component
    */
-  submitButton?: React.ComponentType<{ loading: boolean }>;
+  SubmitButton?: React.ComponentType<{
+    /**
+     * Whether the form is submitting or not
+     */
+    isSubmitting?: boolean;
+    /**
+     * You have to call this function to submit the form, If you do that then the form will be submitted and onSubmit callback will be called if there is no error
+     * @param e Event
+     * @returns Promise<void>
+     */
+    onFormSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
+  }>;
   /**
    * The submit button variant
    */
@@ -195,13 +215,21 @@ interface FormComponentProps<TData extends FieldValues> {
    */
   submitClassName?: string;
   /**
+   * Whether the form is submitting or not
+   */
+  isSubmitting?: boolean;
+  /**
+   * The callback will fired when the form is reset
+   */
+  onReset?: () => void;
+  /**
    * The text to display on the reset button
    */
-  resetText?: string;
+  resetText?: React.ReactNode;
   /**
    * The reset button component
    */
-  resetButton?: React.ComponentType;
+  ResetButton?: React.ComponentType<{ onFormReset?: UseFormReset<TData> }>;
   /**
    * The reset button variant
    */
@@ -214,6 +242,10 @@ interface FormComponentProps<TData extends FieldValues> {
    * The class name for the reset button
    */
   resetClassName?: string;
+  /**
+   * Whether the form is resetting or not
+   */
+  isResetting?: boolean;
   /**
    * The class name for the form element
    */
@@ -255,12 +287,12 @@ const Form = <TData extends FieldValues>({
   fields,
   className,
   submitText = 'Submit',
-  submitButton: SubmitButton,
+  SubmitButton,
   submitButtonVariant = 'solid',
   submitButtonColor = 'primary',
   submitClassName,
   resetText = 'Reset',
-  resetButton: ResetButton,
+  ResetButton,
   resetButtonVariant = 'outline',
   resetButtonColor,
   resetClassName,
@@ -271,15 +303,19 @@ const Form = <TData extends FieldValues>({
   inline: formInline,
   formRef,
   id,
+  isSubmitting: isFormSubmitting,
+  isResetting,
+  onReset,
 }: FormComponentProps<TData>) => {
   const inlineTypes = ['checkbox'];
+  const isSubmitting = isFormSubmitting ?? form.formState.isSubmitting;
   return (
     <FormProvider {...form}>
       <form
         id={id}
         ref={formRef}
         noValidate={noValidate}
-        onSubmit={onSubmit ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
+        onSubmit={!hideSubmitButton ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
         className={cn('space-y-4', className)}
       >
         {fields.map(({ required, label, inline, formItemClassName, formLabelClassName, ...item }) => (
@@ -533,15 +569,17 @@ const Form = <TData extends FieldValues>({
         ))}
         <Box className={cn('flex gap-3 pt-2', actionClassName)}>
           {ResetButton ? (
-            <ResetButton />
+            <ResetButton onFormReset={form.reset} />
           ) : (
             !hideResetButton && (
               <Button
                 type="reset"
                 variant={resetButtonVariant}
                 color={resetButtonColor}
+                disabled={isResetting}
                 onClick={() => {
                   form.reset();
+                  onReset?.();
                 }}
                 className={resetClassName}
               >
@@ -550,17 +588,17 @@ const Form = <TData extends FieldValues>({
             )
           )}
           {SubmitButton ? (
-            <SubmitButton loading={form.formState.isSubmitting} />
+            <SubmitButton isSubmitting={isSubmitting} onFormSubmit={form.handleSubmit(onSubmit, onSubmitError)} />
           ) : (
             !hideSubmitButton && (
               <Button
                 type="submit"
                 variant={submitButtonVariant}
                 color={submitButtonColor}
-                disabled={form.formState.isSubmitting}
+                disabled={isSubmitting}
                 className={submitClassName}
               >
-                {form.formState.isSubmitting && <ArrowPathIcon className="size-4 animate-spin" />}
+                {isSubmitting && <ArrowPathIcon className="size-4 animate-spin" />}
                 {submitText}
               </Button>
             )
