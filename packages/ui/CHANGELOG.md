@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.4
+
+### Patch Changes
+
+- [`f3b3edd`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/f3b3edd5847f4c0f91e1dd635c535b850c5d1925) Thanks [@paalamugan](https://github.com/paalamugan)! - added chart export into components
+
 ## 1.3.3
 
 ### Patch Changes
