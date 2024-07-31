@@ -1,7 +1,7 @@
 import type { Preview, StoryFn } from '@storybook/react';
 
 import '../packages/ui/dist/index.css';
-import '../packages/ui/dist/tailwind.css';
+import '../packages/ui/src/tailwind.css';
 
 import { ThemeProvider } from '@paalan/react-providers/ThemeProvider';
 import { GLOBALS_UPDATED } from '@storybook/core-events';

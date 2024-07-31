@@ -6,7 +6,7 @@ export default defineConfig((options) => {
     splitting: false,
     entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}', '!src/**/*.d.ts'],
     format: ['esm', 'cjs'],
-    external: ['react', 'react-dom', 'react-router-dom', 'react-error-boundary', /@paalan\/react-(.*)/],
+    external: ['react', 'react-dom', 'react-router-dom', 'react-error-boundary', 'recharts', /@paalan\/react-(.*)/],
     target: 'esnext',
     outDir: 'dist',
     minify: false,
