@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.3
+
+### Patch Changes
+
+- [`a2f1326`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/a2f13260330e1783f4929abdd56872e17c99d3e6) Thanks [@paalamugan](https://github.com/paalamugan)! - added chart component
+
 ## 1.3.2
 
 ### Patch Changes
