@@ -93,6 +93,10 @@ export interface DialogProps extends React.ComponentPropsWithoutRef<typeof Dialo
    */
   triggerClassName?: string;
   /**
+   * The content of the dialog. (Optional)
+   */
+  content?: React.ReactNode;
+  /**
    * The content of the dialog.
    */
   contentClassName?: string;
@@ -116,9 +120,19 @@ export interface DialogProps extends React.ComponentPropsWithoutRef<typeof Dialo
   /**
    * The footer content of the dialog.
    */
-  footer?: React.ReactNode;
+  footer?: {
+    /**
+     * The content of the footer.
+     */
+    content: React.ReactNode;
+    /**
+     * The className of the footer content. (Optional)
+     */
+    className?: string;
+  };
 }
 const Dialog: React.FC<DialogProps> = ({
+  content,
   children,
   trigger,
   triggerClassName,
@@ -127,6 +141,7 @@ const Dialog: React.FC<DialogProps> = ({
   footer,
   ...props
 }) => {
+  const dialogContent = content || children;
   return (
     <DialogRoot {...props}>
       {trigger && (
@@ -141,8 +156,8 @@ const Dialog: React.FC<DialogProps> = ({
             {header.description && <DialogDescription>{header.description}</DialogDescription>}
           </DialogHeader>
         )}
-        {children}
-        {footer && <DialogFooter>{footer}</DialogFooter>}
+        {dialogContent}
+        {footer && <DialogFooter className={footer.className}>{footer.content}</DialogFooter>}
       </DialogContent>
     </DialogRoot>
   );

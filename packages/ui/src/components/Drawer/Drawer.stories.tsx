@@ -6,19 +6,19 @@ import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } 
 import { Input } from '../Input';
 import { Label } from '../Label';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogRoot,
-  DialogTitle,
-  DialogTrigger,
-} from './Dialog';
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from './Drawer';
 
-const meta: Meta<typeof Dialog> = {
-  title: 'Components/Dialog',
-  component: Dialog,
+const meta: Meta<typeof Drawer> = {
+  title: 'Components/Drawer',
+  component: Drawer,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -27,12 +27,12 @@ const meta: Meta<typeof Dialog> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof Dialog>;
+type Story = StoryObj<typeof Drawer>;
 
 export const Basic: Story = {
   render: () => (
-    <Dialog
-      trigger={<Button variant="outline">Open Dialog</Button>}
+    <Drawer
+      trigger={<Button variant="outline">Open Drawer</Button>}
       header={{
         title: 'Are you sure absolutely sure?',
         description:
@@ -41,9 +41,24 @@ export const Basic: Story = {
     />
   ),
 };
+
+export const DrawerWithCloseButton: Story = {
+  render: () => (
+    <Drawer
+      trigger={<Button variant="outline">Open Drawer</Button>}
+      header={{
+        title: 'Are you sure absolutely sure?',
+        description:
+          'This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
+      }}
+      drawerCloseButton={<Button variant="outline">Close</Button>}
+    />
+  ),
+};
+
 export const EditProfile: Story = {
   render: () => (
-    <Dialog
+    <Drawer
       trigger={<Button variant="outline">Edit Profile</Button>}
       contentClassName="sm:max-w-[425px]"
       header={{
@@ -66,39 +81,39 @@ export const EditProfile: Story = {
           <Input id="username" defaultValue="@paalamugan" className="col-span-3" />
         </Box>
       </Box>
-    </Dialog>
+    </Drawer>
   ),
   args: {},
 };
 
 export const ContextMenuNote: Story = {
   render: () => (
-    <DialogRoot>
+    <DrawerRoot>
       <ContextMenu>
         <ContextMenuTrigger>Right click</ContextMenuTrigger>
         <ContextMenuContent>
           <ContextMenuItem>Open</ContextMenuItem>
           <ContextMenuItem>Download</ContextMenuItem>
-          <DialogTrigger asChild>
+          <DrawerTrigger asChild>
             <ContextMenuItem>
               <Text as="span" fontSize="sm">
                 Delete
               </Text>
             </ContextMenuItem>
-          </DialogTrigger>
+          </DrawerTrigger>
         </ContextMenuContent>
       </ContextMenu>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Are you sure absolutely sure?</DialogTitle>
-          <DialogDescription>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Are you sure absolutely sure?</DrawerTitle>
+          <DrawerDescription>
             This action cannot be undone. Are you sure you want to permanently delete this file from our servers?
-          </DialogDescription>
-        </DialogHeader>
-        <DialogFooter>
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
           <Button type="submit">Confirm</Button>
-        </DialogFooter>
-      </DialogContent>
-    </DialogRoot>
+        </DrawerFooter>
+      </DrawerContent>
+    </DrawerRoot>
   ),
 };
