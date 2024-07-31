@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.8
+
+### Patch Changes
+
+- [`e4f2b0f`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/e4f2b0fbf06b8cdb7705ec4388b9a2ea037ddecb) Thanks [@paalamugan](https://github.com/paalamugan)! - Add Drawer and Breadcrumb components to UI package
+
 ## 1.3.7
 
 ### Patch Changes
