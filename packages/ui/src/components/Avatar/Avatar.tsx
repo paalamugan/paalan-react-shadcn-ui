@@ -35,7 +35,7 @@ const AvatarFallback = React.forwardRef<
 ));
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-interface AvatarProps extends Omit<React.ComponentPropsWithoutRef<typeof AvatarRoot>, 'children'> {
+export interface AvatarProps extends Omit<React.ComponentPropsWithoutRef<typeof AvatarRoot>, 'children'> {
   /**
    * The image source to use for the avatar.
    */
@@ -44,12 +44,24 @@ interface AvatarProps extends Omit<React.ComponentPropsWithoutRef<typeof AvatarR
    * The fallback content to use when the `src` is not available.
    */
   fallback?: React.ReactNode;
+  /**
+   * The alternate text to use for the avatar image.
+   */
+  alt?: string;
+  /**
+   * Props to pass to the `AvatarImage` component.
+   */
+  avatarImageProps?: React.ComponentPropsWithoutRef<typeof AvatarImage>;
+  /**
+   * Props to pass to the `AvatarFallback` component.
+   */
+  avatarFallbackProps?: React.ComponentPropsWithoutRef<typeof AvatarFallback>;
 }
 const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps>(
-  ({ src, fallback, ...props }, ref) => (
+  ({ src, fallback, alt, avatarImageProps, avatarFallbackProps, ...props }, ref) => (
     <AvatarRoot ref={ref} {...props}>
-      <AvatarImage src={src} />
-      {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
+      <AvatarImage src={src} alt={alt} {...avatarImageProps} />
+      {fallback && <AvatarFallback {...avatarFallbackProps}>{fallback}</AvatarFallback>}
     </AvatarRoot>
   ),
 );
