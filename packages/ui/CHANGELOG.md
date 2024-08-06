@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.9
+
+### Patch Changes
+
+- [`1554985`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/1554985a722aec6ed7160cb342b3b8040f9715d4) Thanks [@paalamugan](https://github.com/paalamugan)! - update Avatar component props
+
 ## 1.3.8
 
 ### Patch Changes
