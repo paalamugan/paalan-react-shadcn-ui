@@ -287,7 +287,7 @@ const Select = React.forwardRef<React.ElementRef<typeof SelectTrigger>, SelectPr
                           value={option.value}
                           disabled={option.disabled}
                         >
-                          {option.labelContent || label}
+                          {option.labelContent || option.label}
                         </SelectItem>
                       ))}
                     </SelectGroup>
