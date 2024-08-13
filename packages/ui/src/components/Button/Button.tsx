@@ -117,7 +117,8 @@ const Button: ComponentWithAs<'button', ButtonProps> = forwardRef<ButtonProps, '
     ref,
   ) => {
     const Comp = asChild ? Slot : Component;
-    const outlineClassName = variant === 'outline' && !color ? buttonVariants({ variant: 'outline' }) : '';
+    const outlineClassName =
+      variant === 'outline' && !color ? buttonVariants({ variant: 'outline', size, rounded }) : '';
     return (
       <Box
         {...props}
