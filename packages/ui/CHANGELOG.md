@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.10
+
+### Patch Changes
+
+- [`2fbd5f2`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/2fbd5f2e52dc2ab629896547a9be26b6c553885c) Thanks [@paalamugan](https://github.com/paalamugan)! - chore(ui): update Button component to include size and rounded props for outline variant
+
 ## 1.3.9
 
 ### Patch Changes
