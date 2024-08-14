@@ -1,5 +1,11 @@
 # @paalan/react-config
 
+## 1.3.1
+
+### Patch Changes
+
+- [`7da83b7`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/7da83b703eb48a208cf0c024e4255613e5162de0) Thanks [@paalamugan](https://github.com/paalamugan)! - feat(ui): add Stepper component
+
 ## 1.3.0
 
 ### Minor Changes
