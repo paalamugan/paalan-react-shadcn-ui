@@ -14,11 +14,15 @@ import { NextAndPrevPagination, PaginationSizeOption } from './components';
 
 export const DEFAULT_PAGE_SIZE_OPTIONS = [10, 20, 30, 40, 50];
 
-export interface PaginationProps extends BoxProps, Omit<UsePaginationParams, 'onChange'> {
+export interface PaginationProps extends BoxProps, Omit<UsePaginationParams, 'onChange' | 'page'> {
   /**
    * The total number of items.
    */
   total: number;
+  /**
+   * The current page number.
+   */
+  currentPage?: number;
   /**
    * The total number of items per page.
    * @default 10
@@ -62,6 +66,11 @@ export interface PaginationProps extends BoxProps, Omit<UsePaginationParams, 'on
    * Additional class names to apply to the pagination.
    */
   className?: string;
+  /**
+   * Show pagination only if total is greater than page size
+   * @default true
+   */
+  showOnlyIfTotalGreaterThanPageSize?: boolean;
 }
 
 /**
@@ -73,7 +82,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       total,
       siblings,
       boundaries,
-      page,
+      currentPage,
       initialPage,
       onPageChange,
       showTotalResults = false,
@@ -84,6 +93,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       className,
       pageSize: selectedPageSize = DEFAULT_PAGE_SIZE_OPTIONS[0],
       onPageSizeChange,
+      showOnlyIfTotalGreaterThanPageSize = true,
       ...props
     },
     ref,
@@ -99,7 +109,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
     const pagination = usePagination({
       siblings,
       boundaries,
-      page,
+      page: currentPage,
       initialPage,
       total: totalPages,
       onChange: onPageChange,
@@ -112,6 +122,8 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
     const isLastPage = pagination.active === totalPages;
     const toCount =
       isLastPage && currentPageCount !== 0 ? fromCount + currentPageCount - 1 : pagination.active * pageSize;
+
+    if (showOnlyIfTotalGreaterThanPageSize && total <= pageSize) return null;
 
     return (
       <Box
@@ -162,9 +174,9 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
               <span className="sr-only">Previous</span>
               <ChevronLeftIcon className="size-5" aria-hidden="true" />
             </IconButton>
-            {pagination.range.map((number) => (
+            {pagination.range.map((number, index) => (
               <IconButton
-                key={number}
+                key={`${number}-${index}`}
                 outline
                 rounded="none"
                 onClick={() => {

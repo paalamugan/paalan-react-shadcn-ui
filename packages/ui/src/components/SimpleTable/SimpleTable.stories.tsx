@@ -19,7 +19,7 @@ export const Basic: Story = {
         title: 'Invoice',
         accessorKey: 'invoice',
         className: 'w-[100px]',
-        rowClassName: 'font-medium',
+        rowCellClassName: 'font-medium',
       },
       {
         title: 'Status',
@@ -33,7 +33,7 @@ export const Basic: Story = {
         title: 'Amount',
         accessorKey: 'totalAmount',
         className: 'text-right',
-        rowClassName: 'text-right',
+        rowCellClassName: 'text-right',
       },
     ],
     rows: [
@@ -88,5 +88,25 @@ export const WithCaption: Story = {
   args: {
     ...Basic.args,
     caption: 'A list of your recent invoices.',
+  },
+};
+
+export const WithPagination: Story = {
+  args: {
+    ...Basic.args,
+    enablePagination: true,
+    paginationProps: {
+      currentPage: 1,
+      pageSize: 3,
+      onPageChange: () => {},
+      onPageSizeChange: () => {},
+      showOnlyIfTotalGreaterThanPageSize: false,
+    },
+  },
+};
+
+export const WithNoData: Story = {
+  args: {
+    ...Basic.args,
   },
 };

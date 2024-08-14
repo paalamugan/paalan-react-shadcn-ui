@@ -77,7 +77,7 @@ export const WithCustomTotal: Story = {
 export const WithCustomPage: Story = {
   args: {
     ...Default.args,
-    page: 5,
+    currentPage: 5,
   },
 };
 

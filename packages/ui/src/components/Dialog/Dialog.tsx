@@ -153,7 +153,7 @@ const Dialog: React.FC<DialogProps> = ({
         {header && (
           <DialogHeader className={header.className}>
             {header.title && <DialogTitle>{header.title}</DialogTitle>}
-            {header.description && <DialogDescription>{header.description}</DialogDescription>}
+            <DialogDescription>{header.description}</DialogDescription>
           </DialogHeader>
         )}
         {dialogContent}

@@ -304,7 +304,7 @@ const Select = React.forwardRef<React.ElementRef<typeof SelectTrigger>, SelectPr
   },
 );
 
-Select.displayName = SelectRoot.displayName || 'Select';
+Select.displayName = 'Select';
 
 export {
   Select,

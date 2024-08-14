@@ -8,6 +8,6 @@ import { Box } from '../../base';
 export interface SkeletonProps extends Omit<HTMLTailwindStyledComponentProps<'div'>, 'as' | 'children'> {}
 
 export const Skeleton: FC<SkeletonProps> = ({ className, ...props }) => {
-  return <Box className={cn('animate-pulse rounded-md bg-gray-200', className)} {...props} />;
+  return <Box className={cn('animate-pulse rounded-md bg-gray-200 dark:bg-gray-500', className)} {...props} />;
 };
 Skeleton.displayName = 'Skeleton';

@@ -58,3 +58,4 @@ export * from './Tooltip';
 export * from './Chart';
 export * from './Breadcrumb';
 export * from './Drawer';
+export * from './Stepper';

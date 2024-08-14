@@ -97,16 +97,16 @@ export interface BreadcrumbProps extends Omit<React.ComponentPropsWithoutRef<typ
   /**
    * The items to display in the breadcrumb.
    */
-  items: { label: string; href?: string }[];
+  items: { label: React.ReactNode; href?: string }[];
   /**
-   * The link component to use for the breadcrumb items
-   * @default 'a'
+   * The link component to use for the breadcrumb items.
    * @example <Breadcrumb items={items} Link={Link} />
    * @example <Breadcrumb items={items} Link={NextLink} />
    */
-  Link: React.ComponentType<React.ComponentPropsWithoutRef<'a'>>;
+  Link: React.ComponentType<{ href: string; children: React.ReactNode; className?: string }>;
   /**
    * The number of items to display in the breadcrumb.
+   * @default 3
    */
   itemsToDisplay?: number;
   /**
@@ -119,9 +119,43 @@ export interface BreadcrumbProps extends Omit<React.ComponentPropsWithoutRef<typ
    * @returns  void
    */
   onOpenChange?: (open: boolean) => void;
+  /**
+   * The props for the breadcrumb list.
+   */
+  breadcrumbListProps?: Omit<React.ComponentPropsWithoutRef<typeof BreadcrumbList>, 'children'>;
+  /**
+   * The props for the breadcrumb item.
+   */
+  breadcrumbItemProps?: Omit<React.ComponentPropsWithoutRef<typeof BreadcrumbItem>, 'children'>;
+  /**
+   *  The props for the breadcrumb separator.
+   */
+  breadcrumbSeparatorProps?: React.ComponentPropsWithoutRef<typeof BreadcrumbSeparator>;
+  /**
+   * The props for the breadcrumb ellipsis.
+   */
+  breadcrumbEllipsisProps?: React.ComponentPropsWithoutRef<typeof BreadcrumbEllipsis>;
 }
+/**
+ * Breadcrumbs are a navigational aid that helps users keep track of their location within a website or application.
+ */
 const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
-  ({ items, Link, itemsToDisplay = 3, open, onOpenChange, ...props }, ref) => {
+  (
+    {
+      items,
+      Link,
+      itemsToDisplay = 3,
+      open,
+      onOpenChange,
+      breadcrumbListProps,
+      breadcrumbSeparatorProps,
+      breadcrumbItemProps,
+      breadcrumbEllipsisProps,
+
+      ...props
+    },
+    ref,
+  ) => {
     const isDesktop = useMediaQuery('(min-width: 768px)');
 
     const [localOpen, setLocalOpen] = React.useState(open ?? false);
@@ -137,23 +171,36 @@ const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
       onOpenChange?.(open);
     };
 
+    const displayCondition = itemsToDisplay > 1 && items.length > itemsToDisplay;
+    const slicedItems = displayCondition ? items.slice(-itemsToDisplay + 1) : items.slice(1);
     return (
       <BreadcrumbRoot ref={ref} {...props}>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={items[0].href}>{items[0].label}</BreadcrumbLink>
+        <BreadcrumbList {...breadcrumbListProps}>
+          <BreadcrumbItem {...breadcrumbItemProps}>
+            {items[0]?.href ? (
+              <>
+                <BreadcrumbLink asChild className="max-w-20 truncate md:max-w-none">
+                  <Link href={items[0]?.href}>{items[0]?.label}</Link>
+                </BreadcrumbLink>
+              </>
+            ) : (
+              <BreadcrumbPage className="max-w-20 truncate md:max-w-none">{items[0]?.label || ''}</BreadcrumbPage>
+            )}
           </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          {items.length > itemsToDisplay ? (
+          <BreadcrumbSeparator {...breadcrumbSeparatorProps} />
+          {displayCondition ? (
             <>
-              <BreadcrumbItem>
+              <BreadcrumbItem {...breadcrumbItemProps}>
                 {isDesktop ? (
                   <DropdownMenuRoot open={localOpen} onOpenChange={localOnOpenChange}>
                     <DropdownMenuTrigger className="flex items-center gap-1" aria-label="Toggle menu">
-                      <BreadcrumbEllipsis className="size-4" />
+                      <BreadcrumbEllipsis
+                        {...breadcrumbEllipsisProps}
+                        className={cn('size-4', breadcrumbEllipsisProps?.className)}
+                      />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start">
-                      {items.slice(1, -2).map((item, index) => (
+                      {items.slice(1, -itemsToDisplay + 1).map((item, index) => (
                         <DropdownMenuItem key={index}>
                           <Link href={item.href ? item.href : '#'}>{item.label}</Link>
                         </DropdownMenuItem>
@@ -163,7 +210,10 @@ const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
                 ) : (
                   <DrawerRoot open={localOpen} onOpenChange={setLocalOpen}>
                     <DrawerTrigger aria-label="Toggle Menu">
-                      <BreadcrumbEllipsis className="size-4" />
+                      <BreadcrumbEllipsis
+                        {...breadcrumbEllipsisProps}
+                        className={cn('size-4', breadcrumbEllipsisProps?.className)}
+                      />
                     </DrawerTrigger>
                     <DrawerContent>
                       <DrawerHeader className="text-left">
@@ -171,7 +221,7 @@ const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
                         <DrawerDescription>Select a page to navigate to.</DrawerDescription>
                       </DrawerHeader>
                       <div className="grid gap-1 px-4">
-                        {items.slice(1, -2).map((item, index) => (
+                        {items.slice(1, -itemsToDisplay + 1).map((item, index) => (
                           <Link key={index} href={item.href ? item.href : '#'} className="py-1 text-sm">
                             {item.label}
                           </Link>
@@ -186,22 +236,24 @@ const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
                   </DrawerRoot>
                 )}
               </BreadcrumbItem>
-              <BreadcrumbSeparator />
+              <BreadcrumbSeparator {...breadcrumbSeparatorProps} />
             </>
           ) : null}
-          {items.slice(-itemsToDisplay + 1).map((item, index) => (
-            <BreadcrumbItem key={index}>
-              {item.href ? (
-                <>
-                  <BreadcrumbLink asChild className="max-w-20 truncate md:max-w-none">
-                    <Link href={item.href}>{item.label}</Link>
-                  </BreadcrumbLink>
-                  <BreadcrumbSeparator />
-                </>
-              ) : (
-                <BreadcrumbPage className="max-w-20 truncate md:max-w-none">{item.label}</BreadcrumbPage>
-              )}
-            </BreadcrumbItem>
+          {slicedItems.map((item, index) => (
+            <React.Fragment key={index}>
+              <BreadcrumbItem {...breadcrumbItemProps}>
+                {item.href ? (
+                  <>
+                    <BreadcrumbLink asChild className="max-w-20 truncate md:max-w-none">
+                      <Link href={item.href}>{item.label}</Link>
+                    </BreadcrumbLink>
+                  </>
+                ) : (
+                  <BreadcrumbPage className="max-w-20 truncate md:max-w-none">{item.label}</BreadcrumbPage>
+                )}
+              </BreadcrumbItem>
+              {index !== slicedItems.length - 1 && <BreadcrumbSeparator {...breadcrumbSeparatorProps} />}
+            </React.Fragment>
           ))}
         </BreadcrumbList>
       </BreadcrumbRoot>

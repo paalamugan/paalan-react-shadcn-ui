@@ -36,74 +36,71 @@ export const Basic: Story = {
   args: {},
 };
 
-const formSchema = z.object({
-  marketing_emails: z.boolean().default(false).optional(),
-  security_emails: z.boolean(),
-});
-
-const SwitchFormExample = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      security_emails: true,
-    },
-  });
-
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    toast('You submitted the following values:', {
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
-  };
-
-  return (
-    <FormRoot {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
-        <div>
-          <h3 className="mb-4 text-lg font-medium">Email Notifications</h3>
-          <div className="space-y-4">
-            <FormField
-              control={form.control}
-              name="marketing_emails"
-              render={({ field }) => (
-                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-                  <div className="space-y-0.5">
-                    <FormLabel>Marketing emails</FormLabel>
-                    <FormDescription>Receive emails about new products, features, and more.</FormDescription>
-                  </div>
-                  <FormControl>
-                    <Switch checked={field.value} onCheckedChange={field.onChange} />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="security_emails"
-              render={({ field }) => (
-                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-                  <div className="space-y-0.5">
-                    <FormLabel>Security emails</FormLabel>
-                    <FormDescription>Receive emails about your account security.</FormDescription>
-                  </div>
-                  <FormControl>
-                    <Switch checked={field.value} onCheckedChange={field.onChange} disabled aria-readonly />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
-        </div>
-        <Button type="submit">Submit</Button>
-      </form>
-    </FormRoot>
-  );
-};
-
 export const SwitchForm: Story = {
-  render: (args) => <SwitchFormExample {...args} />,
+  render: (_args) => {
+    const formSchema = z.object({
+      marketing_emails: z.boolean().default(false).optional(),
+      security_emails: z.boolean(),
+    });
+    const form = useForm<z.infer<typeof formSchema>>({
+      resolver: zodResolver(formSchema),
+      defaultValues: {
+        security_emails: true,
+      },
+    });
+
+    const onSubmit = (data: z.infer<typeof formSchema>) => {
+      toast('You submitted the following values:', {
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          </pre>
+        ),
+      });
+    };
+
+    return (
+      <FormRoot {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+          <div>
+            <h3 className="mb-4 text-lg font-medium">Email Notifications</h3>
+            <div className="space-y-4">
+              <FormField
+                control={form.control}
+                name="marketing_emails"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                    <div className="space-y-0.5">
+                      <FormLabel>Marketing emails</FormLabel>
+                      <FormDescription>Receive emails about new products, features, and more.</FormDescription>
+                    </div>
+                    <FormControl>
+                      <Switch checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="security_emails"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                    <div className="space-y-0.5">
+                      <FormLabel>Security emails</FormLabel>
+                      <FormDescription>Receive emails about your account security.</FormDescription>
+                    </div>
+                    <FormControl>
+                      <Switch checked={field.value} onCheckedChange={field.onChange} disabled aria-readonly />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
+          <Button type="submit">Submit</Button>
+        </form>
+      </FormRoot>
+    );
+  },
   args: {},
 };

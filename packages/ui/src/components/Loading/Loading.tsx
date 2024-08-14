@@ -23,7 +23,7 @@ type LoadingProps = React.ComponentPropsWithoutRef<typeof LoadingIcon> & {
 
 export const Loading: React.FC<LoadingProps> = ({ className, spin = true, content, parentClassName, ...props }) => {
   return (
-    <Flex className={cn('inline-flex items-center gap-2 text-gray-800', parentClassName)}>
+    <Flex className={cn('inline-flex items-center gap-2 text-gray-800 dark:text-gray-200', parentClassName)}>
       <LoadingIcon
         {...props}
         className={cn(
