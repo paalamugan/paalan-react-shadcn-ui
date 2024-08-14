@@ -1,6 +1,6 @@
-# Paalan React UI Components
+# Paalan Shadcn React UI Components
 
-This package contains the components for the Paalan React UI.
+This package contains the components for the Paalan shadcn React UI Components. We customize the components from the Shadcn UI package and add some additional components and styles to the package.
 
 ## Installation
 
@@ -47,6 +47,10 @@ import './globals.css'; // Import your global styles
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  @apply border-border;
+}
 ```
 
 ### ThemeProvider - For React Framework
