@@ -142,11 +142,11 @@ export const App = () => {
 ```jsx
 import { Button } from '@paalan/react-ui';
 
-<Button variant="primary" size="md" disabled>
+<Button variant="solid" color="primary" size="md" disabled>
   Click me
 </Button>
 
-<Button variant="secondary" size="lg">
+<Button variant="solid" color="secondary" size="lg">
   Click me
 </Button>
 ```
