@@ -1,6 +1,6 @@
 # Paalan React UI
 
-Reusable react ui components with build on top of Tailwind CSS and Shadcn UI.
+Reusable react ui components with build on top of Tailwind CSS and Shadcn UI. In this package, We customize the Tailwind CSS and Shadcn UI to make it more user-friendly and easy to use.
 
 ## Prerequisites
 

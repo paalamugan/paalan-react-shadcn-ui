@@ -2,7 +2,7 @@
   "name": "paalan-react-shadcn-ui",
   "private": true,
   "version": "1.0.0",
-  "description": "Reusable react ui components with build on top of Tailwind CSS and Shadcn UI",
+  "description": "Reusable react ui components with build on top of Tailwind CSS and Shadcn UI. In this package, We customize the Tailwind CSS and Shadcn UI to make it more user-friendly and easy to use.",
   "type": "module",
   "author": {
     "name": "Paalamugan"
