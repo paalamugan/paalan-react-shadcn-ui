@@ -187,7 +187,7 @@ const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
               <BreadcrumbPage className="max-w-20 truncate md:max-w-none">{items[0]?.label || ''}</BreadcrumbPage>
             )}
           </BreadcrumbItem>
-          <BreadcrumbSeparator {...breadcrumbSeparatorProps} />
+          {items.length > 1 && <BreadcrumbSeparator {...breadcrumbSeparatorProps} />}
           {displayCondition ? (
             <>
               <BreadcrumbItem {...breadcrumbItemProps}>
