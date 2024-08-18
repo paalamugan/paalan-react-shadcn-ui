@@ -1,5 +1,11 @@
 # @paalan/react-config
 
+## 1.3.3
+
+### Patch Changes
+
+- [`01d2049`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/01d20498cc1cc354b3fc44a169ef286fd94d50a3) Thanks [@paalamugan](https://github.com/paalamugan)! - add link color
+
 ## 1.3.2
 
 ### Patch Changes
