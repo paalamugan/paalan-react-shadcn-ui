@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.13
+
+### Patch Changes
+
+- [`0cdcdf4`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/0cdcdf421b2eac8ecc2b04913b730ffe26fad972) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: update Breadcrumb component to conditionally render BreadcrumbSeparator
+
 ## 1.3.12
 
 ### Patch Changes
