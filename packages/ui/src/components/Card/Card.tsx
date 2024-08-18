@@ -55,10 +55,27 @@ const CardFooter: ComponentWithAs<'div', OmitColorFromHTMLAttributes> = forwardR
 );
 CardFooter.displayName = 'CardFooter';
 
-const isCardHeader = (
-  header: unknown,
-): header is { title: React.ReactNode; description?: React.ReactNode; className?: string } => {
+const isCardHeader = (header: unknown): header is CardCustomHeaderProps => {
   return !!header && typeof header === 'object' && 'title' in header;
+};
+
+export type CardCustomHeaderProps = {
+  /**
+   * Optional title for the card header
+   */
+  title: React.ReactNode;
+  /**
+   * Optional class name for the card header title
+   */
+  titleClassName?: string;
+  /**
+   * Optional description for the card header
+   */
+  description?: React.ReactNode;
+  /**
+   * Optional class name for the card header description
+   */
+  descriptionClassName?: string;
 };
 
 export type CardProps = React.ComponentPropsWithoutRef<typeof CardRoot> & {
@@ -69,22 +86,7 @@ export type CardProps = React.ComponentPropsWithoutRef<typeof CardRoot> & {
   /**
    * Optional header for the card
    */
-  header?:
-    | {
-        /**
-         * Optional title for the card header
-         */
-        title: React.ReactNode;
-        /**
-         * Optional description for the card header
-         */
-        description?: React.ReactNode;
-        /**
-         * Optional class name for the card header title
-         */
-        className?: string;
-      }
-    | React.ReactNode;
+  header?: CardCustomHeaderProps | React.ReactNode;
   /**
    * Optional class name for the card header
    */
@@ -111,8 +113,10 @@ const Card: ComponentWithAs<'div', CardProps> = forwardRef<CardProps, 'div'>(
           <CardHeader className={headerClassName}>
             {isCardHeader(header) ? (
               <>
-                {header.title && <CardTitle className={header.className}>{header.title}</CardTitle>}
-                {header.description && <CardDescription>{header.description}</CardDescription>}
+                {header.title && <CardTitle className={header.titleClassName}>{header.title}</CardTitle>}
+                {header.description && (
+                  <CardDescription className={header.descriptionClassName}>{header.description}</CardDescription>
+                )}
               </>
             ) : (
               header
