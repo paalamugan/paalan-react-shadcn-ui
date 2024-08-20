@@ -57,7 +57,7 @@ const HorizontalStep = React.forwardRef<HTMLDivElement, StepSharedProps>((props,
         '[&:not(:last-child)]:after:transition-all [&:not(:last-child)]:after:duration-200',
         "[&:not(:last-child)]:after:h-[2px] [&:not(:last-child)]:after:bg-border [&:not(:last-child)]:after:content-['']",
         'data-[completed=true]:[&:not(:last-child)]:after:bg-primary',
-        'data-[invalid=true]:[&:not(:last-child)]:after:bg-destructive',
+        'data-[invalid=true]:[&:not(:last-child)]:after:bg-danger',
         variant === 'circle-alt' &&
           'flex-1 flex-col justify-start [&:not(:last-child)]:after:relative [&:not(:last-child)]:after:end-[50%] [&:not(:last-child)]:after:start-[50%] [&:not(:last-child)]:after:top-[calc(var(--step-icon-size)/2)] [&:not(:last-child)]:after:order-[-1] [&:not(:last-child)]:after:w-[calc((100%-var(--step-icon-size))-(var(--step-gap)))]',
         variant === 'circle' &&

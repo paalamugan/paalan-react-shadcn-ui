@@ -32,6 +32,7 @@ const StepButtonContainer = ({
     <Button
       variant="ghost"
       type="button"
+      color="gray"
       tabIndex={currentStepClickable ? 0 : -1}
       className={cn(
         'stepper__step-button-container',
@@ -41,7 +42,7 @@ const StepButtonContainer = ({
         'data-[clickable=true]:pointer-events-auto',
         'data-[active=true]:border-primary data-[active=true]:bg-primary data-[active=true]:text-primary-foreground',
         'data-[current=true]:border-primary data-[current=true]:bg-secondary',
-        'data-[invalid=true]:bg-destructive data-[invalid=true]:border-destructive data-[invalid=true]:text-destructive-foreground',
+        'data-[invalid=true]:border-danger data-[invalid=true]:bg-danger data-[invalid=true]:text-danger-foreground',
         styles?.['step-button-container'],
       )}
       aria-current={isCurrentStep ? 'step' : undefined}

@@ -9,6 +9,13 @@ import { Step } from './step';
 import { useMediaQuery } from './use-media-query';
 import { useStepper } from './use-stepper';
 
+const TimelineContainer: React.FC<
+  React.PropsWithChildren<{
+    className?: string;
+  }>
+> = ({ children, className }) => {
+  return <div className={cn('flex w-full flex-row gap-10', className)}>{children}</div>;
+};
 const VARIABLE_SIZES = {
   sm: '36px',
   md: '40px',
@@ -34,6 +41,9 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>((props, ref: Reac
     styles,
     variables,
     scrollTracking = false,
+    timeline,
+    timelineContainerClassName,
+    timelineContentClassName,
     ...rest
   } = props;
 
@@ -62,7 +72,8 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>((props, ref: Reac
   const orientation = isMobile && responsive ? 'vertical' : orientationProp;
 
   const isVertical = orientation === 'vertical';
-
+  const isVerticalTimeline = isVertical && (isMobile ? false : (timeline ?? false));
+  const Container = isVerticalTimeline ? TimelineContainer : React.Fragment;
   return (
     <StepperProvider
       value={{
@@ -77,6 +88,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>((props, ref: Reac
         clickable,
         stepCount,
         isVertical,
+        isVerticalTimeline,
         variant: variant || 'circle',
         expandVerticalSteps,
         steps,
@@ -84,29 +96,38 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>((props, ref: Reac
         styles,
       }}
     >
-      <div
-        ref={ref}
-        className={cn(
-          'stepper__main-container',
-          'flex w-full flex-wrap',
-          stepCount === 1 ? 'justify-end' : 'justify-between',
-          orientation === 'vertical' ? 'flex-col' : 'flex-row',
-          variant === 'line' && orientation === 'horizontal' && 'gap-4',
-          className,
-          styles?.['main-container'],
+      <Container className={timelineContainerClassName}>
+        <div
+          ref={ref}
+          className={cn(
+            'stepper__main-container',
+            'flex w-full flex-wrap',
+            stepCount === 1 ? 'justify-end' : 'justify-between',
+            orientation === 'vertical' || isVerticalTimeline ? 'flex-col' : 'flex-row',
+            variant === 'line' && orientation === 'horizontal' && 'gap-4',
+            isVerticalTimeline && 'w-auto max-w-48 justify-start',
+            className,
+            styles?.['main-container'],
+          )}
+          style={
+            {
+              '--step-icon-size': variables?.['--step-icon-size'] || `${VARIABLE_SIZES[size || 'md']}`,
+              '--step-gap': variables?.['--step-gap'] || isVerticalTimeline ? '0px' : '8px',
+            } as React.CSSProperties
+          }
+          {...rest}
+        >
+          <VerticalContent>{items}</VerticalContent>
+        </div>
+        {orientation === 'horizontal' && <HorizontalContent>{items}</HorizontalContent>}
+        {isVerticalTimeline && (
+          <div className={cn('flex flex-grow flex-col gap-2', timelineContentClassName)}>
+            <HorizontalContent>{items}</HorizontalContent>
+            {footer}
+          </div>
         )}
-        style={
-          {
-            '--step-icon-size': variables?.['--step-icon-size'] || `${VARIABLE_SIZES[size || 'md']}`,
-            '--step-gap': variables?.['--step-gap'] || '8px',
-          } as React.CSSProperties
-        }
-        {...rest}
-      >
-        <VerticalContent>{items}</VerticalContent>
-      </div>
-      {orientation === 'horizontal' && <HorizontalContent>{items}</HorizontalContent>}
-      {footer}
+        {!isVerticalTimeline && footer}
+      </Container>
     </StepperProvider>
   );
 });

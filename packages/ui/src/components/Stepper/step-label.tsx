@@ -37,7 +37,7 @@ const descriptionVariants = cva('', {
 });
 
 const StepLabel = ({ isCurrentStep, opacity, label, description }: StepLabelProps) => {
-  const { variant, styles, size, orientation } = useStepper();
+  const { variant, styles, size, orientation, isVerticalTimeline } = useStepper();
   const shouldRender = !!label || !!description;
 
   return shouldRender ? (
@@ -57,13 +57,23 @@ const StepLabel = ({ isCurrentStep, opacity, label, description }: StepLabelProp
       }}
     >
       {!!label && (
-        <span className={cn('stepper__step-label', labelVariants({ size }), styles?.['step-label'])}>{label}</span>
+        <span
+          className={cn(
+            'stepper__step-label',
+            isVerticalTimeline && 'break-all',
+            labelVariants({ size }),
+            styles?.['step-label'],
+          )}
+        >
+          {label}
+        </span>
       )}
       {!!description && (
         <span
           className={cn(
             'stepper__step-description',
             'text-muted-foreground',
+            isVerticalTimeline && 'break-all',
             descriptionVariants({ size }),
             styles?.['step-description'],
           )}

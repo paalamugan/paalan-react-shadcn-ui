@@ -7,6 +7,7 @@ interface StepperContextValue extends StepperProps {
   isError?: boolean;
   isLoading?: boolean;
   isVertical?: boolean;
+  isVerticalTimeline?: boolean;
   stepCount?: number;
   expandVerticalSteps?: boolean;
   activeStep: number;

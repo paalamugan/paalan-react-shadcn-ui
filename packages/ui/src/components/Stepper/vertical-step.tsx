@@ -71,6 +71,7 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>((props,
     setStep,
     isLastStep: isLastStepCurrentStep,
     previousActiveStep,
+    isVerticalTimeline,
   } = useStepper();
 
   const opacity = hasVisited ? 1 : 0.8;
@@ -118,6 +119,7 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>((props,
       ref={ref}
       className={cn(
         'stepper__vertical-step',
+        isVerticalTimeline && isCurrentStep && 'flex-grow',
         verticalStepVariants({
           variant: variant?.includes('circle') ? 'circle' : 'line',
         }),
@@ -136,7 +138,8 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>((props,
         data-active={active}
         className={cn(
           'stepper__vertical-step-container',
-          'flex items-center',
+          'flex',
+          isVerticalTimeline ? 'items-start' : 'items-center',
           variant === 'line' && 'border-s-[3px] py-2 ps-3 data-[active=true]:border-primary',
           styles?.['vertical-step-container'],
         )}
@@ -160,13 +163,13 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>((props,
       <div
         className={cn(
           'stepper__vertical-step-content',
-          !isLastStep && 'min-h-4',
+          !isLastStep && (isVerticalTimeline ? 'min-h-10' : 'min-h-4'),
           variant !== 'line' && 'ps-[--step-icon-size]',
           variant === 'line' && orientation === 'vertical' && 'min-h-0',
           styles?.['vertical-step-content'],
         )}
       >
-        {renderChildren()}
+        {!isVerticalTimeline && renderChildren()}
       </div>
     </div>
   );

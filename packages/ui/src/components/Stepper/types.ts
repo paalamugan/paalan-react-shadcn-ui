@@ -10,6 +10,21 @@ type StepItem = {
   optional?: boolean;
 };
 
+interface TimelineStepProps {
+  /**
+   * Whether to display the steps as a timeline
+   */
+  timeline?: boolean;
+  /**
+   * Class name for the timeline container
+   */
+  timelineContainerClassName?: string;
+  /**
+   * Class name for the timeline content
+   */
+  timelineContentClassName?: string;
+}
+
 interface StepOptions {
   orientation?: 'vertical' | 'horizontal';
   state?: 'loading' | 'error';
@@ -50,7 +65,7 @@ interface StepOptions {
   scrollTracking?: boolean;
 }
 
-interface StepperProps extends StepOptions {
+interface StepperProps extends StepOptions, TimelineStepProps {
   children?: React.ReactNode;
   className?: string;
   initialStep: number;
