@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.3.15
+
+### Patch Changes
+
+- [`d796957`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/d796957fdf5dd106f3ee109db8a5e38b52f9d392) Thanks [@paalamugan](https://github.com/paalamugan)! - chore update stepper component
+
 ## 1.3.14
 
 ### Patch Changes
