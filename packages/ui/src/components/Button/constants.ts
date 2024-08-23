@@ -59,7 +59,7 @@ export const BUTTON_COLOR_VARIANT_MAPPING: Record<ButtonVariant, Record<AllColor
     warning: 'bg-warning hover:bg-warning/90 focus-visible:ring-warning text-warning-foreground',
   },
   surface: {
-    gray: 'bg-transparent text-gray-600 hover:bg-gray-50 focus:ring-gray-200 focus-visible:ring-gray-500 border border-gray-300',
+    gray: 'bg-transparent text-gray-600 hover:bg-gray-50 focus:ring-gray-200 focus-visible:ring-gray-500 border border-current',
     red: 'bg-transparent text-red-600 hover:bg-red-50 focus:ring-red-200 focus-visible:ring-red-500 border border-current',
     orange:
       'bg-transparent text-orange-600 hover:bg-orange-50 focus:ring-orange-200 focus-visible:ring-orange-500 border border-current',
@@ -101,46 +101,46 @@ export const BUTTON_COLOR_VARIANT_MAPPING: Record<ButtonVariant, Record<AllColor
       'bg-transparent text-warning hover:bg-warning/10 focus:ring-warning focus-visible:ring-warning border border-current',
   },
   outline: {
-    gray: 'bg-transparent text-gray-600 hover:bg-gray-600 hover:text-gray-50 focus-visible:ring-gray-500 border border-gray-300',
-    red: 'bg-transparent text-red-600 hover:bg-red-600 hover:text-red-50 focus-visible:ring-red-500 border border-current',
+    gray: 'bg-transparent text-gray-600 hover:bg-gray-600 hover:text-gray-50 focus-visible:ring-gray-500 border border-current hover:border-gray-600',
+    red: 'bg-transparent text-red-600 hover:bg-red-600 hover:text-red-50 focus-visible:ring-red-500 border border-current hover:border-red-600',
     orange:
-      'bg-transparent text-orange-600 hover:bg-orange-600 hover:text-orange-50 focus-visible:ring-orange-500 border border-current',
+      'bg-transparent text-orange-600 hover:bg-orange-600 hover:text-orange-50 focus-visible:ring-orange-500 border border-current hover:border-orange-600',
     amber:
-      'bg-transparent text-amber-600 hover:bg-amber-600 hover:text-amber-50 focus-visible:ring-amber-500 border border-current',
+      'bg-transparent text-amber-600 hover:bg-amber-600 hover:text-amber-50 focus-visible:ring-amber-500 border border-current hover:border-amber-600',
     yellow:
-      'bg-transparent text-yellow-600 hover:bg-yellow-600 hover:text-yellow-50 focus-visible:ring-yellow-500 border border-current',
-    lime: 'bg-transparent text-lime-600 hover:bg-lime-600 hover:text-lime-50 focus-visible:ring-lime-500 border border-current',
+      'bg-transparent text-yellow-600 hover:bg-yellow-600 hover:text-yellow-50 focus-visible:ring-yellow-500 border border-current hover:border-yellow-600',
+    lime: 'bg-transparent text-lime-600 hover:bg-lime-600 hover:text-lime-50 focus-visible:ring-lime-500 border border-current hover:border-lime-600',
     green:
-      'bg-transparent text-green-600 hover:bg-green-600 hover:text-green-50 focus-visible:ring-green-500 border border-current',
+      'bg-transparent text-green-600 hover:bg-green-600 hover:text-green-50 focus-visible:ring-green-500 border border-current hover:border-green-600',
     emerald:
-      'bg-transparent text-emerald-600 hover:bg-emerald-600 hover:text-emerald-50 focus-visible:ring-emerald-500 border border-current',
-    teal: 'bg-transparent text-teal-600 hover:bg-teal-600 hover:text-teal-50 focus-visible:ring-teal-500 border border-current',
-    cyan: 'bg-transparent text-cyan-600 hover:bg-cyan-600 hover:text-cyan-50 focus-visible:ring-cyan-500 border border-current',
-    sky: 'bg-transparent text-sky-600 hover:bg-sky-600 hover:text-sky-50 focus-visible:ring-sky-500 border border-current',
-    blue: 'bg-transparent text-blue-600 hover:bg-blue-600 hover:text-blue-50 focus-visible:ring-blue-500 border border-current',
+      'bg-transparent text-emerald-600 hover:bg-emerald-600 hover:text-emerald-50 focus-visible:ring-emerald-500 border border-current hover:border-emerald-600',
+    teal: 'bg-transparent text-teal-600 hover:bg-teal-600 hover:text-teal-50 focus-visible:ring-teal-500 border border-current hover:border-teal-600',
+    cyan: 'bg-transparent text-cyan-600 hover:bg-cyan-600 hover:text-cyan-50 focus-visible:ring-cyan-500 border border-current hover:border-cyan-600',
+    sky: 'bg-transparent text-sky-600 hover:bg-sky-600 hover:text-sky-50 focus-visible:ring-sky-500 border border-current hover:border-sky-600',
+    blue: 'bg-transparent text-blue-600 hover:bg-blue-600 hover:text-blue-50 focus-visible:ring-blue-500 border border-current hover:border-blue-600',
     indigo:
-      'bg-transparent text-indigo-600 hover:bg-indigo-600 hover:text-indigo-50 focus-visible:ring-indigo-500 border border-current',
+      'bg-transparent text-indigo-600 hover:bg-indigo-600 hover:text-indigo-50 focus-visible:ring-indigo-500 border border-current hover:border-indigo-600',
     violet:
-      'bg-transparent text-violet-600 hover:bg-violet-600 hover:text-violet-50 focus-visible:ring-violet-500 border border-current',
+      'bg-transparent text-violet-600 hover:bg-violet-600 hover:text-violet-50 focus-visible:ring-violet-500 border border-current hover:border-violet-600',
     purple:
-      'bg-transparent text-purple-600 hover:bg-purple-600 hover:text-purple-50 focus-visible:ring-purple-500 border border-current',
+      'bg-transparent text-purple-600 hover:bg-purple-600 hover:text-purple-50 focus-visible:ring-purple-500 border border-current hover:border-purple-600',
     fuchsia:
-      'bg-transparent text-fuchsia-600 hover:bg-fuchsia-600 hover:text-fuchsia-50 focus-visible:ring-fuchsia-500 border border-current',
-    pink: 'bg-transparent text-pink-600 hover:bg-pink-600 hover:text-pink-50 focus-visible:ring-pink-500 border border-current',
-    rose: 'bg-transparent text-rose-600 hover:bg-rose-600 hover:text-rose-50 focus-visible:ring-rose-500 border border-current',
+      'bg-transparent text-fuchsia-600 hover:bg-fuchsia-600 hover:text-fuchsia-50 focus-visible:ring-fuchsia-500 border border-current hover:border-fuchsia-600',
+    pink: 'bg-transparent text-pink-600 hover:bg-pink-600 hover:text-pink-50 focus-visible:ring-pink-500 border border-current hover:border-pink-600',
+    rose: 'bg-transparent text-rose-600 hover:bg-rose-600 hover:text-rose-50 focus-visible:ring-rose-500 border border-current hover:border-rose-600',
     primary:
-      'bg-transparent text-primary hover:bg-primary hover:text-primary-foreground focus-visible:ring-primary border border-current',
+      'bg-transparent text-primary hover:bg-primary hover:text-primary-foreground focus-visible:ring-primary border border-current hover:border-primary',
     secondary:
-      'bg-transparent text-secondary-foreground hover:bg-secondary-foreground/80 hover:text-secondary focus-visible:ring-secondary-foreground border border-current',
+      'bg-transparent text-secondary-foreground hover:bg-secondary-foreground/80 hover:text-secondary focus-visible:ring-secondary-foreground border border-current hover:border-secondary',
     tertiary:
-      'bg-transparent text-tertiary hover:bg-tertiary hover:text-tertiary-foreground focus-visible:ring-tertiary border border-current',
-    info: 'bg-transparent text-info hover:bg-info hover:text-info-foreground focus-visible:ring-info border border-current',
+      'bg-transparent text-tertiary hover:bg-tertiary hover:text-tertiary-foreground focus-visible:ring-tertiary border border-current hover:border-tertiary',
+    info: 'bg-transparent text-info hover:bg-info hover:text-info-foreground focus-visible:ring-info border border-current hover:border-info',
     danger:
-      'bg-transparent text-danger hover:bg-danger hover:text-danger-foreground focus-visible:ring-danger border border-current',
+      'bg-transparent text-danger hover:bg-danger hover:text-danger-foreground focus-visible:ring-danger border border-current hover:border-danger',
     success:
-      'bg-transparent text-success hover:bg-success hover:text-success-foreground focus-visible:ring-success border border-current',
+      'bg-transparent text-success hover:bg-success hover:text-success-foreground focus-visible:ring-success border border-current hover:border-success',
     warning:
-      'bg-transparent text-warning hover:bg-warning hover:text-warning-foreground focus-visible:ring-warning border border-current',
+      'bg-transparent text-warning hover:bg-warning hover:text-warning-foreground focus-visible:ring-warning border border-current hover:border-warning',
   },
   soft: {
     gray: 'bg-gray-100 hover:bg-gray-200 text-gray-800 focus-visible:ring-gray-600',
@@ -161,14 +161,14 @@ export const BUTTON_COLOR_VARIANT_MAPPING: Record<ButtonVariant, Record<AllColor
     fuchsia: 'bg-fuchsia-100 hover:bg-fuchsia-200 text-fuchsia-800 focus-visible:ring-fuchsia-600',
     pink: 'bg-pink-100 hover:bg-pink-200 text-pink-800 focus-visible:ring-pink-600',
     rose: 'bg-rose-100 hover:bg-rose-200 text-rose-800 focus-visible:ring-rose-600',
-    primary: 'bg-primary-soft/60 hover:bg-primary-soft text-primary/90 focus-visible:ring-primary',
+    primary: 'bg-primary-soft hover:bg-primary-soft/90 text-primary/90 focus-visible:ring-primary',
     secondary:
-      'bg-secondary-soft/60 hover:bg-secondary-soft text-secondary-foreground/90 focus-visible:ring-secondary-foreground',
-    tertiary: 'bg-tertiary-soft/60 hover:bg-tertiary-soft text-tertiary/90 focus-visible:ring-tertiary',
-    info: 'bg-info-soft/60 hover:bg-info-soft text-info/90 focus-visible:ring-info',
-    danger: 'bg-danger-soft/60 hover:bg-danger-soft text-danger/90 focus-visible:ring-danger',
-    success: 'bg-success-soft/60 hover:bg-success-soft text-success/90 focus-visible:ring-success',
-    warning: 'bg-warning-soft hover:bg-warning-soft/80 text-warning focus-visible:ring-warning',
+      'bg-secondary-soft hover:bg-secondary-soft/90 text-secondary-foreground/70 focus-visible:ring-secondary-foreground',
+    tertiary: 'bg-tertiary-soft hover:bg-tertiary-soft/90 text-tertiary/90 focus-visible:ring-tertiary',
+    info: 'bg-info-soft hover:bg-info-soft/90 text-info/90 focus-visible:ring-info',
+    danger: 'bg-danger-soft hover:bg-danger-soft/90 text-danger/90 focus-visible:ring-danger',
+    success: 'bg-success-soft hover:bg-success-soft/90 text-success/90 focus-visible:ring-success',
+    warning: 'bg-warning-soft hover:bg-warning-soft/90 text-warning focus-visible:ring-warning',
   },
   ghost: {
     gray: 'bg-transparent text-gray-600 hover:bg-gray-50 shadow-none focus-visible:ring-gray-500',
