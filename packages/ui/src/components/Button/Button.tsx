@@ -27,7 +27,7 @@ const buttonVariants = cva(
         warning: BUTTON_COLOR_VARIANT_MAPPING['solid']['warning'],
         danger: BUTTON_COLOR_VARIANT_MAPPING['solid']['danger'],
         outline:
-          'border border-border bg-transparent text-accent-foreground hover:bg-accent hover:text-accent-foreground',
+          'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
       },
       rounded: BUTTON_ROUNDED,
@@ -117,8 +117,18 @@ const Button: ComponentWithAs<'button', ButtonProps> = forwardRef<ButtonProps, '
     ref,
   ) => {
     const Comp = asChild ? Slot : Component;
-    const outlineClassName =
-      variant === 'outline' && !color ? buttonVariants({ variant: 'outline', size, rounded }) : '';
+    let buttonClassName = '';
+
+    if (['outline', 'ghost'].includes(variant) && !color) {
+      buttonClassName = buttonVariants({
+        variant: variant as Extract<ButtonProps['variant'], 'outline' | 'ghost'>,
+        size,
+        rounded,
+      });
+    } else {
+      buttonClassName = BUTTON_COLOR_VARIANT_MAPPING[variant][color || 'primary'];
+    }
+    
     return (
       <Box
         {...props}
@@ -127,9 +137,8 @@ const Button: ComponentWithAs<'button', ButtonProps> = forwardRef<ButtonProps, '
           unstyled
             ? className
             : cn(
+                buttonClassName,
                 buttonVariants({ size, rounded }),
-                BUTTON_COLOR_VARIANT_MAPPING[variant][color || 'primary'],
-                outlineClassName,
                 className,
               )
         }
