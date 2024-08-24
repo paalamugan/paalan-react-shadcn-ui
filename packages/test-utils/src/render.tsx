@@ -34,3 +34,21 @@ export const renderWithAct = async (ui: React.ReactNode) => {
   });
   return result!;
 };
+
+/**
+ * Renders an asynchronous component with the given props and options.
+ *
+ * @template T - The type of the props for the async component.
+ * @param asyncComponent - The async component function that returns a JSX element.
+ * @param props - The props to pass to the async component.
+ * @param renderOptions - The options for rendering the component.
+ * @returns The rendered component.
+ */
+export const renderWithAsync = async <T,>(
+  asyncComponent: (props: T) => Promise<JSX.Element>,
+  props: T,
+  renderOptions?: ThemeRenderOptions,
+) => {
+  const jsx = await asyncComponent(props);
+  return render(jsx, renderOptions);
+};
