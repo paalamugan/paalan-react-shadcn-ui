@@ -1,5 +1,11 @@
 # @paalan/react-icons
 
+## 1.4.0
+
+### Minor Changes
+
+- [`4988e1d`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/4988e1d8da1b952dff8a1e0791beed049e1e802a) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: refactor the code
+
 ## 1.3.1
 
 ### Patch Changes
