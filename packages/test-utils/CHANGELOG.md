@@ -1,5 +1,11 @@
 # @paalan/react-test-utils
 
+## 1.4.1
+
+### Patch Changes
+
+- [`a1939f7`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/a1939f74864ce0b679a581175325b27d9665a485) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: added renderWithAsync function
+
 ## 1.4.0
 
 ### Minor Changes
