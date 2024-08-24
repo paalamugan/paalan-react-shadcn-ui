@@ -26,8 +26,7 @@ const buttonVariants = cva(
         success: BUTTON_COLOR_VARIANT_MAPPING['solid']['success'],
         warning: BUTTON_COLOR_VARIANT_MAPPING['solid']['warning'],
         danger: BUTTON_COLOR_VARIANT_MAPPING['solid']['danger'],
-        outline:
-          'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+        outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
       },
       rounded: BUTTON_ROUNDED,
@@ -128,20 +127,12 @@ const Button: ComponentWithAs<'button', ButtonProps> = forwardRef<ButtonProps, '
     } else {
       buttonClassName = BUTTON_COLOR_VARIANT_MAPPING[variant][color || 'primary'];
     }
-    
+
     return (
       <Box
         {...props}
         as={Comp}
-        className={
-          unstyled
-            ? className
-            : cn(
-                buttonClassName,
-                buttonVariants({ size, rounded }),
-                className,
-              )
-        }
+        className={unstyled ? className : cn(buttonClassName, buttonVariants({ size, rounded }), className)}
         ref={ref}
         disabled={isLoading || disabled}
       >

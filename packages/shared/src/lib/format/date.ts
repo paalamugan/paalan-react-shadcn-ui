@@ -243,4 +243,4 @@ export const DEFAULT_DATE_OPTIONS: IDateOptions = {
   timeZone: getLocalCountryBasedFormat().timeZone,
 };
 
-export const defaultDateIntl = new DateIntl(DEFAULT_DATE_OPTIONS);
+export const dateIntl = new DateIntl(DEFAULT_DATE_OPTIONS);

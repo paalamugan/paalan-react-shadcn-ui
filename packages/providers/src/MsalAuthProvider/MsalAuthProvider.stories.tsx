@@ -1,4 +1,4 @@
-import { Button, ErrorRouterBoundary } from '@paalan/react-ui';
+import { Button, ErrorReactRouterBoundary } from '@paalan/react-ui';
 import { Box, Code, Flex, Heading, Stack } from '@paalan/react-ui/base';
 import { Link, useNavigate } from 'react-router-dom';
 import { reactRouterParameters, withRouter } from 'storybook-addon-react-router-v6';
@@ -119,7 +119,7 @@ WithReactRouter.parameters = {
   reactRouter: reactRouterParameters({
     routing: {
       path: '/',
-      errorElement: <ErrorRouterBoundary />,
+      errorElement: <ErrorReactRouterBoundary />,
       children: [
         {
           path: '/',

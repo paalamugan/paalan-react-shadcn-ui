@@ -9,9 +9,9 @@ import {
   getLocale,
   NumberIntl,
   t,
-} from '@paalan/react-shared/utils';
+} from '@paalan/react-shared/lib';
 
-import type { CountryBasedFormatOptionKey } from '@paalan/react-shared/utils';
+import type { CountryBasedFormatOptionKey } from '@paalan/react-shared/lib';
 import type { FormatIntlContextState, FormatIntlProviderProps } from './types';
 
 import { FormatIntlContextProvider } from './context';

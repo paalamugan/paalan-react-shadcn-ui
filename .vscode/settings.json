@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "prettier.prettierPath": "./node_modules/prettier/index.cjs",
   "cSpell.words": [
     "autodocs",

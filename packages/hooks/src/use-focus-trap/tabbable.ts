@@ -2,7 +2,7 @@ const TABBABLE_NODES = /input|select|textarea|button|object/;
 export const FOCUS_SELECTOR = 'a, input, select, textarea, button, object, [tabindex]';
 
 function hidden(element: HTMLElement) {
-  if (import.meta.env.TEST) {
+  if (process.env.TEST) {
     return false;
   }
 

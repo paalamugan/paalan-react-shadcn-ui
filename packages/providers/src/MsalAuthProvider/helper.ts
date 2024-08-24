@@ -1,34 +1,71 @@
 import { InteractionRequiredAuthError, LogLevel, PublicClientApplication } from '@azure/msal-browser';
-import { logger } from '@paalan/react-shared/utils';
+import { logger } from '@paalan/react-shared/lib';
 import axios from 'axios';
 
 import type { AccountInfo, Configuration, IPublicClientApplication } from '@azure/msal-browser';
 import type { AxiosRequestConfig } from 'axios';
 import type { MsalConfiguration, MsalUserInfo } from './types';
 
-import { MSAL_GRAPH_CONFIG, MSAL_LOGIN_REQUEST } from './constants';
+import { AZURE_AUTHENTICATION_ERROR, MSAL_GRAPH_CONFIG, MSAL_LOGIN_REQUEST } from './constants';
 
-const getAzureAuthenticationResult = async (msalInstance: IPublicClientApplication, account: AccountInfo | null) => {
+/**
+ * Checks if the Azure token is expired.
+ * @param account - The account information.
+ * @param extendExpiresOnInSec - Optional. The number of seconds to extend the expiration date by.
+ * @returns A boolean indicating whether the token is expired or not.
+ */
+export const isAzureTokenExpired = (account: AccountInfo | null, extendExpiresOnInSec?: number): boolean => {
   if (!account) {
-    throw Error('No active account! Verify a user has been signed in and setActiveAccount has been called.');
+    return true;
   }
 
-  const response = await msalInstance.acquireTokenSilent({
-    ...MSAL_LOGIN_REQUEST,
-    account: account,
-  });
-  const idTokenClaims = response.idTokenClaims as { exp: number };
+  const idTokenClaims = account.idTokenClaims as { exp: number };
   const expireDate = new Date(idTokenClaims.exp * 1000);
+  if (extendExpiresOnInSec) {
+    expireDate.setSeconds(expireDate.getSeconds() + extendExpiresOnInSec);
+  }
   const now = new Date();
 
-  if (now > expireDate) {
-    // If idToken is expired, we get a new one
-    return msalInstance.ssoSilent({
-      ...MSAL_LOGIN_REQUEST,
-    });
-  }
+  return now > expireDate;
+};
 
-  return response;
+/**
+ * Retrieves the Azure authentication result.
+ *
+ * @param msalInstance - The instance of IPublicClientApplication.
+ * @param account - The account information or null.
+ * @returns The authentication result.
+ * @throws - If no active account is found.
+ * @throws - If an Azure authentication error occurs.
+ */
+export const getAzureAuthenticationResult = async (
+  msalInstance: IPublicClientApplication,
+  account: AccountInfo | null,
+) => {
+  try {
+    if (!account) {
+      throw Error('No active account! Verify a user has been signed in and setActiveAccount has been called.');
+    }
+
+    const response = await msalInstance.acquireTokenSilent({
+      ...MSAL_LOGIN_REQUEST,
+      account: account,
+    });
+
+    if (isAzureTokenExpired(response.account)) {
+      // If idToken is expired, we get a new one
+      return msalInstance.ssoSilent({
+        ...MSAL_LOGIN_REQUEST,
+      });
+    }
+
+    return response;
+  } catch (err) {
+    const error = err as Error;
+    error.name = AZURE_AUTHENTICATION_ERROR;
+    msalInstance.setActiveAccount(null); // Clear the active account
+    throw err;
+  }
 };
 
 const getMsalUserInfoFromIdTokenClaims = (

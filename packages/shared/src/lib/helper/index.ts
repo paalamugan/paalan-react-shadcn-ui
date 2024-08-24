@@ -1,5 +1,3 @@
-import type { Dict } from '../types/common';
-
 /**
  * Checks if a value is defined and not null.
  * @param value - The value to check.
@@ -13,7 +11,7 @@ export const isDefinedValue = (value: unknown) => value !== undefined && value !
  * @returns A dictionary object with the disabled argTypes.
  */
 export const disableStorybookArgTypes = (argTypes: string[]) => {
-  const result: Dict = {};
+  const result: Record<string, unknown> = {};
   argTypes.forEach((key) => {
     result[key] = { table: { disable: true } };
   });

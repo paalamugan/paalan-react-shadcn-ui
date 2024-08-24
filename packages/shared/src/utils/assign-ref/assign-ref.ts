@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import { isDefinedValue } from '../helper';
+import { isDefinedValue } from '../../lib/helper';
 
 export const assignRef = <T>(
   ref: React.Dispatch<React.SetStateAction<T>> | React.ForwardedRef<T> | null | undefined,

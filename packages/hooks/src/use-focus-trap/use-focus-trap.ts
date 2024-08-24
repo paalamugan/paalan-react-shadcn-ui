@@ -25,7 +25,7 @@ export const useFocusTrap = (active = true): ((instance: HTMLElement | null) => 
 
     if (focusElement) {
       focusElement.focus({ preventScroll: true });
-    } else if (import.meta.env.DEV) {
+    } else if (process.env.DEV) {
       console.warn('[Hooks/use-focus-trap] Failed to find focusable element within provided node', node);
     }
   };
@@ -54,7 +54,7 @@ export const useFocusTrap = (active = true): ((instance: HTMLElement | null) => 
         setTimeout(() => {
           if (node.getRootNode()) {
             focusNode(node);
-          } else if (import.meta.env.DEV) {
+          } else if (process.env.DEV) {
             console.warn('[Hooks/use-focus-trap] Ref node is not part of the dom', node);
           }
         });

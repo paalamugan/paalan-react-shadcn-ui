@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { TIME_ZONE_LISTS } from '@paalan/react-shared/constants';
-import { CURRENCY_CODES } from '@paalan/react-shared/utils';
+import { CURRENCY_CODES } from '@paalan/react-shared/lib';
 import { Button, Combobox, NumberInput, Select, toast, ToggleGroup } from '@paalan/react-ui';
 import {
   Box,
@@ -25,7 +25,7 @@ import {
 import { addDays } from 'date-fns';
 
 import type { TimeZone } from '@paalan/react-shared/constants';
-import type { CountryBasedFormatOptionKey, CurrencyCode } from '@paalan/react-shared/utils';
+import type { CountryBasedFormatOptionKey, CurrencyCode } from '@paalan/react-shared/lib';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { useFormatIntl } from './context';

@@ -26,7 +26,6 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "react-router-dom": "^6.17.0",
     "@zag-js/element-size": "^0.24.0",
     "zen-observable-ts": "^1.1.0"
   },

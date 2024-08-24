@@ -10,8 +10,8 @@ import {
   ErrorInternalServer,
   ErrorInternalServerResponse,
   ErrorNotFoundResponse,
-  ErrorRouterBoundary,
-  ErrorRouterComponent,
+  ErrorReactRouterBoundary,
+  ErrorReactRouterComponent,
 } from '.';
 import { Heading, Stack, Text } from '../../base';
 
@@ -33,8 +33,8 @@ WithErrorBoundary.argTypes = {
   },
   fallback: {
     description:
-      'The fallback error component, if the children throw an error. If not provided, then the "ErrorRouterBoundary" will be used.',
-    defaultValue: ErrorRouterBoundary,
+      'The fallback error component, if the children throw an error. If not provided, then the "ErrorReactRouterBoundary" will be used.',
+    defaultValue: ErrorReactRouterBoundary,
   },
   onError: {
     description: 'The callback function to be called when an error occurs',
@@ -50,7 +50,7 @@ WithErrorBoundary.argTypes = {
 WithErrorBoundary.decorators = [withRouter];
 WithErrorBoundary.parameters = {
   reactRouter: reactRouterParameters({
-    routing: { path: '/user/1', errorElement: <ErrorRouterBoundary /> },
+    routing: { path: '/user/1', errorElement: <ErrorReactRouterBoundary /> },
   }),
 };
 
@@ -198,11 +198,11 @@ WithErrorNotFoundResponse.args = {
     'Probably you got here by accident. If you think there is something wrong on our side, please contact us!',
 };
 
-export const WithErrorRouterComponent: StoryFn<typeof ErrorRouterComponent> = (args) => {
-  return <ErrorRouterComponent {...args} />;
+export const WithErrorReactRouterComponent: StoryFn<typeof ErrorReactRouterComponent> = (args) => {
+  return <ErrorReactRouterComponent {...args} />;
 };
 
-WithErrorRouterComponent.argTypes = {
+WithErrorReactRouterComponent.argTypes = {
   error: {
     description: 'The error to be displayed',
   },
@@ -214,7 +214,7 @@ WithErrorRouterComponent.argTypes = {
   },
 };
 
-WithErrorRouterComponent.args = {
+WithErrorReactRouterComponent.args = {
   error: new Error('this is custom error'),
   className: '',
   heading: '',

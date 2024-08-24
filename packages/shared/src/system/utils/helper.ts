@@ -5,7 +5,7 @@ import type { Dict, FilterFn, FontSize } from '../../types';
 import type { BoxColorVariant } from '../constants/colors';
 import type { Breakpoints } from '../utils/generated-theme';
 
-import { isDefinedValue } from '../../utils/helper';
+import { isDefinedValue } from '../../lib/helper';
 import { BOX_COLOR_VARIANTS } from '../constants/colors';
 import { isStyleProp, systemProps } from '../styled-props';
 import { breakpoints } from '../utils/generated-theme';

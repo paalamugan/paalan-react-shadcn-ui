@@ -58,7 +58,7 @@ const App = () => {
 ### Code - With React Router
 
 ```jsx
-import { Button, Code, ErrorRouterBoundary } from '@paalan/react-ui/components';
+import { Button, Code, ErrorReactRouterBoundary } from '@paalan/react-ui/components';
 import { Box, Heading, Stack } from '@paalan/react-ui/layouts';
 import { AuthenticatedRoute, MsalAuthProvider, useMsalAuth } from '@paalan/react-ui/providers';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
@@ -84,7 +84,7 @@ const Home = () => {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" errorElement={<ErrorRouterBoundary />}>
+    <Route path="/" errorElement={<ErrorReactRouterBoundary />}>
       {/* Authenticated route */}
       <Route element={<AuthenticatedRoute />}>
         <Route path="/" element={<Home />} />

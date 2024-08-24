@@ -143,6 +143,9 @@ importers:
       react-hook-form:
         specifier: ^7.46.1
         version: 7.52.1(react@18.3.1)
+      react-router-dom:
+        specifier: ^6.17.0
+        version: 6.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: ^2.4.0
         version: 2.4.0
@@ -375,9 +378,6 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
-      react-router-dom:
-        specifier: ^6.17.0
-        version: 6.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       remark-gfm:
         specifier: ^4.0.0
         version: 4.0.0
@@ -486,6 +486,9 @@ importers:
       '@azure/msal-react':
         specifier: ^2.0.7
         version: 2.0.21(@azure/msal-browser@3.19.1)(react@18.3.1)
+      '@paalan/react-providers':
+        specifier: 'file:'
+        version: 'link:'
       axios:
         specifier: ^1.6.0
         version: 1.7.2
@@ -501,6 +504,9 @@ importers:
 
   packages/shared:
     dependencies:
+      '@paalan/react-shared':
+        specifier: 'file:'
+        version: 'link:'
       axios:
         specifier: ^1.6.2
         version: 1.7.2
@@ -527,6 +533,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.9.0(react-hook-form@7.52.1(react@18.3.1))
+      '@paalan/react-ui':
+        specifier: 'file:'
+        version: 'link:'
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -638,9 +647,6 @@ importers:
       react-hook-form:
         specifier: ^7.51.5
         version: 7.52.1(react@18.3.1)
-      react-router-dom:
-        specifier: ^6.17.0
-        version: 6.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       recharts:
         specifier: ^2.12.7
         version: 2.12.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

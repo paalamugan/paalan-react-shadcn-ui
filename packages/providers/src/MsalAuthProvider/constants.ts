@@ -9,3 +9,5 @@ export const MSAL_LOGIN_REQUEST: RedirectRequest = {
 export const MSAL_GRAPH_CONFIG = {
   graphMeEndpoint: 'https://graph.microsoft.com/v1.0/me',
 } as const;
+
+export const AZURE_AUTHENTICATION_ERROR = 'AzureAuthenticationError';

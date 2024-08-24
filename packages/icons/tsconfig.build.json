@@ -1,11 +1,4 @@
 {
   "extends": ["../../tsconfig.json"],
-  "include": ["src"],
-  "exclude": ["dist", "src/**/*.stories.tsx", "src/**/*.test.tsx"],
-  "compilerOptions": {
-    "noEmit": false,
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "outDir": "dist/types"
-  }
+  "exclude": ["dist", "**/*.stories.tsx", "**/*.test.tsx"]
 }

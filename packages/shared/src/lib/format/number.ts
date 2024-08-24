@@ -44,4 +44,4 @@ export class NumberIntl implements INumberIntl {
   }
 }
 
-export const defaultNumberIntl = new NumberIntl();
+export const numberIntl = new NumberIntl();

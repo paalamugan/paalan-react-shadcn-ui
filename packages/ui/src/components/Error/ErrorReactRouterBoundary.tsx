@@ -1,16 +1,16 @@
-import { HttpError } from '@paalan/react-shared/utils';
+import { HttpError } from '@paalan/react-shared/lib';
 import { useRouteError } from 'react-router-dom';
 
 import { ErrorInternalResponse, isInternalErrorResponse } from './ErrorInternalResponse';
 import { ErrorInternalServerResponse } from './ErrorInternalServerResponse';
 import { ErrorNotFoundResponse } from './ErrorNotFoundResponse';
-import { ErrorRouterComponent } from './ErrorRouterComponent';
+import { ErrorReactRouterComponent } from './ErrorReactRouterComponent';
 
 interface IProps<Response extends HttpError['response'] = never> {
   error?: Response;
 }
 
-export const ErrorRouterBoundary = <Response extends HttpError['response'] = never>(props: IProps<Response>) => {
+export const ErrorReactRouterBoundary = <Response extends HttpError['response'] = never>(props: IProps<Response>) => {
   const routeError = useRouteError();
 
   const error = props.error ?? routeError;
@@ -32,7 +32,7 @@ export const ErrorRouterBoundary = <Response extends HttpError['response'] = nev
   if (error instanceof Error) {
     return (
       <ErrorInternalResponse>
-        <ErrorRouterComponent error={error} />
+        <ErrorReactRouterComponent error={error} />
       </ErrorInternalResponse>
     );
   }
@@ -40,7 +40,7 @@ export const ErrorRouterBoundary = <Response extends HttpError['response'] = nev
   if (isInternalErrorResponse(error)) {
     return (
       <ErrorInternalResponse>
-        <ErrorRouterComponent error={error.error} />
+        <ErrorReactRouterComponent error={error.error} />
       </ErrorInternalResponse>
     );
   }

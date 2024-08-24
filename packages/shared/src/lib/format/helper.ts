@@ -40,8 +40,8 @@ export const getLocale = async (locale?: CountryBasedFormat['locale']): Promise<
     const data = await import(`date-fns/locale`);
     return data[locale];
   } catch (error) {
-    console.warn(`Locale ${locale} not found. Using en-US`);
-    return;
+    console.warn(`Locale ${locale} not found. Using en-IN as fallback.`);
+    return (await import(`date-fns/locale/en-IN`)).default;
   }
 };
 
@@ -58,8 +58,8 @@ export const getLocalCountryBasedFormat = (): Required<CountryBasedFormat> => {
   return {
     dateFormat,
     dateTimeFormat,
-    locale: locale || 'enUS',
+    locale: locale || 'enIN',
     timeZone,
-    currency: 'USD',
+    currency: 'INR',
   };
 };

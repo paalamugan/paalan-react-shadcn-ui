@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useCallbackRef } from '@paalan/react-hooks';
-import { logger } from '@paalan/react-shared/utils';
+import { logger } from '@paalan/react-shared/lib';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 import type { AccountInfo } from '@azure/msal-browser';

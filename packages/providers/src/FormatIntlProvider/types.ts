@@ -6,7 +6,7 @@ import type {
   DateIntl,
   NumberIntl,
   t,
-} from '@paalan/react-shared/utils';
+} from '@paalan/react-shared/lib';
 import type { PropsWithChildren } from 'react';
 
 export interface CurrencyExchange extends CurrencyConverterOptions {}

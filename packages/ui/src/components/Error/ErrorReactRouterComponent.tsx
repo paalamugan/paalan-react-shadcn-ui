@@ -7,12 +7,12 @@ import type { FC, ReactNode } from 'react';
 import { Box, Heading, Stack, Strong, Text } from '../../base';
 import { Button } from '../Button';
 
-interface ErrorRouterComponentProps {
+interface ErrorReactRouterComponentProps {
   error: Error;
   heading?: ReactNode;
   className?: string;
 }
-export const ErrorRouterComponent: FC<ErrorRouterComponentProps> = ({ error, className, heading }) => {
+export const ErrorReactRouterComponent: FC<ErrorReactRouterComponentProps> = ({ error, className, heading }) => {
   const navigate = useNavigate();
   const location = useLocation();
   return (
