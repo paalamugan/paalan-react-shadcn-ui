@@ -462,9 +462,6 @@ importers:
       react-dom:
         specifier: '>=16.18.x'
         version: 18.3.1(react@18.3.1)
-      react-router-dom:
-        specifier: ^6.17.0
-        version: 6.25.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       zen-observable-ts:
         specifier: ^1.1.0
         version: 1.1.0
@@ -486,9 +483,6 @@ importers:
       '@azure/msal-react':
         specifier: ^2.0.7
         version: 2.0.21(@azure/msal-browser@3.19.1)(react@18.3.1)
-      '@paalan/react-providers':
-        specifier: 'file:'
-        version: 'link:'
       axios:
         specifier: ^1.6.0
         version: 1.7.2
@@ -504,9 +498,6 @@ importers:
 
   packages/shared:
     dependencies:
-      '@paalan/react-shared':
-        specifier: 'file:'
-        version: 'link:'
       axios:
         specifier: ^1.6.2
         version: 1.7.2
@@ -533,9 +524,6 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.9.0(react-hook-form@7.52.1(react@18.3.1))
-      '@paalan/react-ui':
-        specifier: 'file:'
-        version: 'link:'
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
