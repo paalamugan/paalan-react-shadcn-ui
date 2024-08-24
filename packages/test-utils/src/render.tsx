@@ -3,17 +3,16 @@ import '@testing-library/jest-dom';
 import { act, render as rtlRender } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import type { RenderOptions, RenderResult } from '@testing-library/react';
+import type { RenderOptions, RenderResult as RtlRenderResult } from '@testing-library/react';
 import type * as React from 'react';
 
 export interface ThemeRenderOptions extends RenderOptions {
   ThemeProvider?: React.ComponentType<unknown>;
 }
 
-export type RenderFn = (
-  ui: React.ReactNode,
-  options?: ThemeRenderOptions,
-) => ReturnType<typeof rtlRender> & { user: ReturnType<typeof userEvent.setup> };
+export type RenderResult = RtlRenderResult & { user: ReturnType<typeof userEvent.setup> };
+
+export type RenderFn = (ui: React.ReactNode, options?: ThemeRenderOptions) => RenderResult;
 
 export const render: RenderFn = (ui, { ThemeProvider, ...options } = {}) => {
   const user = userEvent.setup();
@@ -35,6 +34,11 @@ export const renderWithAct = async (ui: React.ReactNode) => {
   return result!;
 };
 
+type RenderWithAsync = <T>(
+  asyncComponent: (props: T) => Promise<JSX.Element>,
+  props: T,
+  renderOptions?: ThemeRenderOptions,
+) => Promise<RenderResult>;
 /**
  * Renders an asynchronous component with the given props and options.
  *
@@ -44,7 +48,7 @@ export const renderWithAct = async (ui: React.ReactNode) => {
  * @param renderOptions - The options for rendering the component.
  * @returns The rendered component.
  */
-export const renderWithAsync = async <T,>(
+export const renderWithAsync: RenderWithAsync = async <T,>(
   asyncComponent: (props: T) => Promise<JSX.Element>,
   props: T,
   renderOptions?: ThemeRenderOptions,
