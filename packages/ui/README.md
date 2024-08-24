@@ -1,6 +1,6 @@
 # Paalan Shadcn React UI Components
 
-This package contains the components for the Paalan shadcn React UI Components. We customize the components from the Shadcn UI package and add some additional components and styles to the package..
+This package contains the components for the Paalan shadcn React UI Components. We customize the components from the Shadcn UI package and add some additional components and styles to the package.
 
 ## Installation
 
