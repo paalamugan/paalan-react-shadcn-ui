@@ -166,7 +166,7 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
 );
 FormMessage.displayName = 'FormMessage';
 
-export interface FormComponentProps<TData extends FieldValues> {
+export interface FormComponentProps<TData extends FieldValues> extends React.PropsWithChildren {
   /**
    * The form object from react-hook-form
    */
@@ -306,6 +306,7 @@ const Form = <TData extends FieldValues>({
   isSubmitting: isFormSubmitting,
   isResetting,
   onReset,
+  children,
 }: FormComponentProps<TData>) => {
   const inlineTypes = ['checkbox'];
   const isSubmitting = isFormSubmitting ?? form.formState.isSubmitting;
@@ -568,6 +569,7 @@ const Form = <TData extends FieldValues>({
             )}
           />
         ))}
+        {children}
         <Box className={cn('flex gap-3 pt-2', actionClassName)}>
           {ResetButton ? (
             <ResetButton onFormReset={form.reset} />
