@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.1
+
+### Patch Changes
+
+- [`a7b56d1`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/a7b56d1bb6248f8f745fcb4fd8f5d844eabd6bfa) Thanks [@paalamugan](https://github.com/paalamugan)! - chore(ui): update form component
+
 ## 1.4.0
 
 ### Minor Changes
