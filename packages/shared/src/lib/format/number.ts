@@ -36,7 +36,7 @@ export class NumberIntl implements INumberIntl {
   }
 
   private isValid(value: number | string): boolean {
-    if (!value || Number.isNaN(value) || Number.isNaN(Number(value))) {
+    if (Number.isNaN(value) || Number.isNaN(Number(value))) {
       return false;
     }
 

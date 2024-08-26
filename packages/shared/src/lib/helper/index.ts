@@ -80,13 +80,10 @@ export const debounce = <T extends (...args: Parameters<T>) => ReturnType<T>>(
 ) => {
   let timeout: NodeJS.Timeout | null;
 
-  function debounceFunction(this: ThisParameterType<T>, ...args: Parameters<T>) {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const context = this;
-
+  const debounceFunction = (...args: Parameters<T>) => {
     const later = () => {
       timeout = null;
-      if (!immediate) func.apply(context, args);
+      if (!immediate) func(...args);
     };
 
     const callNow = immediate && !timeout;
@@ -94,8 +91,8 @@ export const debounce = <T extends (...args: Parameters<T>) => ReturnType<T>>(
     if (timeout) clearTimeout(timeout);
     timeout = setTimeout(later, wait);
 
-    if (callNow) func.apply(context, args);
-  }
+    if (callNow) func(...args);
+  };
 
   return debounceFunction;
 };

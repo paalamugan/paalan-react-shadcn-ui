@@ -49,7 +49,7 @@ export class CurrencyIntl extends CurrencyConverter implements ICurrencyIntl {
   }
 
   private isValid(value: number | string): boolean {
-    if (!value || Number.isNaN(value) || Number.isNaN(Number(value))) {
+    if (Number.isNaN(value) || Number.isNaN(Number(value))) {
       return false;
     }
 
