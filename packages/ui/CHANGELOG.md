@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.2
+
+### Patch Changes
+
+- [`714bd39`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/714bd39acfd627a599a357a1086ec47f470beb79) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: Update DataTable component to handle no results scenario
+
 ## 1.4.1
 
 ### Patch Changes
