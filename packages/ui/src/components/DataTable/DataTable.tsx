@@ -168,8 +168,8 @@ export const DataTable = <TRow, TValue>({
                 </TableRow>
               ))
             ) : (
-              <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
+              <TableRow className="hover:bg-transparent">
+                <TableCell colSpan={columns.length} className="p-6 text-center text-base text-muted-foreground">
                   {noResultsMessage}
                 </TableCell>
               </TableRow>

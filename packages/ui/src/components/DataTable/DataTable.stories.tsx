@@ -164,3 +164,10 @@ export const SearchWithFacetFilter: Story = {
     ],
   },
 };
+
+export const NoResults: Story = {
+  args: {
+    ...Basic.args,
+    rows: [],
+  },
+};
