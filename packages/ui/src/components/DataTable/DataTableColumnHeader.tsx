@@ -16,15 +16,38 @@ import {
 interface DataTableColumnHeaderProps<TData, TValue> extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   column: Column<TData, TValue>;
   title: ReactNode;
+  isSimpleSort?: boolean;
 }
 
 export const DataTableColumnHeader = <TData, TValue>({
   column,
   title,
   className,
+  isSimpleSort = true,
 }: DataTableColumnHeaderProps<TData, TValue>) => {
   if (!column.getCanSort()) {
     return <div className={cn(className)}>{title}</div>;
+  }
+
+  if (isSimpleSort) {
+    return (
+      <Button
+        variant="ghost"
+        size="sm"
+        color="secondary"
+        className={cn(className)}
+        onClick={() => column.toggleSorting()}
+      >
+        <span>{title}</span>
+        {column.getIsSorted() === 'desc' ? (
+          <ArrowDownIcon className="size-3.5" />
+        ) : column.getIsSorted() === 'asc' ? (
+          <ArrowUpIcon className="size-3.5" />
+        ) : (
+          <CaretSortIcon className="size-4" />
+        )}
+      </Button>
+    );
   }
 
   return (
@@ -39,11 +62,11 @@ export const DataTableColumnHeader = <TData, TValue>({
           >
             <span>{title}</span>
             {column.getIsSorted() === 'desc' ? (
-              <ArrowDownIcon className="ml-2 size-4" />
+              <ArrowDownIcon className="size-3.5" />
             ) : column.getIsSorted() === 'asc' ? (
-              <ArrowUpIcon className="ml-2 size-4" />
+              <ArrowUpIcon className="size-3.5" />
             ) : (
-              <CaretSortIcon className="ml-2 size-4" />
+              <CaretSortIcon className="size-4" />
             )}
           </Button>
         </DropdownMenuTrigger>

@@ -3,14 +3,14 @@ import { useEffect, useMemo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, DoubleArrowLeftIcon, DoubleArrowRightIcon } from '@paalan/react-icons';
 
 import type { Table } from '@tanstack/react-table';
-import type { DataTablePaginationOption } from './types';
+import type { DataTablePaginationType } from './types';
 
 import { Button } from '../Button';
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValue } from '../Select';
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>;
-  pagination?: DataTablePaginationOption;
+  pagination?: DataTablePaginationType;
   enableSelectableTable?: boolean;
 }
 

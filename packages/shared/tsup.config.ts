@@ -6,7 +6,7 @@ export default defineConfig(() => {
     splitting: false,
     entry: ['src/**/*.{ts,tsx}', '!src/**/*.test.{ts,tsx}', '!src/**/*.stories.{ts,tsx}'],
     format: ['esm', 'cjs'],
-    external: ['react', 'react-dom', 'axios', /@paalan\/react-(.*)/, 'tailwind-merge', 'clsx', 'tailwindcss'],
+    external: ['react', 'react-dom', 'axios', /@paalan\/react-(.*)/, 'tailwind-merge', 'clsx', 'tailwindcss', 'zod'],
     target: 'esnext',
     outDir: 'dist',
     minify: false,

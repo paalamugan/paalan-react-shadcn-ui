@@ -13,7 +13,6 @@ export const StyledComponent: ComponentWithAs<'div', TailwindStyledComponentProp
     <Component
       {...attrProps}
       className={cn(
-        className,
         tailwindBoxVariants({
           bg,
           color,
@@ -21,6 +20,7 @@ export const StyledComponent: ComponentWithAs<'div', TailwindStyledComponentProp
           fontSize,
         }),
         tailwindClassName,
+        className,
       )}
       ref={ref}
     />

@@ -153,7 +153,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       zod:
-        specifier: ^3.22.2
+        specifier: ^3.23.8
         version: 3.23.8
     devDependencies:
       '@babel/preset-typescript':
@@ -516,6 +516,9 @@ importers:
       tailwindcss:
         specifier: '>=3.0.0'
         version: 3.4.6(ts-node@10.9.2(@swc/core@1.7.0)(@types/node@20.14.11)(typescript@5.3.3))
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
 
   packages/test-utils: {}
 

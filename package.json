@@ -101,7 +101,7 @@
     "react-hook-form": "^7.46.1",
     "tailwind-merge": "^2.4.0",
     "zen-observable-ts": "^1.1.0",
-    "zod": "^3.22.2"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.22.15",

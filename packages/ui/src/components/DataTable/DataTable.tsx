@@ -18,7 +18,7 @@ import type {
   DataTableColumnDef,
   DataTableFacetFilterColumn,
   DataTableInstance,
-  DataTablePaginationOption,
+  DataTablePaginationType,
   DataTableSearchFilterColumn,
 } from './types';
 
@@ -47,7 +47,7 @@ export interface DataTableProps<TRow, TValue = unknown> {
   /**
    * provide the column accessorKey value to filter the table
    */
-  facetFilterColumns?: DataTableFacetFilterColumn[];
+  facetFilterColumns?: DataTableFacetFilterColumn<TRow, TValue>[];
   /**
    * show the table toolbar
    */
@@ -55,7 +55,7 @@ export interface DataTableProps<TRow, TValue = unknown> {
   /**
    * provide the pagination options
    */
-  pagination?: DataTablePaginationOption;
+  pagination?: DataTablePaginationType;
   /**
    * additional class name to apply to the component
    */
@@ -80,8 +80,10 @@ export interface DataTableProps<TRow, TValue = unknown> {
    * additional content to render on the right side of the table
    */
   toolbarRightSideContent?: ReactNode;
-
-  defaultSorting?: SortingState;
+  /**
+   * provide the sorting columns state
+   */
+  sortingColumns?: SortingState;
 }
 
 /**
@@ -101,12 +103,12 @@ export const DataTable = <TRow, TValue>({
   noResultsMessage = 'No results.',
   tableInstanceRef,
   toolbarRightSideContent,
-  defaultSorting = [],
+  sortingColumns = [],
 }: DataTableProps<TRow, TValue>) => {
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [sorting, setSorting] = useState<SortingState>(defaultSorting);
+  const [sorting, setSorting] = useState<SortingState>(sortingColumns);
   const tableColumns = enableSelectableTable ? [getSelectColumn<TRow>(), ...columns] : columns;
   const paginationEnabled = pagination?.enabled ?? false;
 

@@ -46,6 +46,7 @@ export const Toolbar: Story = {
     ...Basic.args,
     showTableConfigure: true,
     search: {
+      enabled: true,
       accessorKey: 'id',
       placeholder: 'Search by task...',
     },
@@ -68,6 +69,7 @@ export const FilterSearch: Story = {
   args: {
     ...Pagination.args,
     search: {
+      enabled: true,
       accessorKey: 'id',
       placeholder: 'Search by task...',
     },
@@ -79,6 +81,7 @@ export const ToolbarWithPagination: Story = {
     ...Pagination.args,
     showTableConfigure: true,
     search: {
+      enabled: true,
       accessorKey: 'id',
       placeholder: 'Search by task...',
     },
@@ -102,6 +105,7 @@ export const ToolbarWithRightSideContent: Story = {
     ...Pagination.args,
     showTableConfigure: true,
     search: {
+      enabled: true,
       accessorKey: 'id',
       placeholder: 'Search by task...',
     },
@@ -147,6 +151,7 @@ export const SearchWithFacetFilter: Story = {
   args: {
     ...Pagination.args,
     search: {
+      enabled: true,
       accessorKey: 'id',
       placeholder: 'Search by task...',
     },

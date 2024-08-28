@@ -1,9 +1,7 @@
 import { CheckIcon, PlusCircledIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 
-import type { Column } from '@tanstack/react-table';
-import type { ReactNode } from 'react';
-import type { DataTableLabelOption } from './types';
+import type { DataTableFacetFilterProps } from './types';
 
 import { Badge } from '../Badge';
 import { Button } from '../Button';
@@ -19,26 +17,21 @@ import {
 import { PopoverContent, PopoverRoot, PopoverTrigger } from '../Popover';
 import { Separator } from '../Separator';
 
-interface DataTableFacetedFilterProps<TData, TValue> {
-  column?: Column<TData, TValue>;
-  title?: string;
-  options: DataTableLabelOption[];
-  emptyResultMessage?: ReactNode;
-}
-
-export function DataTableFacetedFilter<TData, TValue>({
+export const DataTableFacetedFilter = <TData, TValue>({
   column,
   title,
   options,
   emptyResultMessage = 'No results found.',
-}: DataTableFacetedFilterProps<TData, TValue>) {
+  className,
+  searchPlaceholder = 'Search...',
+}: DataTableFacetFilterProps<TData, TValue>) => {
   const facets = column?.getFacetedUniqueValues();
   const selectedValues = new Set(column?.getFilterValue() as string[]);
 
   return (
     <PopoverRoot>
       <PopoverTrigger asChild>
-        <Button variant="outline" size="sm" className="border-dashed">
+        <Button variant="outline" size="sm" className={cn('border-dashed', className)}>
           <PlusCircledIcon className="mr-2 size-4" />
           {title}
           {selectedValues?.size > 0 && (
@@ -68,9 +61,22 @@ export function DataTableFacetedFilter<TData, TValue>({
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0" align="start">
         <CommandModal>
-          <CommandInput placeholder={title} />
+          <CommandInput placeholder={searchPlaceholder} />
           <CommandList>
             <CommandEmpty>{emptyResultMessage}</CommandEmpty>
+            {selectedValues.size > 0 && (
+              <>
+                <CommandGroup>
+                  <CommandItem
+                    onSelect={() => column?.setFilterValue(undefined)}
+                    className="justify-center text-center"
+                  >
+                    Clear filters
+                  </CommandItem>
+                </CommandGroup>
+                <CommandSeparator />
+              </>
+            )}
             <CommandGroup>
               {options.map((option) => {
                 const isSelected = selectedValues.has(option.value);
@@ -108,22 +114,9 @@ export function DataTableFacetedFilter<TData, TValue>({
                 );
               })}
             </CommandGroup>
-            {selectedValues.size > 0 && (
-              <>
-                <CommandSeparator />
-                <CommandGroup>
-                  <CommandItem
-                    onSelect={() => column?.setFilterValue(undefined)}
-                    className="justify-center text-center"
-                  >
-                    Clear filters
-                  </CommandItem>
-                </CommandGroup>
-              </>
-            )}
           </CommandList>
         </CommandModal>
       </PopoverContent>
     </PopoverRoot>
   );
-}
+};
