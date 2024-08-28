@@ -1,5 +1,11 @@
 # @paalan/react-shared
 
+## 1.4.2
+
+### Patch Changes
+
+- [`2f05793`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/2f05793bb2cefcfe17114eca3ce132a5e87e7bfc) Thanks [@paalamugan](https://github.com/paalamugan)! - chore added Datatable isSimpleSort prop
+
 ## 1.4.1
 
 ### Patch Changes
