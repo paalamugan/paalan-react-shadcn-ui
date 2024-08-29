@@ -32,13 +32,12 @@ const StepButtonContainer = ({
     <Button
       variant="ghost"
       type="button"
-      color="gray"
       tabIndex={currentStepClickable ? 0 : -1}
       className={cn(
         'stepper__step-button-container',
         'pointer-events-none rounded-full p-0',
         'h-[var(--step-icon-size)] w-[var(--step-icon-size)]',
-        'flex items-center justify-center rounded-full border-2',
+        'flex shrink-0 items-center justify-center rounded-full border-2 text-foreground',
         'data-[clickable=true]:pointer-events-auto',
         'data-[active=true]:border-primary data-[active=true]:bg-primary data-[active=true]:text-primary-foreground',
         'data-[current=true]:border-primary data-[current=true]:bg-secondary',

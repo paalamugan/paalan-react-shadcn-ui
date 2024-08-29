@@ -14,7 +14,7 @@ const TimelineContainer: React.FC<
     className?: string;
   }>
 > = ({ children, className }) => {
-  return <div className={cn('flex w-full flex-row gap-10', className)}>{children}</div>;
+  return <div className={cn('flex flex-row gap-5 md:gap-10 lg:gap-20', className)}>{children}</div>;
 };
 const VARIABLE_SIZES = {
   sm: '36px',
@@ -105,7 +105,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>((props, ref: Reac
             stepCount === 1 ? 'justify-end' : 'justify-between',
             orientation === 'vertical' || isVerticalTimeline ? 'flex-col' : 'flex-row',
             variant === 'line' && orientation === 'horizontal' && 'gap-4',
-            isVerticalTimeline && 'w-auto max-w-48 justify-start',
+            isVerticalTimeline && 'w-auto justify-start md:max-w-56',
             className,
             styles?.['main-container'],
           )}

@@ -163,7 +163,7 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>((props,
       <div
         className={cn(
           'stepper__vertical-step-content',
-          !isLastStep && (isVerticalTimeline ? 'min-h-10' : 'min-h-4'),
+          !isLastStep && (isVerticalTimeline ? 'min-h-14' : 'min-h-4'),
           variant !== 'line' && 'ps-[--step-icon-size]',
           variant === 'line' && orientation === 'vertical' && 'min-h-0',
           styles?.['vertical-step-content'],

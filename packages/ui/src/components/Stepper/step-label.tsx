@@ -60,6 +60,7 @@ const StepLabel = ({ isCurrentStep, opacity, label, description }: StepLabelProp
         <span
           className={cn(
             'stepper__step-label',
+            'text-foreground',
             isVerticalTimeline && 'break-all',
             labelVariants({ size }),
             styles?.['step-label'],
