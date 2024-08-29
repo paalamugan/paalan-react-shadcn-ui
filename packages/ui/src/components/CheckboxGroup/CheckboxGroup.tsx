@@ -3,9 +3,9 @@ import React from 'react';
 import { cn } from '@paalan/react-shared/lib';
 import { isAriaInvalid } from '@paalan/react-shared/utils';
 
-import type { ColorVariant } from '@paalan/react-shared/system';
 import type { OptionType } from '@paalan/react-shared/types';
 import type { ReactNode } from 'react';
+import type { CheckboxProps } from '../Checkbox';
 
 import { Box } from '../../base';
 import { Checkbox } from '../Checkbox';
@@ -30,7 +30,7 @@ export interface CheckboxGroupProps {
    */
   inline?: boolean;
   /** Variant of the checkbox */
-  variant?: ColorVariant;
+  variant?: CheckboxProps['variant'];
   /**
    * Whether the checkbox is swapped to the right or not
    */
