@@ -19,8 +19,8 @@ export const StyledComponent: ComponentWithAs<'div', TailwindStyledComponentProp
           borderColor,
           fontSize,
         }),
-        tailwindClassName,
         className,
+        tailwindClassName,
       )}
       ref={ref}
     />
