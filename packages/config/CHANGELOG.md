@@ -1,5 +1,11 @@
 # @paalan/react-config
 
+## 1.4.1
+
+### Patch Changes
+
+- [`36dc8be`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/36dc8be730feebbd34598169e04389da88383e55) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: Add word-break class to handle long words in Stepper component
+
 ## 1.4.0
 
 ### Minor Changes

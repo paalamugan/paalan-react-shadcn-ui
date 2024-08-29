@@ -1,6 +1,6 @@
 {
   "name": "@paalan/react-config",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "React UI config for Paalan UI",
   "type": "module",
   "main": "dist/index.js",
