@@ -61,7 +61,7 @@ const StepLabel = ({ isCurrentStep, opacity, label, description }: StepLabelProp
           className={cn(
             'stepper__step-label',
             'text-foreground',
-            isVerticalTimeline && 'break-all',
+            isVerticalTimeline && 'word-break',
             labelVariants({ size }),
             styles?.['step-label'],
           )}
@@ -74,7 +74,7 @@ const StepLabel = ({ isCurrentStep, opacity, label, description }: StepLabelProp
           className={cn(
             'stepper__step-description',
             'text-muted-foreground',
-            isVerticalTimeline && 'break-all',
+            isVerticalTimeline && 'word-break',
             descriptionVariants({ size }),
             styles?.['step-description'],
           )}

@@ -133,6 +133,10 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  .word-break {
+    word-break: break-word;
+  }
 }
 
 @media (max-width: 640px) {

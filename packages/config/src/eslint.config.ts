@@ -75,6 +75,7 @@ export default {
           'accent',
           'popover',
           'card',
+          'word-break',
           'toast-*',
           'toast-headless',
           'toast-headless-title',

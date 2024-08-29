@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { create } from '@storybook/theming';
 
-import brandImage from './storybook-logo.png';
+// import brandImage from './storybook-logo.png';
 
 const getCurrentTheme = () => {
   const search = window.location.search;
@@ -21,5 +21,5 @@ export default create({
   base: getCurrentTheme(),
   brandTitle: 'Paalan React UI',
   brandUrl: 'https://paalamugan.com',
-  brandImage,
+  // brandImage,
 });
