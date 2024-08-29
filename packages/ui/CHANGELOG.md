@@ -1,5 +1,13 @@
 # @paalan/react-ui
 
+## 1.4.4
+
+### Patch Changes
+
+- [`2973467`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/29734674d07ab1c3b0c6f85e93ac09076f573883) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: Update Stepper component styles for better responsiveness
+
+- [`be5f4c1`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/be5f4c13ec0654de425f4f8310f5997cb0ad936f) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: Add link color variant to shared system constants and utils
+
 ## 1.4.3
 
 ### Patch Changes
