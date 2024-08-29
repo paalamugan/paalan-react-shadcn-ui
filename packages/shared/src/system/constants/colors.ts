@@ -19,16 +19,7 @@ export const TAILWIND_COLOR_VARIANTS = [
   'rose',
 ] as const;
 
-export const COLOR_VARIANTS = [
-  'primary',
-  'secondary',
-  'tertiary',
-  'info',
-  'success',
-  'warning',
-  'danger',
-  'link',
-] as const;
+export const COLOR_VARIANTS = ['primary', 'secondary', 'tertiary', 'info', 'success', 'warning', 'danger'] as const;
 
 export type TailwindColorVariant = (typeof TAILWIND_COLOR_VARIANTS)[number];
 export type ColorVariant = (typeof COLOR_VARIANTS)[number];
@@ -38,6 +29,7 @@ export type AllColorVariant = (typeof ALL_COLOR_VARIANTS)[number];
 
 export const BOX_COLOR_VARIANTS = [
   ...ALL_COLOR_VARIANTS,
+  'link',
   'muted',
   'black',
   'white',
