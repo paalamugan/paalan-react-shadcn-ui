@@ -59,7 +59,7 @@ export const AvatarUpload: FC<AvatarUploadProps> = ({
               inputRef.current?.click();
             }}
           >
-            <PencilIcon className="size-4 text-background" />
+            <PencilIcon className="size-4 text-background" aria-label="pencil" />
           </Button>
           <Input ref={inputRef} type="file" className="hidden" onChange={onChange || handleChange} accept="image/*" />
         </>
