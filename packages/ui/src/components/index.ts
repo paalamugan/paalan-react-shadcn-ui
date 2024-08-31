@@ -5,6 +5,7 @@ export * from './Alert';
 export * from './AlertDialog';
 export * from './AspectRatio';
 export * from './Avatar';
+export * from './AvatarUpload';
 export * from './Badge';
 export * from './Button';
 export * from './Calendar';

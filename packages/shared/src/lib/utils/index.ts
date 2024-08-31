@@ -69,3 +69,24 @@ export const convertObjectKeysIntoZodEnum = <T extends Record<string, string>>(o
 export const convertObjectValuesIntoZodEnum = <T extends Record<string, string>>(obj: T) => {
   return z.enum(convertObjectValuesForZodEnum(obj));
 };
+
+/**
+ * Converts a File object to a base64 string.
+ * @param file - The File object to convert.
+ * @returns A Promise that resolves with the base64 string representation of the file.
+ */
+export const toBase64 = (file: File) => {
+  return new Promise<string | ArrayBuffer | null>((resolve, reject) => {
+    const fileReader = new FileReader();
+
+    fileReader.readAsDataURL(file);
+
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
+};

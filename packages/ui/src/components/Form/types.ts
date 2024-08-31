@@ -1,5 +1,6 @@
 import type { ColorVariant } from '@paalan/react-shared/system';
 import type { ReactNode } from 'react';
+import type { ControllerRenderProps, FieldValues, Path } from 'react-hook-form';
 import type { CheckboxProps } from '../Checkbox';
 import type { CheckboxGroupProps } from '../CheckboxGroup/CheckboxGroup';
 import type { ComboboxProps } from '../Combobox';
@@ -15,7 +16,7 @@ import type { TextareaProps } from '../Textarea';
 
 interface CommonFormItemField {
   name: string;
-  label: string;
+  label?: ReactNode;
   labelDescription?: ReactNode;
   description?: ReactNode;
   required?: boolean;
@@ -125,6 +126,11 @@ export interface FormDateRangePickerField
   dateRangePickerProps?: Omit<DateRangePickerProps, 'label' | 'onDateRangeChange'>;
 }
 
+export interface FormItemCustomField extends CommonFormItemField {
+  type: 'custom';
+  render: <TData extends FieldValues>(props: { field: ControllerRenderProps<TData, Path<TData>> }) => ReactNode;
+}
+
 export type FormItemField =
   | FormItemInputField
   | FormItemNumberInputField
@@ -136,4 +142,5 @@ export type FormItemField =
   | FormItemCheckboxGroupField
   | FormItemComboboxField
   | FormDatePickerField
-  | FormDateRangePickerField;
+  | FormDateRangePickerField
+  | FormItemCustomField;

@@ -331,22 +331,25 @@ const Form = <TData extends FieldValues>({
                     'flex-row items-center': inline || formInline || inlineTypes.includes(item.type),
                   })}
                 >
-                  <FormLabel
-                    required={required}
-                    htmlFor={field.name}
-                    className={cn(
-                      {
-                        'break-word w-[9rem] min-w-[9rem]': formInline && !inlineTypes.includes(item.type),
-                        'order-1': inlineTypes.includes(item.type),
-                      },
-                      formLabelClassName,
-                    )}
-                    labelDescription={labelDescription}
-                  >
-                    {label}
-                  </FormLabel>
+                  {label && (
+                    <FormLabel
+                      required={required}
+                      htmlFor={field.name}
+                      className={cn(
+                        {
+                          'break-word w-[9rem] min-w-[9rem]': formInline && !inlineTypes.includes(item.type),
+                          'order-1': inlineTypes.includes(item.type),
+                        },
+                        formLabelClassName,
+                      )}
+                      labelDescription={labelDescription}
+                    >
+                      {label}
+                    </FormLabel>
+                  )}
 
                   <>
+                    {item.type === 'custom' && <FormControl>{item.render?.({ field })}</FormControl>}
                     {item.type === 'input' && (
                       <FormControl>
                         <Input
