@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.7
+
+### Patch Changes
+
+- [`a8452ad`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/a8452ad94e8516ee9fe203c722ee3f98c84c7a35) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: Update Button component to use React.ReactNode for loadingText prop
+
 ## 1.4.6
 
 ### Patch Changes
