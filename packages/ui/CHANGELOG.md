@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.8
+
+### Patch Changes
+
+- [`2a5f512`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/2a5f51277aebc45b66ff729c364485edb24ece70) Thanks [@paalamugan](https://github.com/paalamugan)! - feat: Add FormFieldItems component to Form for rendering multiple form fields
+
 ## 1.4.7
 
 ### Patch Changes
