@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.6
+
+### Patch Changes
+
+- [`573e94b`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/573e94b9d129bd59683ca2f935d5a03e0d727d5e) Thanks [@paalamugan](https://github.com/paalamugan)! - feat: Add AvatarUpload component and types
+
 ## 1.4.5
 
 ### Patch Changes
