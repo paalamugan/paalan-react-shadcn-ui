@@ -108,7 +108,7 @@
 
 ### Patch Changes
 
-- [`31e0bca`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/31e0bca23d741da94a0f5db89dea636240bb82f2) Thanks [@paalamugan](https://github.com/paalamugan)! - feat: Add labelDescription prop to FormItemField interface
+- [`31e0bca`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/31e0bca23d741da94a0f5db89dea636240bb82f2) Thanks [@paalamugan](https://github.com/paalamugan)! - feat: Add labelDescription prop to FormFieldItem interface
 
 ## 1.3.6
 

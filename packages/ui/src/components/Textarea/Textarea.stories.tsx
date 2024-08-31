@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import type { FormItemField } from '../Form/types';
+import type { FormFieldItem } from '../Form/types';
 
 import { Button } from '../Button';
 import { Form } from '../Form';
@@ -108,7 +108,7 @@ export const WithFormTextarea: Story = {
       });
     };
 
-    const fields: FormItemField[] = [
+    const fields: FormFieldItem<z.infer<typeof formSchema>>[] = [
       {
         name: 'bio',
         type: 'textarea',

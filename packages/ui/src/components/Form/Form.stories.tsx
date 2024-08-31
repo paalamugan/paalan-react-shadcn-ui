@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import type { FormComponentProps } from './Form';
-import type { FormItemField } from './types';
+import type { FormComponentProps, FormFieldItem } from './types';
 
 import { Input } from '../Input';
 import { toast } from '../Toast';
@@ -78,7 +77,7 @@ type Story = StoryObj<typeof Form>;
 export const Basic: Story = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   render: (args: FormComponentProps<any>) => {
-    const formItemFields: FormItemField[] = [
+    const formItemFields: FormFieldItem<FormType>[] = [
       {
         type: 'input',
         name: 'username',
@@ -345,7 +344,7 @@ export const WithInline: Story = {
 export const WithCustomGridFormAlignment: Story = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   render: (args: FormComponentProps<any>) => {
-    const formItemFields: FormItemField[] = [
+    const formItemFields: FormFieldItem<FormType>[] = [
       {
         type: 'input',
         name: 'username',

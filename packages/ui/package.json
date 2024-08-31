@@ -22,7 +22,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx}\" --cache",
     "tsup": "tsup",
     "tsup:watch": "tsup --watch",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "validate": "pnpm type-check && pnpm lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
