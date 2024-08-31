@@ -119,7 +119,6 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>((props,
       ref={ref}
       className={cn(
         'stepper__vertical-step',
-        isVerticalTimeline && isCurrentStep && 'flex-grow',
         verticalStepVariants({
           variant: variant?.includes('circle') ? 'circle' : 'line',
         }),

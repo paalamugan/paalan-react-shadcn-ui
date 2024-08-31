@@ -1,4 +1,5 @@
 import type { ChangeEventHandler, ReactNode } from 'react';
+import type { InputProps } from '../Input';
 
 export interface AvatarUploadProps {
   /**
@@ -37,4 +38,8 @@ export interface AvatarUploadProps {
    * @example <User2Icon className="size-1/2" />
    */
   avatarFallbackIcon?: ReactNode;
+  /**
+   * The props to apply to the input element.
+   */
+  inputProps: InputProps;
 }

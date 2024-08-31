@@ -30,7 +30,6 @@ export const FormFieldItemComponent = <TData extends FieldValues>({
   const inlineTypes = ['checkbox'];
   return (
     <FormField
-      key={item.name}
       control={control}
       name={item.name}
       render={({ field }) => (
