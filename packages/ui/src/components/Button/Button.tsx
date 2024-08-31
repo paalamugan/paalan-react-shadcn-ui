@@ -78,7 +78,7 @@ export interface ButtonProps
   /**
    * Optional loading text for the button
    */
-  loadingText?: string;
+  loadingText?: React.ReactNode;
   /**
    * Optional wrapper class name for the button and icons (if any)
    */
@@ -141,7 +141,7 @@ const Button: ComponentWithAs<'button', ButtonProps> = forwardRef<ButtonProps, '
         ) : (
           <Box className={cn('inline-flex flex-1 items-center justify-center gap-1.5', wrapperClassName)}>
             {!isLoading && leftIcon}
-            {isLoading && <ArrowPathIcon className={cn('h-4 w-4 animate-spin', size && LOADING_ICON_SIZE[size])} />}
+            {isLoading && <ArrowPathIcon className={cn('size-4 animate-spin', size && LOADING_ICON_SIZE[size])} />}
             {isLoading && loadingText ? loadingText : label || children}
             {!isLoading && rightIcon}
           </Box>

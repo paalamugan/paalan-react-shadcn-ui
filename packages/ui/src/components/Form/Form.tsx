@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { ArrowPathIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
 import { Slot } from '@radix-ui/react-slot';
 import { Controller, FormProvider, useFormContext } from 'react-hook-form';
@@ -194,13 +193,14 @@ export interface FormComponentProps<TData extends FieldValues> extends React.Pro
     /**
      * Whether the form is submitting or not
      */
-    isSubmitting?: boolean;
+    isSubmitting: boolean;
     /**
      * You have to call this function to submit the form, If you do that then the form will be submitted and onSubmit callback will be called if there is no error
+     * Only use this function when you want to submit the form manually or <Button type="button" />
      * @param e Event
-     * @returns Promise<void>
+     * @example <Button type="button" isLoading={isSubmitting} onClick={onFormSubmit}>Submit</Button>
      */
-    onFormSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
+    onFormSubmit: React.FormEventHandler<HTMLFormElement>;
   }>;
   /**
    * The submit button variant
@@ -229,7 +229,7 @@ export interface FormComponentProps<TData extends FieldValues> extends React.Pro
   /**
    * The reset button component
    */
-  ResetButton?: React.ComponentType<{ onFormReset?: UseFormReset<TData> }>;
+  ResetButton?: React.ComponentType<{ onFormReset: UseFormReset<TData> }>;
   /**
    * The reset button variant
    */
@@ -316,7 +316,7 @@ const Form = <TData extends FieldValues>({
         id={id}
         ref={formRef}
         noValidate={noValidate}
-        onSubmit={!hideSubmitButton ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
+        onSubmit={form.handleSubmit(onSubmit, onSubmitError)}
         className={cn('space-y-4', className)}
       >
         {fields.map(({ required, label, labelDescription, inline, formItemClassName, formLabelClassName, ...item }) => (
@@ -601,10 +601,9 @@ const Form = <TData extends FieldValues>({
                 type="submit"
                 variant={submitButtonVariant}
                 color={submitButtonColor}
-                disabled={isSubmitting}
+                isLoading={isSubmitting}
                 className={submitClassName}
               >
-                {isSubmitting && <ArrowPathIcon className="size-4 animate-spin" />}
                 {submitText}
               </Button>
             )
