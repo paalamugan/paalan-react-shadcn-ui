@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.9
+
+### Patch Changes
+
+- [`38f8d46`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/38f8d46107c238b4d6d9f1cc62df4a6566785378) Thanks [@paalamugan](https://github.com/paalamugan)! - feat: Add forwardRef to AvatarUpload component for better control over input element
+
 ## 1.4.8
 
 ### Patch Changes
