@@ -1,5 +1,16 @@
 # @paalan/react-ui
 
+## 1.4.10
+
+### Patch Changes
+
+- [`8efdcdd`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/8efdcdd173ca945ae8a377b4c9e3e8d13598a23e) Thanks [@paalamugan](https://github.com/paalamugan)! - feat: Update AvatarUpload and Form components
+
+  - Add forwardRef to AvatarUpload component for better control over input element
+  - Add FormFieldItems component to Form for rendering multiple form fields
+  - Fix missing aria-label in PencilIcon of AvatarUpload component
+  - Update Button component to use React.ReactNode for loadingText prop
+
 ## 1.4.9
 
 ### Patch Changes

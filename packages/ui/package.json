@@ -1,6 +1,6 @@
 {
   "name": "@paalan/react-ui",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "React UI components for Paalan UI",
   "type": "module",
   "main": "dist/index.js",
