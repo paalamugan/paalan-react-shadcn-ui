@@ -3,6 +3,8 @@ import * as React from 'react';
 import { cn } from '@paalan/react-shared/lib';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 
+import type { TabOption } from './types';
+
 const TabsRoot = TabsPrimitive.Root;
 
 const TabsList = React.forwardRef<
@@ -62,6 +64,10 @@ TabsContent.displayName = TabsPrimitive.Content.displayName;
 
 export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsRoot> {
   /**
+   * The tabs to render in the component
+   */
+  tabs: Array<TabOption>;
+  /**
    * The active tab
    */
   activeTab: string;
@@ -85,13 +91,6 @@ export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsRoo
    * Optional class name for the all tab content
    */
   contentClassName?: string;
-  tabs: {
-    label: string;
-    value: string;
-    content: React.ReactNode;
-    triggerClassName?: string;
-    contentClassName?: string;
-  }[];
   /**
    * Optional class name for the tab list
    */
@@ -121,6 +120,7 @@ const Tabs = React.forwardRef<React.ElementRef<typeof TabsRoot>, TabsProps>(
     ref,
   ) => {
     const [activeTab, setActiveTab] = React.useState(tab);
+
     React.useEffect(() => {
       setActiveTab(tab);
     }, [tab]);
@@ -141,9 +141,13 @@ const Tabs = React.forwardRef<React.ElementRef<typeof TabsRoot>, TabsProps>(
         </TabsList>
 
         {tabs.map(({ value, content, contentClassName }) => (
-          <TabsContent key={value} value={value} className={cn(allContentClassName, contentClassName)}>
-            {content}
-          </TabsContent>
+          <React.Fragment key={value}>
+            {!!content && (
+              <TabsContent value={value} className={cn(allContentClassName, contentClassName)}>
+                {content}
+              </TabsContent>
+            )}
+          </React.Fragment>
         ))}
       </TabsRoot>
     );

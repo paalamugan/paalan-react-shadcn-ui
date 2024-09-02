@@ -15,9 +15,9 @@ import type { CheckboxGroupProps } from '../CheckboxGroup/CheckboxGroup';
 import type { ComboboxProps } from '../Combobox';
 import type { DatePickerProps } from '../DatePicker';
 import type { DateRangePickerProps } from '../DateRangePicker';
-import type { Input } from '../Input';
+import type { InputProps } from '../Input';
 import type { MultiSelectProps } from '../MultiSelect';
-import type { NumberInputProps } from '../NumberInput/NumberInput';
+import type { NumberInputProps } from '../NumberInput';
 import type { RadioGroupProps } from '../RadioGroup';
 import type { SelectProps } from '../Select';
 import type { SelectOption } from '../Select/types';
@@ -38,9 +38,10 @@ interface CommonFormFieldItem<TData> {
 }
 
 export type FormInputProps = Omit<
-  React.ComponentPropsWithoutRef<typeof Input>,
+  InputProps,
   'inline' | 'label' | 'className' | 'disabled' | 'placeholder' | 'name' | 'required' | 'type'
 >;
+
 export interface FormFieldInputItem<TData>
   extends CommonFormFieldItem<TData>,
     Partial<Pick<FormInputProps, 'onValueChange' | 'onChange'>> {

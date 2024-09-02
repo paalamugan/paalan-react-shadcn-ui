@@ -7,7 +7,7 @@ import type { InputProps } from '../Input';
 
 import { Input } from '../Input';
 
-export interface NumberInputProps extends Omit<InputProps, 'onValueChange'> {
+export interface NumberInputProps extends Omit<InputProps, 'onValueChange' | 'value' | 'defaultValue'> {
   /**
    * value of number input
    */
@@ -16,6 +16,10 @@ export interface NumberInputProps extends Omit<InputProps, 'onValueChange'> {
    * default value of number input(when uncontrolled)
    */
   defaultValue?: string | number | null;
+  /**
+   * zero will be treated as empty string
+   */
+  zeroAsEmptyString?: boolean;
   /**
    * If true, only positive integer is allowed
    */
@@ -28,12 +32,12 @@ export interface NumberInputProps extends Omit<InputProps, 'onValueChange'> {
    * If true, only positive integer is allowed and starts with zero
    * @default false
    */
-  positiveIntegerStartsWithZero?: boolean;
+  isPositiveIntegerStartsWithZero?: boolean;
   /**
    * if true, only positive float is allowed and starts with zero
    * @default false
    */
-  positiveFloatStartsWithZero?: boolean;
+  isPositiveFloatStartsWithZero?: boolean;
   /**
    *
    * @param value current value of the input
@@ -50,15 +54,16 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
       onValueChange,
       value,
       defaultValue,
-      positiveIntegerStartsWithZero = false,
-      positiveFloatStartsWithZero = false,
+      isPositiveIntegerStartsWithZero,
+      isPositiveFloatStartsWithZero,
+      zeroAsEmptyString,
       ...props
     },
     ref,
   ) => {
     const [localValue, setLocalValue] = useControllableState({
-      value: isDefinedValue(value) ? `${value}` : '',
-      defaultValue: isDefinedValue(defaultValue) ? `${defaultValue}` : '',
+      value: isDefinedValue(value) ? `${zeroAsEmptyString ? value || '' : value}` : '',
+      defaultValue: isDefinedValue(defaultValue) ? `${zeroAsEmptyString ? defaultValue || '' : ''}` : '',
       onChange: (value) => onValueChange?.(+value),
     });
 
@@ -68,14 +73,23 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
         setLocalValue(value);
         return onChange?.(event);
       }
-
       if (isPositiveIntegerValue) {
-        if (isPositiveInteger(value, positiveIntegerStartsWithZero ? 0 : 1)) {
+        if (isPositiveInteger(value, 1)) {
           setLocalValue(value);
           onChange?.(event);
         }
       } else if (isPositiveFloatValue) {
-        if (isPositiveFloat(value, positiveFloatStartsWithZero ? 0 : 1)) {
+        if (isPositiveFloat(value, 1)) {
+          setLocalValue(value);
+          onChange?.(event);
+        }
+      } else if (isPositiveIntegerStartsWithZero) {
+        if (isPositiveInteger(value, 0)) {
+          setLocalValue(value);
+          onChange?.(event);
+        }
+      } else if (isPositiveFloatStartsWithZero) {
+        if (isPositiveFloat(value, 0)) {
           setLocalValue(value);
           onChange?.(event);
         }

@@ -1,14 +1,13 @@
 import { cn } from '@paalan/react-shared/lib';
 import { forwardRef, isAriaInvalid } from '@paalan/react-shared/utils';
 
-import type { ComponentWithAs } from '@paalan/react-shared/types';
-import type { BoxProps } from '../../base';
+import type { ComponentWithAs, HTMLTailwindStyledComponentProps } from '@paalan/react-shared/types';
 
 import { Box } from '../../base';
 import { ErrorMessage } from '../ErrorMessage';
 import { Label } from '../Label';
 
-export interface InputProps extends BoxProps {
+export interface InputProps extends HTMLTailwindStyledComponentProps<'input'> {
   /**
    * whether the input is invalid
    */

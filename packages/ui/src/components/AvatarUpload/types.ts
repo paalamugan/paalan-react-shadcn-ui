@@ -41,5 +41,5 @@ export interface AvatarUploadProps {
   /**
    * The props to apply to the input element.
    */
-  inputProps: InputProps;
+  inputProps?: InputProps;
 }
