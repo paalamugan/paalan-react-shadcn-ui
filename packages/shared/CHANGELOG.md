@@ -1,5 +1,11 @@
 # @paalan/react-shared
 
+## 1.4.5
+
+### Patch Changes
+
+- [`f9565bf`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/f9565bf087b1ddb207e3e0650dd5fcb993e8b0d1) Thanks [@paalamugan](https://github.com/paalamugan)! - refactor: Remove unused utility function convertObjectValuesForZodEnum
+
 ## 1.4.4
 
 ### Patch Changes
