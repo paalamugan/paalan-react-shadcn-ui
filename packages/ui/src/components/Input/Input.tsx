@@ -89,7 +89,7 @@ const Input: ComponentWithAs<'input', InputProps> = forwardRef<InputProps, 'inpu
             id={labelId}
             required={required}
             className={cn(
-              'flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+              'h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
               {
                 'border-danger placeholder:text-danger focus-visible:ring-danger/40': isInvalid,
                 'bg-muted/40 read-only:focus-visible:ring-0': props.readOnly,

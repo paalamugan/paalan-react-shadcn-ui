@@ -14,22 +14,6 @@ export const cn = (...inputs: ClassValue[]) => {
 };
 
 /**
- * Converts the values of an object into an array for Zod enum.
- *
- * @template T - The type of the object.
- * @param obj - The object to convert.
- * @returns - The converted array of values.
- * @throws - Throws an error if the object is empty.
- */
-export const convertObjectValuesForZodEnum = <T extends Record<string, string>>(obj: T) => {
-  const values = Object.values(obj);
-  if (!values.length) {
-    throw new Error('Empty object');
-  }
-  return [...values] as [T[keyof T], ...T[keyof T][]];
-};
-
-/**
  * Converts the keys of an object into an array for Zod enum.
  *
  * @template T - The type of the object.
@@ -38,7 +22,7 @@ export const convertObjectValuesForZodEnum = <T extends Record<string, string>>(
  * @throws - Throws an error if the object is empty.
  */
 export const convertObjectKeysForZodEnum = <
-  T extends Record<string, string>,
+  T extends Record<string, unknown>,
   TKey = keyof T extends string ? keyof T : never,
 >(
   obj: T,
@@ -56,8 +40,24 @@ export const convertObjectKeysForZodEnum = <
  * @param obj - The object containing key-value pairs.
  * @returns A Zod enum representing the keys of the object.
  */
-export const convertObjectKeysIntoZodEnum = <T extends Record<string, string>>(obj: T) => {
+export const convertObjectKeysIntoZodEnum = <T extends Record<string, unknown>>(obj: T) => {
   return z.enum(convertObjectKeysForZodEnum(obj));
+};
+
+/**
+ * Converts the values of an object into an array for Zod enum.
+ *
+ * @template T - The type of the object.
+ * @param obj - The object to convert.
+ * @returns - The converted array of values.
+ * @throws - Throws an error if the object is empty.
+ */
+export const convertObjectValuesForZodEnum = <T extends Record<string, string>>(obj: T) => {
+  const values = Object.values(obj);
+  if (!values.length) {
+    throw new Error('Empty object');
+  }
+  return [...values] as [T[keyof T], ...T[keyof T][]];
 };
 
 /**
