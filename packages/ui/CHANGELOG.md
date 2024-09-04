@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.12
+
+### Patch Changes
+
+- [`fad2414`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/fad241453108111bd3b2737901e60c64d43da4c3) Thanks [@paalamugan](https://github.com/paalamugan)! - chore: Update PopoverContent component to include min-width for better layout
+
 ## 1.4.11
 
 ### Patch Changes
