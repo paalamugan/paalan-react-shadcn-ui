@@ -198,7 +198,7 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
               </Button>
             </PopoverTrigger>
             <PopoverContent
-              className={cn(isPreset ? 'flex w-auto flex-col space-y-2 p-2' : 'w-auto p-0')}
+              className={cn('min-w-fit', isPreset ? 'flex w-auto flex-col space-y-2 p-2' : 'w-auto p-0')}
               align="start"
             >
               {isPreset ? (

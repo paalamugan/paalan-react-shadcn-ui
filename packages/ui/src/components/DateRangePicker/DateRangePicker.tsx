@@ -162,7 +162,7 @@ export const DateRangePicker = React.forwardRef<HTMLButtonElement, DateRangePick
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
+              <PopoverContent className="w-auto min-w-fit p-0" align="start">
                 <Calendar
                   mode="range"
                   defaultMonth={date?.from}
