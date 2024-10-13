@@ -2,8 +2,7 @@ import * as React from 'react';
 
 import { useControllableState } from '@paalan/react-hooks';
 import { CaretSortIcon, CheckIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid, isDefinedValue } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid, isDefinedValue } from '@paalan/react-shared/lib';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
 import type { SelectOption, SelectOptionGroupType } from './types';

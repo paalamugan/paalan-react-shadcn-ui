@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { CalendarIcon, XCircleIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 import { addDays, format } from 'date-fns';
 
 import { Box } from '../../base';

@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 import { CheckIcon, MinusIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { cva } from 'class-variance-authority';
 

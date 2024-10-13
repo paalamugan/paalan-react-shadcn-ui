@@ -1,7 +1,6 @@
 import { forwardRef, Fragment, useMemo, useState } from 'react';
 
-import { cn } from '@paalan/react-shared/lib';
-import { result } from '@paalan/react-shared/utils';
+import { cn, result } from '@paalan/react-shared/lib';
 
 import type { FC, ForwardedRef, ReactElement } from 'react';
 import type { SimpleTableProps } from './types';

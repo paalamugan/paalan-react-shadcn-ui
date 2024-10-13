@@ -1,5 +1,5 @@
-import { cn } from '@paalan/react-shared/lib';
-import { forwardRef, isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
+import { forwardRef } from '@paalan/react-shared/utils';
 
 import type { ComponentWithAs, HTMLTailwindStyledComponentProps } from '@paalan/react-shared/types';
 

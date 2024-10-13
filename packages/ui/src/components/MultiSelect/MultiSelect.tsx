@@ -2,8 +2,7 @@ import * as React from 'react';
 
 import { useCallbackRef } from '@paalan/react-hooks';
 import { CaretSortIcon, XMarkIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 
 import type { ComboboxProps } from '../Combobox';
 

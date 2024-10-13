@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 import { CalendarIcon, XCircleIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 import { format } from 'date-fns';
 
 import type { DateRange } from 'react-day-picker';

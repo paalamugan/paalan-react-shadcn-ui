@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
 import { CaretSortIcon, XCircleIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 
 import type { OptionType } from '@paalan/react-shared/types';
 import type { PopoverModalContentProps } from '../Popover/components';

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 
 import type { OptionType } from '@paalan/react-shared/types';
 import type { ReactNode } from 'react';

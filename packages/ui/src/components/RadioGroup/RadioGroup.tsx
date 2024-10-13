@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 import { CheckIcon } from '@paalan/react-icons';
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { cva } from 'class-variance-authority';
 

@@ -1,3 +1,4 @@
+import { disableStorybookArgTypes } from '@paalan/react-shared/lib';
 import {
   alignContent,
   alignItems,
@@ -12,7 +13,6 @@ import {
   placeItems,
   placeSelf,
 } from '@paalan/react-shared/system';
-import { disableStorybookArgTypes } from '@paalan/react-shared/utils';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

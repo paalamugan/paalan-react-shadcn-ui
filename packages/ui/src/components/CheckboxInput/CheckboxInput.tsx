@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { cn } from '@paalan/react-shared/lib';
-import { isAriaInvalid } from '@paalan/react-shared/utils';
+import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 import { cva } from 'class-variance-authority';
 
 import type { HTMLTailwindStyledComponentProps } from '@paalan/react-shared/types';
