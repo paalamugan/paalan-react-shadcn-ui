@@ -70,7 +70,6 @@ export const Basic: Story = {
   args: {
     options: options,
     selectedValues: ['next.js'],
-    commandClassName: 'w-[560px]',
   },
 };
 export const WithLabel: Story = {

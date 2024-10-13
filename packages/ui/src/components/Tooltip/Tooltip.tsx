@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { useControllableState } from '@paalan/react-hooks';
 import { cn } from '@paalan/react-shared/lib';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
@@ -76,23 +77,31 @@ interface TooltipProps extends Omit<React.ComponentPropsWithoutRef<typeof Toolti
 }
 
 const Tooltip = React.forwardRef<React.ElementRef<typeof TooltipContent>, TooltipProps>(
-  ({ className, trigger, asPortal, content, side = 'top', align = 'center', ...props }, ref) => {
+  (
+    {
+      className,
+      trigger,
+      asPortal,
+      content,
+      side = 'top',
+      align = 'center',
+      defaultOpen,
+      open,
+      onOpenChange,
+      ...props
+    },
+    ref,
+  ) => {
     const TooltipPortalComponent = asPortal ? TooltipPortal : React.Fragment;
-    const [open, setOpen] = React.useState(props.open ?? props.defaultOpen);
+    const [localOpen, setLocalOpen] = useControllableState({
+      defaultValue: defaultOpen,
+      value: open,
+      onChange: onOpenChange,
+    });
 
-    React.useEffect(() => {
-      if (props.open !== undefined) {
-        setOpen(props.open);
-      }
-    }, [props.open]);
-
-    const onOpenChangeHandle = (open: boolean) => {
-      setOpen(open);
-      props.onOpenChange?.(open);
-    };
     return (
       <TooltipProvider delayDuration={100}>
-        <TooltipRoot open={open} onOpenChange={onOpenChangeHandle}>
+        <TooltipRoot open={localOpen} onOpenChange={setLocalOpen}>
           <TooltipTrigger asChild>{trigger}</TooltipTrigger>
           <TooltipPortalComponent>
             <TooltipContent

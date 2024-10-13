@@ -108,5 +108,6 @@ export const WithPagination: Story = {
 export const WithNoData: Story = {
   args: {
     ...Basic.args,
+    rows: [],
   },
 };

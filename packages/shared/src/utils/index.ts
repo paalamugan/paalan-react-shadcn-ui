@@ -6,7 +6,6 @@ export * from './create-context';
 export * from './create-context-container';
 export * from './dom';
 export * from './forward-ref';
-export * from '../lib/helper';
 export * from './lower-first';
 export * from './patch-console-error';
 export * from './random-id';

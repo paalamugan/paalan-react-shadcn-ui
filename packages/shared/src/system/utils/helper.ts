@@ -107,13 +107,23 @@ export const generateTailwindClassName = (styledProps: Dict) => {
  */
 export const getRandomBoxColors = (count: number) => {
   const result: BoxColorVariant[] = [];
-  const ignoredColors = ['inherit', 'transparent', 'background', 'foreground', 'secondary', 'muted', 'white', 'black'];
+  const ignoredColors = [
+    'inherit',
+    'transparent',
+    'background',
+    'foreground',
+    'secondary',
+    'muted',
+    'white',
+    'black',
+    'current',
+  ];
   const variants = BOX_COLOR_VARIANTS.filter((variant) => !ignoredColors.includes(variant));
   for (let i = 0; i < count; i += 1) {
     const randomIndex = Math.floor(Math.random() * variants.length);
     const value = variants[randomIndex];
     if (value) {
-      result.push();
+      result.push(value);
     }
   }
   return result;

@@ -1,0 +1,67 @@
+import { Canvas, Controls, Meta, Source, Story } from '@storybook/blocks';
+
+import * as allStories from './NextThemeProvider.stories.tsx';
+
+<Meta of={allStories} />
+
+# NextThemeProvider
+
+The NextThemeProvider component provides a theme to its child components and persists the theme in local storage.
+
+## Usage
+
+### Example
+
+<Canvas of={allStories.Basic} sourceState="none" />
+
+### Code
+
+```tsx
+import { NextThemeProvider, useNextTheme } from '@paalan/react-providers';
+import { Button, Heading, HStack, Stack } from '@paalan/react-ui';
+
+const Component = () => {
+  const { theme, setTheme } = useNextTheme();
+
+  return (
+    <Stack as="section" gap="4">
+      <Heading>Current Theme: {theme}</Heading>
+      <HStack>
+        <Button onClick={() => setTheme('dark')} variant="outline">
+          Dark
+        </Button>
+        <Button onClick={() => setTheme('light')} variant="outline">
+          Light
+        </Button>
+        <Button onClick={() => setTheme('system')} variant="outline">
+          System
+        </Button>
+      </HStack>
+    </Stack>
+  );
+};
+
+const App = () => {
+  return (
+    <NextThemeProvider>
+      <Component />
+    </NextThemeProvider>
+  );
+};
+
+function Usage() {
+  return <App />;
+}
+```
+
+## Hooks
+
+useNextTheme is a hook that returns the current theme and a function to set the theme.
+
+```ts
+const { theme, setTheme } = useNextTheme();
+```
+
+## Props
+
+<Controls sort="requiredFirst" />

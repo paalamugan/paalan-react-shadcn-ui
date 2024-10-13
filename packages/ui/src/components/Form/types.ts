@@ -173,7 +173,7 @@ export interface FormComponentProps<TData extends FieldValues> extends React.Pro
   /**
    * The callback will fired when the form is submitted
    */
-  onSubmit: SubmitHandler<TData>;
+  onSubmit?: SubmitHandler<TData>;
   /**
    * The callback will fired when the form is submitted with error
    */
@@ -196,7 +196,7 @@ export interface FormComponentProps<TData extends FieldValues> extends React.Pro
      * @param e Event
      * @example <Button type="button" isLoading={isSubmitting} onClick={onFormSubmit}>Submit</Button>
      */
-    onFormSubmit: React.FormEventHandler<HTMLFormElement>;
+    onFormSubmit?: React.FormEventHandler<HTMLFormElement>;
   }>;
   /**
    * The submit button variant

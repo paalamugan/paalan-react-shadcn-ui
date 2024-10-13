@@ -45,7 +45,7 @@ export const FormFieldItemComponent = <TData extends FieldValues>({
                 htmlFor={field.name}
                 className={cn(
                   {
-                    'break-word w-[9rem] min-w-[9rem]': formInline && !inlineTypes.includes(item.type),
+                    'break-word w-[9rem] shrink-0': formInline && !inlineTypes.includes(item.type),
                     'order-1': inlineTypes.includes(item.type),
                   },
                   formLabelClassName,
@@ -265,7 +265,7 @@ export const FormFieldItemComponent = <TData extends FieldValues>({
           {item.description && (
             <FormDescription
               className={cn({
-                'pl-[calc(9rem+0.5rem)]': formInline,
+                'pl-[9.5rem]': formInline,
               })}
             >
               {item.description}
@@ -273,7 +273,7 @@ export const FormFieldItemComponent = <TData extends FieldValues>({
           )}
           <FormMessage
             className={cn({
-              'pl-[calc(9rem+0.5rem)]': formInline,
+              'pl-[9.5rem]': formInline,
             })}
           />
         </FormItem>

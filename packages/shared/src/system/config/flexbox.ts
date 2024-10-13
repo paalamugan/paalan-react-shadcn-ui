@@ -40,10 +40,10 @@ export const flexbox: Config = {
   flex: t.tailwind('flex'),
   flexFlow: true, // TODO: Add support for flexFlow
   flexGrow: {
-    transform: (value) => (+value === 1 ? 'flex-grow' : 'flex-grow-0'),
+    transform: (value) => (+value === 1 ? 'grow' : 'grow-0'),
   },
   flexShrink: {
-    transform: (value) => (+value === 1 ? 'flex-shrink' : 'flex-shrink-0'),
+    transform: (value) => (+value === 1 ? 'shrink' : 'shrink-0'),
   },
   flexBasis: {
     transform: (value) => `basis-${value}`,

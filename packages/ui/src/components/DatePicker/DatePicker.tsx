@@ -156,7 +156,7 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
 
     return (
       <>
-        <Box className={cn('flex flex-col gap-2', parentClassName)}>
+        <Box className={cn('flex flex-1 flex-col gap-2', parentClassName)}>
           {label && (
             <Label htmlFor={labelId} required={required} isInvalid={isInvalid}>
               {label}

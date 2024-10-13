@@ -40,53 +40,60 @@ export const Form = <TData extends FieldValues>({
   children,
 }: FormComponentProps<TData>) => {
   const isSubmitting = isFormSubmitting ?? form.formState.isSubmitting;
+  const isActionSectionVisible = !hideResetButton || !hideSubmitButton || !!ResetButton || !!SubmitButton;
+
   return (
     <FormRoot {...form}>
       <form
         id={id}
         ref={formRef}
         noValidate={noValidate}
-        onSubmit={form.handleSubmit(onSubmit, onSubmitError)}
+        onSubmit={onSubmit ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
         className={cn('space-y-4', className)}
       >
         <FormFieldItems fields={fields} inline={formInline} control={form.control} />
         {children}
-        <Box className={cn('flex gap-3 pt-2', actionClassName)}>
-          {ResetButton ? (
-            <ResetButton onFormReset={form.reset} />
-          ) : (
-            !hideResetButton && (
-              <Button
-                type="reset"
-                variant={resetButtonVariant}
-                color={resetButtonColor}
-                disabled={isResetting}
-                onClick={() => {
-                  form.reset();
-                  onReset?.();
-                }}
-                className={resetClassName}
-              >
-                {resetText}
-              </Button>
-            )
-          )}
-          {SubmitButton ? (
-            <SubmitButton isSubmitting={isSubmitting} onFormSubmit={form.handleSubmit(onSubmit, onSubmitError)} />
-          ) : (
-            !hideSubmitButton && (
-              <Button
-                type="submit"
-                variant={submitButtonVariant}
-                color={submitButtonColor}
-                isLoading={isSubmitting}
-                className={submitClassName}
-              >
-                {submitText}
-              </Button>
-            )
-          )}
-        </Box>
+        {isActionSectionVisible && (
+          <Box className={cn('flex gap-3', actionClassName)}>
+            {ResetButton ? (
+              <ResetButton onFormReset={form.reset} />
+            ) : (
+              !hideResetButton && (
+                <Button
+                  type="reset"
+                  variant={resetButtonVariant}
+                  color={resetButtonColor}
+                  disabled={isResetting}
+                  onClick={() => {
+                    form.reset();
+                    onReset?.();
+                  }}
+                  className={resetClassName}
+                >
+                  {resetText}
+                </Button>
+              )
+            )}
+            {SubmitButton ? (
+              <SubmitButton
+                isSubmitting={isSubmitting}
+                onFormSubmit={onSubmit ? form.handleSubmit(onSubmit, onSubmitError) : undefined}
+              />
+            ) : (
+              !hideSubmitButton && (
+                <Button
+                  type="submit"
+                  variant={submitButtonVariant}
+                  color={submitButtonColor}
+                  isLoading={isSubmitting}
+                  className={submitClassName}
+                >
+                  {submitText}
+                </Button>
+              )
+            )}
+          </Box>
+        )}
       </form>
     </FormRoot>
   );

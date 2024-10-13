@@ -4,8 +4,8 @@ export const useNextTheme = () => {
   const theme = useTheme();
   return {
     ...theme,
-    isDark: theme.theme === 'dark',
-    isLight: theme.theme === 'light',
+    isDark: theme.resolvedTheme === 'dark',
+    isLight: theme.resolvedTheme === 'light',
     isSystem: theme.theme === 'system',
   };
 };

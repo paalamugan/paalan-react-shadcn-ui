@@ -114,6 +114,8 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
   ) => {
     const isInvalid = isAriaInvalid(props['aria-invalid']) || invalid;
     const id = props.id || props.name || label?.toString() || '';
+    const localChecked = checked ?? `${props.value}` === 'true';
+
     return (
       <>
         <Box className={cn('flex items-center gap-2', rootClassName)}>
@@ -121,7 +123,7 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
             ref={ref}
             {...props}
             id={id}
-            checked={indeterminate ? true : checked}
+            checked={indeterminate ? true : localChecked}
             indeterminate={indeterminate}
             className={cn(
               {

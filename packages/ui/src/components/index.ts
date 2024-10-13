@@ -28,6 +28,7 @@ export * from './Form';
 export * from './HoverCard';
 export * from './IconButton';
 export * from './Input';
+export * from './InputOtp';
 export * from './Label';
 export * from './LabelInput';
 export * from './Loading';
