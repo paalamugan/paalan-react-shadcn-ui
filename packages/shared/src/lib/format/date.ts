@@ -6,7 +6,7 @@ import type { TimeZone } from '../../constants/time-zones';
 
 import { getLocalCountryBasedFormat } from './helper';
 
-export type BaseDateType = string | Date | number;
+export type BaseDateType = string | Date | number | undefined | null;
 
 export interface IDateTransformer<D extends BaseDateType = BaseDateType> {
   parse(value: unknown, timeZone: string, locale?: Locale): Date;
@@ -15,6 +15,7 @@ export interface IDateTransformer<D extends BaseDateType = BaseDateType> {
 
 class DateTransformer implements IDateTransformer<BaseDateType> {
   parse(value: BaseDateType, timeZone: string, locale?: Locale): Date {
+    if (!value) return new Date();
     return utcToZonedTime(value, timeZone, { locale });
   }
 
@@ -197,7 +198,7 @@ export class DateIntl<D extends BaseDateType> {
    * @returns True if the value is a valid date, false otherwise.
    */
   isValid(value: unknown): boolean {
-    if (!value || (isNaN(Date.parse((value as string).toString())) && !isValid(value))) {
+    if (!value || (isNaN(Date.parse(value as string)) && !isValid(value))) {
       return false;
     }
     return true;

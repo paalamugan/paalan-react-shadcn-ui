@@ -29,8 +29,8 @@ export class NumberIntl implements INumberIntl {
    * @param options - The options for formatting the number.
    * @returns The formatted number as a string.
    */
-  format(value: number | string, options: Intl.NumberFormatOptions = {}): string {
-    if (!this.isValid(value)) return this.fallback;
+  format(value: number | string | undefined | null, options: Intl.NumberFormatOptions = {}): string {
+    if (!this.isValid(value || '')) return this.fallback;
 
     return new Intl.NumberFormat(this.locale, options).format(Number(value));
   }

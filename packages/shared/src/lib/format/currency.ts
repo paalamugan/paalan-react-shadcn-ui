@@ -37,8 +37,8 @@ export class CurrencyIntl extends CurrencyConverter implements ICurrencyIntl {
    * @param currency - The currency code to use for formatting. Defaults to the currency specified in the constructor.
    * @returns The formatted currency string.
    */
-  format(value: number | string, currency = this.currency): string {
-    if (!this.isValid(value)) return this.fallback;
+  format(value: number | string | undefined | null, currency = this.currency): string {
+    if (!this.isValid(value || '')) return this.fallback;
 
     return new Intl.NumberFormat(this.locale, {
       currency,
