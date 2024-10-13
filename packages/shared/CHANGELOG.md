@@ -1,5 +1,11 @@
 # @paalan/react-shared
 
+## 1.4.7
+
+### Patch Changes
+
+- [`a5eb32b`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/a5eb32b6452e992762f6c4affe05247d4f984a8a) Thanks [@paalamugan](https://github.com/paalamugan)! - refactor(format): Update currency and number formatting functions
+
 ## 1.4.6
 
 ### Patch Changes
