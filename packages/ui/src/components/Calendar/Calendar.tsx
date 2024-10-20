@@ -8,7 +8,7 @@ import { buttonVariants } from '../Button/Button';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
-const Calendar: React.FC<CalendarProps> = ({ className, classNames, showOutsideDays = true, ...props }) => {
+const Calendar: React.FC<CalendarProps> = ({ className, classNames, showOutsideDays = true, components, ...props }) => {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -50,6 +50,7 @@ const Calendar: React.FC<CalendarProps> = ({ className, classNames, showOutsideD
       components={{
         IconLeft: () => <ChevronLeftIcon className="size-4" />,
         IconRight: () => <ChevronRightIcon className="size-4" />,
+        ...components,
       }}
       {...props}
     />
