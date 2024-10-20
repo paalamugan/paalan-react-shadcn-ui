@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.4.14
+
+### Patch Changes
+
+- [`c3c4b3c`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/c3c4b3c8405dd8582f19e5d27b7750f50662a8ab) Thanks [@paalamugan](https://github.com/paalamugan)! - minor update
+
 ## 1.4.13
 
 ### Patch Changes
