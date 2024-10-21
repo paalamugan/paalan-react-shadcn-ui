@@ -21,3 +21,12 @@ export const DEFAULT_COUNTRY_BASED_FORMAT_OPTIONS = {
     timeZone: 'Asia/Kolkata',
   },
 } satisfies Record<DefaultCountryBasedFormatOptionKey, CountryBasedFormat>;
+
+export const formatRelativeLocale: Record<string, string> = {
+  lastWeek: "'last' eeee 'at' p",
+  yesterday: "'yesterday at' p",
+  today: "'today at' p",
+  tomorrow: "'tomorrow at' p",
+  nextWeek: "eeee 'at' p",
+  other: 'Pp',
+};

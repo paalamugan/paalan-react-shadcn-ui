@@ -1,9 +1,11 @@
 import { formatRelative, isAfter, isValid } from 'date-fns';
 import { formatInTimeZone, utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import enIN from 'date-fns/locale/en-IN';
 
 import type { Locale } from 'date-fns';
 import type { TimeZone } from '../../constants/time-zones';
 
+import { formatRelativeLocale } from './constants';
 import { getLocalCountryBasedFormat } from './helper';
 
 export type BaseDateType = string | Date | number | undefined | null;
@@ -308,4 +310,10 @@ export const dateIntl = new DateIntl({
   dateFormat: 'MMM d, yyyy',
   dateTimeFormat: 'MMM d, yyyy HH:mm',
   timeZone: 'Asia/Kolkata',
+  locale: {
+    ...enIN,
+    formatRelative: (token) => {
+      return formatRelativeLocale[token];
+    },
+  },
 });
