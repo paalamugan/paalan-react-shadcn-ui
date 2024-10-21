@@ -4,7 +4,7 @@ import { getLocalCountryBasedFormat } from './helper';
 
 export const DEFAULT_LOCAL_VALUE = 'LOCAL';
 
-export const DEFAULT_COUNTRY_BASED_FORMAT_OPTIONS: Record<DefaultCountryBasedFormatOptionKey, CountryBasedFormat> = {
+export const DEFAULT_COUNTRY_BASED_FORMAT_OPTIONS = {
   LOCAL: getLocalCountryBasedFormat(),
   US: {
     dateFormat: 'd MMMM yyyy',
@@ -20,4 +20,4 @@ export const DEFAULT_COUNTRY_BASED_FORMAT_OPTIONS: Record<DefaultCountryBasedFor
     locale: 'enIN',
     timeZone: 'Asia/Kolkata',
   },
-};
+} satisfies Record<DefaultCountryBasedFormatOptionKey, CountryBasedFormat>;

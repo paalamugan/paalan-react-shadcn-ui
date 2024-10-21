@@ -238,10 +238,34 @@ export class DateIntl<D extends BaseDateType> {
 
 const dateTransformer = new DateTransformer();
 
-export const DEFAULT_DATE_OPTIONS: IDateOptions = {
+export const LOCALE_DATE_OPTIONS: IDateOptions = {
+  /**
+   * The locale date format to use for formatting dates.
+   */
   dateFormat: getLocalCountryBasedFormat().dateFormat,
+  /**
+   * The locale date and time format to use for formatting dates and times.
+   */
   dateTimeFormat: getLocalCountryBasedFormat().dateTimeFormat,
+  /**
+   * The locale time zone to use for formatting dates and times.
+   */
   timeZone: getLocalCountryBasedFormat().timeZone,
 };
 
-export const dateIntl = new DateIntl(DEFAULT_DATE_OPTIONS);
+/**
+ * Locale date formatter with default options.
+ */
+export const localeDateIntl = new DateIntl(LOCALE_DATE_OPTIONS);
+
+/**
+ * Date formatter with default options.
+ * @default dateFormat - 'MMM d, yyyy'
+ * @default dateTimeFormat - 'MMM d, yyyy HH:mm'
+ * @default timeZone - 'Asia/Kolkata'
+ */
+export const dateIntl = new DateIntl({
+  dateFormat: 'MMM d, yyyy',
+  dateTimeFormat: 'MMM d, yyyy HH:mm',
+  timeZone: 'Asia/Kolkata',
+});
