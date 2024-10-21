@@ -1,5 +1,11 @@
 # @paalan/react-shared
 
+## 1.4.10
+
+### Patch Changes
+
+- [`e86e0e5`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/e86e0e5ac8f6173d61c4697c21bd0c84f73068c4) Thanks [@paalamugan](https://github.com/paalamugan)! - minor update
+
 ## 1.4.9
 
 ### Patch Changes
