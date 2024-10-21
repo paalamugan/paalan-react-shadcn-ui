@@ -25,11 +25,36 @@ class DateTransformer implements IDateTransformer<BaseDateType> {
 }
 
 export interface IDateOptions<D extends BaseDateType = BaseDateType> {
+  /**
+   * The format string for date-only formatting.
+   * @example 'MMM d, yyyy'
+   * @url https://date-fns.org/v3.6.0/docs/format
+   */
   dateFormat: string;
+  /**
+   * The format string for date and time formatting.
+   * @example 'MMM d, yyyy HH:mm'
+   * @url https://date-fns.org/v3.6.0/docs/format
+   */
   dateTimeFormat: string;
+  /**
+   * The transformer used for parsing and converting dates.
+   */
   transformer?: IDateTransformer<D>;
+  /**
+   * The time zone to be used for formatting.
+   * @example 'Asia/Kolkata'
+   */
   timeZone?: TimeZone;
+  /**
+   * The locale to be used for formatting.
+   * @example 'en-IN'
+   */
   locale?: Locale;
+  /**
+   * The fallback string to be used when formatting fails.
+   * @example 'N/A'
+   */
   fallback?: string;
 }
 
@@ -43,14 +68,19 @@ export interface FormatOptions<D extends BaseDateType>
 export class DateIntl<D extends BaseDateType> {
   /**
    * The locale to be used for formatting.
+   * @example 'en-IN'
    */
   readonly locale?: Locale;
   /**
    * The format string for date-only formatting.
+   * @example 'MMM d, yyyy'
+   * @url https://date-fns.org/v3.6.0/docs/format
    */
   readonly dateFormat: string;
   /**
    * The format string for date and time formatting.
+   * @example 'MMM d, yyyy HH:mm'
+   * @url https://date-fns.org/v3.6.0/docs/format
    */
   readonly dateTimeFormat: string;
   /**
@@ -59,10 +89,12 @@ export class DateIntl<D extends BaseDateType> {
   readonly transformer: IDateTransformer;
   /**
    * The fallback string to be used when formatting fails.
+   * @example 'N/A'
    */
   readonly fallback: string;
   /**
    * The time zone to be used for formatting.
+   * @example 'Asia/Kolkata'
    */
   readonly timeZone: TimeZone;
 
@@ -83,16 +115,24 @@ export class DateIntl<D extends BaseDateType> {
   /**
    * Formats the given date value using the specified options.
    * @param value - The date value to format.
-   * @param options - The options for formatting the date.
+   * @param options - The options for formatting the date. If a string is provided, it is used as the dateFormat.
    * @returns The formatted date string.
    */
-  format(value: D, options?: FormatOptions<D>): string {
-    const {
-      dateFormat = this.dateFormat,
-      timeZone = this.timeZone,
-      locale = this.locale,
-      fallback = this.fallback,
-    } = options ?? {};
+  format(value: D, options?: FormatOptions<D> | FormatOptions<D>['dateFormat']): string {
+    const localOptions = {
+      dateFormat: this.dateFormat,
+      timeZone: this.timeZone,
+      locale: this.locale,
+      fallback: this.fallback,
+    };
+
+    if (typeof options === 'string') {
+      localOptions.dateFormat = options;
+    } else if (options) {
+      Object.assign(localOptions, options);
+    }
+
+    const { dateFormat, timeZone, locale, fallback } = localOptions;
     if (!this.isValid(value)) return fallback;
     return formatInTimeZone(this.toDate(value), timeZone, dateFormat, { locale: locale });
   }
@@ -100,17 +140,17 @@ export class DateIntl<D extends BaseDateType> {
   /**
    * Formats the given date value as a date string using the specified options.
    * @param value - The date value to format.
-   * @param options - The options for formatting the date.
+   * @param options - The options for formatting the date. If a string is provided, it is used as the dateFormat.
    * @returns The formatted date string.
    */
-  formatDate(value: D, options?: FormatOptions<D>): string {
+  formatDate(value: D, options?: FormatOptions<D> | FormatOptions<D>['dateFormat']): string {
     return this.format(value, options);
   }
 
   /**
    * Formats the given date value as a date and time string using the specified options.
    * @param value - The date value to format.
-   * @param options - The options for formatting the date and time.
+   * @param options - The options for formatting the date and time. If a string is provided, it is used as the dateFormat.
    * @returns The formatted date and time string.
    */
   formatDateTime(value: D, options?: FormatOptions<D>): string {
@@ -123,7 +163,7 @@ export class DateIntl<D extends BaseDateType> {
   /**
    * Formats the given date value as a relative time string.
    * @param value - The date value to format.
-   * @param baseDate - The base date to calculate the relative time from.
+   * @param baseDate - The base date to calculate the relative time from. Defaults to the current date and time.
    * @param options - The options for formatting the relative time.
    * @returns The formatted relative time string.
    */
