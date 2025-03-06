@@ -1,6 +1,6 @@
 {
   "name": "@paalan/react-shared",
-  "version": "1.4.11",
+  "version": "1.5.0",
   "description": "React UI Shared for Paalan UI",
   "type": "module",
   "main": "dist/index.js",
