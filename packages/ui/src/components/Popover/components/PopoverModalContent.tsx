@@ -94,6 +94,11 @@ export interface PopoverModalContentProps extends Omit<CommandNoResultFoundProps
    * @returns void
    */
   onSearchValueChange?: (search: string) => void;
+  /**
+   * Optional whether to show the check icon
+   * @default true
+   */
+  showCheckIcon?: boolean;
 }
 
 export const PopoverModalContent: FC<PopoverModalContentProps> = ({
@@ -116,6 +121,7 @@ export const PopoverModalContent: FC<PopoverModalContentProps> = ({
   loadingText = 'Loading...',
   searchValue: searchValueProp,
   initialSearchContent,
+  showCheckIcon = true,
 }) => {
   const [searchValue, setSearchValue] = useState(searchValueProp || '');
   const filterRef = useRef(filter);
@@ -195,9 +201,11 @@ export const PopoverModalContent: FC<PopoverModalContentProps> = ({
                 onValueChange?.(currentValue === value ? '' : currentValue);
               }}
             >
-              {isMulti && <CheckIcon className={cn('mr-2 h-4 w-4', checkIconClassNameFn(option.value))} />}
+              {showCheckIcon && isMulti && (
+                <CheckIcon className={cn('mr-2 h-4 w-4', checkIconClassNameFn(option.value))} />
+              )}
               {option.labelContent || option.label}
-              {!isMulti && (
+              {showCheckIcon && !isMulti && (
                 <CheckIcon
                   className={cn(
                     'ml-auto h-4 w-4',

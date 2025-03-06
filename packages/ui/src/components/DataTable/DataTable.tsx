@@ -12,7 +12,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-import type { ColumnFiltersState, SortingState, VisibilityState } from '@tanstack/react-table';
+import type { Cell, ColumnFiltersState, Header, SortingState, VisibilityState } from '@tanstack/react-table';
 import type { MutableRefObject, ReactNode } from 'react';
 import type {
   DataTableColumnDef,
@@ -84,6 +84,18 @@ export interface DataTableProps<TRow, TValue = unknown> {
    * provide the sorting columns state
    */
   sortingColumns?: SortingState;
+  /**
+   *
+   * @param cell single cell of the table
+   * @returns classname
+   */
+  getCellClassName?: (cell: Cell<TRow, TValue>) => string | undefined;
+  /**
+   *
+   * @param header single header of the table
+   * @returns classname
+   */
+  getHeadClassName?: (header: Header<TRow, unknown>) => string | undefined;
 }
 
 /**
@@ -104,6 +116,8 @@ export const DataTable = <TRow, TValue>({
   tableInstanceRef,
   toolbarRightSideContent,
   sortingColumns = [],
+  getCellClassName,
+  getHeadClassName,
 }: DataTableProps<TRow, TValue>) => {
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -136,6 +150,7 @@ export const DataTable = <TRow, TValue>({
   });
 
   useImperativeHandle(tableInstanceRef, () => table, [table]);
+
   return (
     <div className={cn('flex w-full flex-col gap-4', className)}>
       <DataTableToolbar
@@ -152,7 +167,7 @@ export const DataTable = <TRow, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className={getHeadClassName?.(header)}>
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                     </TableHead>
                   );
@@ -165,7 +180,9 @@ export const DataTable = <TRow, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
+                    <TableCell key={cell.id} className={getCellClassName?.(cell)}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
                   ))}
                 </TableRow>
               ))

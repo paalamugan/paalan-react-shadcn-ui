@@ -4,6 +4,8 @@ import { CalendarIcon, XCircleIcon } from '@paalan/react-icons';
 import { cn, isAriaInvalid } from '@paalan/react-shared/lib';
 import { addDays, format } from 'date-fns';
 
+import type { DayPickerBase } from 'react-day-picker';
+
 import { Box } from '../../base';
 import { Button } from '../Button';
 import { Calendar } from '../Calendar';
@@ -78,14 +80,15 @@ export interface DatePickerProps {
    * Whether the date picker is disabled or not
    */
   disabled?: boolean;
+  /**
+   * Additional props for the calendar component.
+   */
+  calendarProps?: DayPickerBase;
 }
 
-const PresetCalendar: React.FC<Pick<DatePickerProps, 'presets' | 'presetPlaceholder' | 'date' | 'onDateChange'>> = ({
-  presets,
-  date,
-  onDateChange,
-  presetPlaceholder = 'Select',
-}) => {
+const PresetCalendar: React.FC<
+  Pick<DatePickerProps, 'presets' | 'presetPlaceholder' | 'date' | 'onDateChange' | 'calendarProps'>
+> = ({ presets, date, onDateChange, presetPlaceholder = 'Select', calendarProps }) => {
   const selectedDate = typeof date === 'string' ? new Date(date) : date;
   return (
     <>
@@ -102,7 +105,7 @@ const PresetCalendar: React.FC<Pick<DatePickerProps, 'presets' | 'presetPlacehol
         </SelectContent>
       </SelectRoot>
       <div className="rounded-md border">
-        <Calendar mode="single" selected={selectedDate} onSelect={onDateChange} />
+        <Calendar {...calendarProps} mode="single" selected={selectedDate} onSelect={onDateChange} />
       </div>
     </>
   );
@@ -128,6 +131,7 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
       id,
       errorMessage,
       disabled,
+      calendarProps,
       ...props
     },
     ref,
@@ -206,9 +210,10 @@ export const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
                   date={date}
                   onDateChange={onSelect}
                   presetPlaceholder={presetPlaceholder}
+                  calendarProps={calendarProps}
                 />
               ) : (
-                <Calendar mode="single" selected={date} onSelect={onSelect} initialFocus />
+                <Calendar {...calendarProps} mode="single" selected={date} onSelect={onSelect} initialFocus />
               )}
             </PopoverContent>
           </PopoverRoot>

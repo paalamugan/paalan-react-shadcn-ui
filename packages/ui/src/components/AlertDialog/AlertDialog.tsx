@@ -94,7 +94,7 @@ const AlertDialogCancel = React.forwardRef<
 >(({ className, variant = 'outline', rounded, size, ...props }, ref) => (
   <AlertDialogPrimitive.Cancel
     ref={ref}
-    className={cn(buttonVariants({ variant, rounded, size }), 'mt-2 sm:mt-0', className)}
+    className={cn(buttonVariants({ variant, rounded, size }), className)}
     {...props}
   />
 ));
@@ -104,7 +104,7 @@ interface AlertDialogProps extends React.ComponentPropsWithoutRef<typeof AlertDi
   /**
    * The trigger element. Must be a `Button` or `IconButton`.
    */
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
   /**
    * The icon of the alert dialog.
    */
@@ -125,7 +125,15 @@ interface AlertDialogProps extends React.ComponentPropsWithoutRef<typeof AlertDi
      * The description of the alert dialog.
      */
     description?: React.ReactNode;
+    /**
+     * The class name for the header.
+     */
+    className?: string;
   };
+  /**
+   * The footer class name.
+   */
+  footerClassName?: string;
   /**
    * The cancel button text.
    */
@@ -163,17 +171,18 @@ const AlertDialog: React.FC<AlertDialogProps> = ({
   confirmButtonProps,
   icon,
   iconClassName,
+  footerClassName,
   ...props
 }) => {
   return (
     <AlertDialogRoot {...props}>
-      <AlertDialogTrigger asChild>{trigger}</AlertDialogTrigger>
+      {!!trigger && <AlertDialogTrigger asChild>{trigger}</AlertDialogTrigger>}
       <AlertDialogContent>
         <Flex alignItems="start">
           {icon && <Box className={cn('mr-4 mt-1 shrink-0', iconClassName)}>{icon}</Box>}
           <Stack>
             {header && (
-              <AlertDialogHeader>
+              <AlertDialogHeader className={cn('text-let', header.className)}>
                 {header.title && <AlertDialogTitle>{header.title}</AlertDialogTitle>}
                 {header.description && <AlertDialogDescription>{header.description}</AlertDialogDescription>}
               </AlertDialogHeader>
@@ -182,7 +191,7 @@ const AlertDialog: React.FC<AlertDialogProps> = ({
           </Stack>
         </Flex>
 
-        <AlertDialogFooter>
+        <AlertDialogFooter className={cn('mt-2', footerClassName)}>
           <AlertDialogCancel {...cancelButtonProps} onClick={onCancel}>
             {cancelButtonText}
           </AlertDialogCancel>

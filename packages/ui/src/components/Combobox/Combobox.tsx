@@ -95,6 +95,11 @@ export interface ComboboxProps extends Omit<PopoverModalContentProps, 'options'>
    * onClear handler for the combobox to clear the value
    */
   onClear?: () => void;
+  /**
+   * Whether the combobox is a render within body container or not
+   * @default true
+   */
+  modal?: boolean;
 }
 
 /**
@@ -122,6 +127,7 @@ export const Combobox = React.forwardRef<React.ElementRef<'button'>, ComboboxPro
       open: defaultOpen = false,
       onOpenChange,
       onClear,
+      modal = true,
       ...popoverModalContentProps
     },
     ref,
@@ -189,7 +195,7 @@ export const Combobox = React.forwardRef<React.ElementRef<'button'>, ComboboxPro
               {label}
             </Label>
           )}
-          <PopoverRoot open={open} onOpenChange={onOpenChangeHandle}>
+          <PopoverRoot modal={modal} open={open} onOpenChange={onOpenChangeHandle}>
             <PopoverTrigger asChild>
               <Button
                 variant="outline"

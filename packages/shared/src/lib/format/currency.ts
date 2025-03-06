@@ -57,4 +57,4 @@ export class CurrencyIntl extends CurrencyConverter implements ICurrencyIntl {
   }
 }
 
-export const currencyIntl = new CurrencyIntl({ currency: 'INR' });
+export const currencyIntl = new CurrencyIntl({ currency: 'INR', locale: 'en-IN' });

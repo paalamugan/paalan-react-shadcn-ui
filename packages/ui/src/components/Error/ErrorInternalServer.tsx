@@ -94,7 +94,7 @@ export const ErrorInternalServer = <ErrorType extends Error = Error>({
               </Button>
             )}
             {onRefresh && (
-              <Button variant="outline" onClick={onRefresh}>
+              <Button variant="outline" onClick={onRefresh} className="text-foreground">
                 <ReloadIcon />
                 {refreshText}
               </Button>
