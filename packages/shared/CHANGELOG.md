@@ -1,5 +1,11 @@
 # @paalan/react-shared
 
+## 1.5.0
+
+### Minor Changes
+
+- [`568a341`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/568a341fe49b198569a98e9feec8550daad23476) Thanks [@paalamugan](https://github.com/paalamugan)! - update Form and Dialog Components
+
 ## 1.4.11
 
 ### Patch Changes
