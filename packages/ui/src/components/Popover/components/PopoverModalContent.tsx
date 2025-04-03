@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { CheckIcon } from '@paalan/react-icons';
 import { cn } from '@paalan/react-shared/lib';
+import { isObject } from 'lodash-es';
 
 import type { OptionType } from '@paalan/react-shared/types';
 import type { FC, ReactNode } from 'react';
@@ -67,10 +68,15 @@ export interface PopoverModalContentProps extends Omit<CommandNoResultFoundProps
    */
   filter?: (option: OptionType, value: string, index: number) => boolean;
   /**
-   * filterBy the option to filter by label, value or both
+   * filterBy the option to filter by label, value, both, metadata or all
+   * - "label" will filter by label key in the option
+   * - "value" will filter by value key in the option
+   * - "metadata" will filter by the metadata key in the option
+   * - "all" will filter by label, value and metadata keys in the option
+   * - "both" will filter by label and value keys in the option
    * @default label
    */
-  filterBy?: 'label' | 'value' | 'both';
+  filterBy?: 'label' | 'value' | 'both' | 'metadata' | 'all';
   /**
    * Whether the combobox is multi
    */
@@ -139,12 +145,29 @@ export const PopoverModalContent: FC<PopoverModalContentProps> = ({
     if (typeof filterRef.current === 'function') {
       return options.filter((option, index) => filterRef.current?.(option, searchValue, index));
     }
-    const filterKeys: (keyof OptionType)[] = filterBy === 'both' ? ['label', 'value'] : [filterBy];
+    
+    const filterKeys: (keyof OptionType)[] = [];
+    if (filterBy === 'all') {
+      filterKeys.push('label', 'value', 'metadata');
+    } else if (filterBy === 'both') {
+      filterKeys.push('label', 'value');
+    } else {
+      filterKeys.push(filterBy);
+    }
+    
     return options.filter((option) => {
       return filterKeys.some((key) => {
         const value = option[key];
         if (typeof value === 'string') {
           return value.toLowerCase().includes(searchValue.toLowerCase());
+        } else if (key === 'metadata' && isObject(value)) {
+          // If the value is an object, check if any of its string properties match the search value
+          return Object.values(value).some((val) => {
+            if (typeof val === 'string') {
+              return val.toLowerCase().includes(searchValue.toLowerCase());
+            }
+            return false;
+          });
         }
         return false;
       });
