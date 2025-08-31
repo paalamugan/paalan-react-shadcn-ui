@@ -1,5 +1,13 @@
 # @paalan/react-ui
 
+## 1.5.0
+
+### Minor Changes
+
+- [`0bd56d0`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/0bd56d0b973e807b40bf87ee3ddcbe293b101409) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: update render type in FormFieldCustomItem and clean up PopoverModalContent
+
+- [`568a341`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/568a341fe49b198569a98e9feec8550daad23476) Thanks [@paalamugan](https://github.com/paalamugan)! - update Form and Dialog Components
+
 ## 1.4.14
 
 ### Patch Changes
