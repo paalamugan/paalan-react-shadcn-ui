@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.5.2
+
+### Patch Changes
+
+- [`cb2e63d`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/cb2e63d44ba64bc11fceee8d63bacd2e603eec2b) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: improve value handling in NumberInput to enforce maxLength and handle empty input
+
 ## 1.5.1
 
 ### Patch Changes
