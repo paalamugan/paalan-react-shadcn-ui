@@ -145,7 +145,7 @@ export const PopoverModalContent: FC<PopoverModalContentProps> = ({
     if (typeof filterRef.current === 'function') {
       return options.filter((option, index) => filterRef.current?.(option, searchValue, index));
     }
-    
+
     const filterKeys: (keyof OptionType)[] = [];
     if (filterBy === 'all') {
       filterKeys.push('label', 'value', 'metadata');
@@ -154,7 +154,7 @@ export const PopoverModalContent: FC<PopoverModalContentProps> = ({
     } else {
       filterKeys.push(filterBy);
     }
-    
+
     return options.filter((option) => {
       return filterKeys.some((key) => {
         const value = option[key];

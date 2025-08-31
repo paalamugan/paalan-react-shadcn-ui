@@ -144,7 +144,7 @@ export interface FormFieldDateRangePickerItem<TData>
 
 export interface FormFieldCustomItem<TData extends FieldValues> extends CommonFormFieldItem<TData> {
   type: 'custom';
-  render: (props: { field: ControllerRenderProps<TData, Path<TData>> }) => ReactNode;
+  render: <TName extends Path<TData>>(props: { field: ControllerRenderProps<TData, TName> }) => ReactNode;
 }
 
 export type FormFieldItem<TData extends FieldValues> =
