@@ -32,6 +32,11 @@ export interface InputProps extends HTMLTailwindStyledComponentProps<'input'> {
    * The error message for the checkbox
    */
   errorMessage?: string;
+
+  /**
+   * max length of the input
+   */
+  maxLength?: number;
 }
 
 const Input: ComponentWithAs<'input', InputProps> = forwardRef<InputProps, 'input'>(
@@ -47,6 +52,7 @@ const Input: ComponentWithAs<'input', InputProps> = forwardRef<InputProps, 'inpu
       inputClassName,
       onValueChange,
       errorMessage,
+      maxLength,
       ...props
     },
     ref,
@@ -55,7 +61,13 @@ const Input: ComponentWithAs<'input', InputProps> = forwardRef<InputProps, 'inpu
     const labelId = id || props.name || label;
 
     const onChangeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const value = event.target.value;
+      let value = event.target.value;
+
+      if (maxLength && value.length > maxLength) {
+        value = value.slice(0, maxLength);
+        event.target.value = value;
+      }
+
       onValueChange?.(value);
       props.onChange?.(event);
     };

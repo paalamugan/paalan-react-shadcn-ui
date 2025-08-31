@@ -44,10 +44,6 @@ export interface NumberInputProps extends Omit<InputProps, 'onValueChange' | 'va
    * @param value current value of the input
    */
   onValueChange?: (value: number | null) => void;
-  /**
-   * max length of the input
-   */
-  maxLength?: number;
 }
 
 export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRef<NumberInputProps, 'input'>(
@@ -62,7 +58,6 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
       isPositiveIntegerStartsWithZero,
       isPositiveFloatStartsWithZero,
       zeroAsEmptyString,
-      maxLength,
       ...props
     },
     ref,
@@ -74,16 +69,10 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
     });
 
     const onChangeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
-      let value = event.target.value;
+      const value = event.target.value;
       if (value === '') {
         setLocalValue(value);
         return onChange?.(event);
-      }
-
-      // Handle max length
-      if (maxLength && value.length > maxLength) {
-        value = value.slice(0, maxLength);
-        event.target.value = value;
       }
 
       if (isPositiveIntegerValue) {
