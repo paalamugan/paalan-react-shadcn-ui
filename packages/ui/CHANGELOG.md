@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.5.1
+
+### Patch Changes
+
+- [`a884021`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/a884021828fd48a5af89e7a3b4d94f3a757edac8) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: update onValueChange to handle null values and add maxLength prop in NumberInput
+
 ## 1.5.0
 
 ### Minor Changes
