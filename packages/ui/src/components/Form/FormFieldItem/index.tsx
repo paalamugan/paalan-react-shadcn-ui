@@ -24,9 +24,9 @@ export type FormFieldItemProps<TData extends FieldValues> = Pick<FormComponentPr
 export const FormFieldItemComponent = <TData extends FieldValues>({
   inline: formInline,
   control,
-  field,
+  field: parentField,
 }: FormFieldItemProps<TData>) => {
-  const { required, label, labelDescription, inline, formItemClassName, formLabelClassName, ...item } = field;
+  const { required, label, labelDescription, inline, formItemClassName, formLabelClassName, ...item } = parentField;
   const inlineTypes = ['checkbox'];
   return (
     <FormField
@@ -92,7 +92,7 @@ export const FormFieldItemComponent = <TData extends FieldValues>({
                     onChange={(event) => {
                       const value = event.currentTarget.valueAsNumber;
                       field.onChange(Number.isNaN(value) ? undefined : value);
-                      item.onValueChange?.(value);
+                      item.onValueChange?.(Number.isNaN(value) ? null : value);
                     }}
                   />
                 </FormControl>

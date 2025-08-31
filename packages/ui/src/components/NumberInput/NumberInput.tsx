@@ -43,7 +43,11 @@ export interface NumberInputProps extends Omit<InputProps, 'onValueChange' | 'va
    *
    * @param value current value of the input
    */
-  onValueChange?: (value: number) => void;
+  onValueChange?: (value: number | null) => void;
+  /**
+   * max length of the input
+   */
+  maxLength?: number;
 }
 
 export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRef<NumberInputProps, 'input'>(
@@ -58,6 +62,7 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
       isPositiveIntegerStartsWithZero,
       isPositiveFloatStartsWithZero,
       zeroAsEmptyString,
+      maxLength,
       ...props
     },
     ref,
@@ -65,7 +70,7 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
     const [localValue, setLocalValue] = useControllableState({
       value: isDefinedValue(value) ? `${zeroAsEmptyString ? value || '' : value}` : '',
       defaultValue: isDefinedValue(defaultValue) ? `${zeroAsEmptyString ? defaultValue || '' : ''}` : '',
-      onChange: (value) => onValueChange?.(+value),
+      onChange: (value) => onValueChange?.(value ? +value : null),
     });
 
     const onChangeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,26 +79,25 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
         setLocalValue(value);
         return onChange?.(event);
       }
-      if (isPositiveIntegerValue) {
-        if (isPositiveInteger(value, 1)) {
-          setLocalValue(value);
-          onChange?.(event);
-        }
-      } else if (isPositiveFloatValue) {
-        if (isPositiveFloat(value, 1)) {
-          setLocalValue(value);
-          onChange?.(event);
-        }
-      } else if (isPositiveIntegerStartsWithZero) {
-        if (isPositiveInteger(value, 0)) {
-          setLocalValue(value);
-          onChange?.(event);
-        }
-      } else if (isPositiveFloatStartsWithZero) {
-        if (isPositiveFloat(value, 0)) {
-          setLocalValue(value);
-          onChange?.(event);
-        }
+
+      // Handle max length
+      if (maxLength && value.length > maxLength) {
+        setLocalValue(value.slice(0, maxLength));
+        return onChange?.(event);
+      }
+
+      if (isPositiveIntegerValue && isPositiveInteger(value, 1)) {
+        setLocalValue(value);
+        onChange?.(event);
+      } else if (isPositiveFloatValue && isPositiveFloat(value, 1)) {
+        setLocalValue(value);
+        onChange?.(event);
+      } else if (isPositiveIntegerStartsWithZero && isPositiveInteger(value, 0)) {
+        setLocalValue(value);
+        onChange?.(event);
+      } else if (isPositiveFloatStartsWithZero && isPositiveFloat(value, 0)) {
+        setLocalValue(value);
+        onChange?.(event);
       } else {
         setLocalValue(value);
         onChange?.(event);
