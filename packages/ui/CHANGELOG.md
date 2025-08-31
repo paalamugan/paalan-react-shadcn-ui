@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.5.3
+
+### Patch Changes
+
+- [`69c3320`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/69c332048142648270d85f53c4bc2701582810dc) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: enforce maxLength handling in Input and remove from NumberInput
+
 ## 1.5.2
 
 ### Patch Changes
