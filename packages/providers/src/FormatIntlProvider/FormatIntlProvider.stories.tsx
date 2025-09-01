@@ -289,7 +289,7 @@ export function NumberFormatter() {
             label="Enter a Number"
             placeholder="Enter a Number"
             value={value}
-            onValueChange={(updateValue) => setValue(updateValue.toString())}
+            onValueChange={(updateValue) => setValue(updateValue?.toString() || '')}
           />
         </VStack>
 

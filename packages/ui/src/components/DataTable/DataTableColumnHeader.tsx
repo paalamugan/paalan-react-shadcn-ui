@@ -35,7 +35,10 @@ export const DataTableColumnHeader = <TData, TValue>({
         variant="ghost"
         size="sm"
         color="secondary"
-        className={cn(className)}
+        className={cn(
+          '-ml-3 h-8 text-muted-foreground hover:text-secondary-foreground focus-visible:ring-0',
+          className,
+        )}
         onClick={() => column.toggleSorting()}
       >
         <span>{title}</span>

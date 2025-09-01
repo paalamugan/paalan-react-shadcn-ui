@@ -92,7 +92,7 @@ export const FormFieldItemComponent = <TData extends FieldValues>({
                     onChange={(event) => {
                       const value = event.currentTarget.valueAsNumber;
                       field.onChange(Number.isNaN(value) ? undefined : value);
-                      item.onValueChange?.(Number.isNaN(value) ? null : value);
+                      item.onValueChange?.(Number.isNaN(value) ? 0 : value);
                     }}
                   />
                 </FormControl>

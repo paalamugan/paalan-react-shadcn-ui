@@ -43,7 +43,7 @@ export interface NumberInputProps extends Omit<InputProps, 'onValueChange' | 'va
    *
    * @param value current value of the input
    */
-  onValueChange?: (value: number | null) => void;
+  onValueChange?: (value: number) => void;
 }
 
 export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRef<NumberInputProps, 'input'>(
@@ -65,7 +65,7 @@ export const NumberInput: ComponentWithAs<'input', NumberInputProps> = forwardRe
     const [localValue, setLocalValue] = useControllableState({
       value: isDefinedValue(value) ? `${zeroAsEmptyString ? value || '' : value}` : '',
       defaultValue: isDefinedValue(defaultValue) ? `${zeroAsEmptyString ? defaultValue || '' : ''}` : '',
-      onChange: (value) => onValueChange?.(value ? +value : null),
+      onChange: (value) => onValueChange?.(value ? +value : 0),
     });
 
     const onChangeHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
