@@ -1,5 +1,11 @@
 # @paalan/react-shared
 
+## 1.5.1
+
+### Patch Changes
+
+- [`7336930`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/7336930024bc35b9ea13425b5a641cf21498436e) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: enhance value validation in CurrencyIntl and NumberIntl to correctly handle zero
+
 ## 1.5.0
 
 ### Minor Changes
