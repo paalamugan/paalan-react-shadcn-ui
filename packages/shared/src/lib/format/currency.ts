@@ -38,21 +38,19 @@ export class CurrencyIntl extends CurrencyConverter implements ICurrencyIntl {
    * @returns The formatted currency string.
    */
   format(value: number | string | undefined | null, currency = this.currency): string {
-    if (!this.isValid(value)) return this.fallback;
+    const convertedValue = value ?? 0;
+    if (!this.isValid(convertedValue)) return this.fallback;
 
     return new Intl.NumberFormat(this.locale, {
       currency,
       currencyDisplay: 'symbol',
       minimumFractionDigits: 2,
       style: 'currency',
-    }).format(Number(value));
+    }).format(Number(convertedValue));
   }
 
   private isValid(value: number | string | undefined | null): boolean {
-    if ((!value && value !== 0) || Number.isNaN(value) || Number.isNaN(Number(value))) {
-      return false;
-    }
-
+    if (Number.isNaN(value) || Number.isNaN(Number(value))) return false;
     return true;
   }
 }

@@ -30,16 +30,14 @@ export class NumberIntl implements INumberIntl {
    * @returns The formatted number as a string.
    */
   format(value: number | string | undefined | null, options: Intl.NumberFormatOptions = {}): string {
-    if (!this.isValid(value || '')) return this.fallback;
+    const convertedValue = value ?? 0;
+    if (!this.isValid(convertedValue)) return this.fallback;
 
-    return new Intl.NumberFormat(this.locale, options).format(Number(value));
+    return new Intl.NumberFormat(this.locale, options).format(Number(convertedValue));
   }
 
-  private isValid(value: number | string): boolean {
-    if ((!value && value !== 0) || Number.isNaN(value) || Number.isNaN(Number(value))) {
-      return false;
-    }
-
+  private isValid(value: number | string | undefined | null): boolean {
+    if (Number.isNaN(value) || Number.isNaN(Number(value))) return false;
     return true;
   }
 }
