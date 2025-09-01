@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.5.4
+
+### Patch Changes
+
+- [`ae35af7`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/ae35af7b233f469b91d06bb50bc0c7be51231b04) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: update className for sorting button in DataTableColumnHeader for improved styling
+
 ## 1.5.3
 
 ### Patch Changes
