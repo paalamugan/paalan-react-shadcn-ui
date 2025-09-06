@@ -1,5 +1,11 @@
 # @paalan/react-ui
 
+## 1.5.5
+
+### Patch Changes
+
+- [`efd8a46`](https://github.com/paalamugan/paalan-react-shadcn-ui/commit/efd8a46bd9201d956786568b3b57e64482ed4026) Thanks [@paalamugan-work](https://github.com/paalamugan-work)! - fix: update Loading component styles for better alignment and add custom styles for number input spin buttonsfix: update Loading component styles for better alignment and add custom styles for number input spin buttons
+
 ## 1.5.4
 
 ### Patch Changes
