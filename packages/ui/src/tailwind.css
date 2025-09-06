@@ -137,6 +137,11 @@
   .word-break {
     word-break: break-word;
   }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    @apply appearance-none;
+  }
 }
 
 @media (max-width: 640px) {
